@@ -35,7 +35,7 @@ export const AnimatedAppIcons = () => {
                     {marqueeItems.map((app, index) => (
                         <div 
                             key={`${app.name}-${index}`} 
-                            className="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
+                            className="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
                         >
                             <div className={`text-3xl ${app.color} group-hover:scale-110 transition-transform duration-300`}>
                                 {app.icon}

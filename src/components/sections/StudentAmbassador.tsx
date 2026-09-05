@@ -121,7 +121,7 @@ export const StudentAmbassador = () => {
                                 >
                                     <div className={`w-14 h-14 shrink-0 rounded-full flex items-center justify-center transition-all duration-500 ${
                                         isActive 
-                                            ? 'bg-[var(--color-primary)] text-white shadow-[0_0_20px_rgba(16,80,224,0.3)]' 
+                                            ? 'bg-[var(--color-primary)] text-secondary shadow-[0_0_20px_rgba(194,169,122,0.45)]' 
                                             : 'bg-white border border-[var(--color-border)] text-[var(--color-muted)]'
                                     }`}>
                                         <step.icon className={`w-6 h-6 ${isActive ? 'animate-bounce' : ''}`} />
@@ -175,7 +175,7 @@ export const StudentAmbassador = () => {
                             </div>
                             
                             <div className="mt-8 pt-6 border-t border-[var(--color-border)]">
-                                <button className="w-full py-3 px-6 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
+                                <button className="w-full py-3 px-6 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-secondary font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
                                     Apply Now
                                     <LuChevronRight className="w-4 h-4" />
                                 </button>

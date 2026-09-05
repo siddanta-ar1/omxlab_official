@@ -17,7 +17,7 @@ const NotFound = () => (
             </p>
             <Link
                 href="/initiatives"
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-lg shadow-[var(--color-primary)]/20"
+                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-lg shadow-[var(--color-primary)]/20"
             >
                 <span>←</span> Back to Initiatives
             </Link>
@@ -64,7 +64,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
 
                     {/* Meta Row */}
                     <div className="flex flex-wrap items-center gap-3 mb-5 text-xs font-mono font-bold uppercase tracking-widest">
-                        <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-white">
+                        <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary">
                             {initiative.status}
                         </span>
                         <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)]">
@@ -223,7 +223,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                                 <div className="mt-7 pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
                                     <Link
                                         href="/contact"
-                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
                                     >
                                         Get in touch <span>→</span>
                                     </Link>

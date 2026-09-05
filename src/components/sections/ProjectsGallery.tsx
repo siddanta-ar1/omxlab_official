@@ -62,7 +62,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                 key={tab}
                                 onClick={() => selectTab(tab)}
                                 className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
-                                    ? 'bg-[var(--color-primary)] text-white shadow-sm'
+                                    ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
                                     : 'text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
@@ -89,7 +89,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary)]/60 via-transparent to-transparent" />
-                                        <span className="absolute top-5 left-5 px-3 py-1 rounded-full bg-[var(--color-primary)] text-white text-xs font-mono font-bold uppercase tracking-widest">
+                                        <span className="absolute top-5 left-5 px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary text-xs font-mono font-bold uppercase tracking-widest">
                                             Featured
                                         </span>
                                     </div>

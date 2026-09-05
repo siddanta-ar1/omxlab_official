@@ -6,19 +6,19 @@ import { MemberCard } from "@/components/common/MemberCard";
 import { LuUsers, LuBriefcase, LuGraduationCap, LuAward, LuCompass, LuHandshake } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuUsers, color: 'text-blue-500', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuBriefcase, color: 'text-emerald-500', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuGraduationCap, color: 'text-indigo-500', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuAward, color: 'text-amber-500', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuCompass, color: 'text-violet-500', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuHandshake, color: 'text-rose-500', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuUsers, color: 'text-[#5B7C99]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuBriefcase, color: 'text-[#52738F]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuGraduationCap, color: 'text-[#2A3340]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuAward, color: 'text-[#C2A97A]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuCompass, color: 'text-[#8A6D34]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuHandshake, color: 'text-[#A98C55]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuUsers, color: 'text-blue-500', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuAward, color: 'text-amber-500', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuGraduationCap, color: 'text-indigo-500', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuCompass, color: 'text-violet-500', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuUsers, color: 'text-[#5B7C99]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuAward, color: 'text-[#C2A97A]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuGraduationCap, color: 'text-[#2A3340]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuCompass, color: 'text-[#8A6D34]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const TeamPage = () => {
@@ -105,7 +105,7 @@ export const TeamPage = () => {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`font-semibold text-sm sm:text-base transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
-                                        ? "bg-[var(--color-primary)] text-white shadow-sm"
+                                        ? "bg-[var(--color-primary)] text-secondary shadow-sm"
                                         : "text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-accent)]"
                                     }`}
                             >

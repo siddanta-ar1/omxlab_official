@@ -1,11 +1,11 @@
 import React from 'react';
 
 const teams = [
-    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-cyan-300 text-cyan-600 bg-cyan-50/40' },
-    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-blue-300 text-blue-600 bg-blue-50/40' },
-    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-lime-400 text-lime-700 bg-lime-50/40' },
-    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-amber-300 text-amber-600 bg-amber-50/40' },
-    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-pink-300 text-pink-600 bg-pink-50/40' },
+    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#BDCCD9] text-[#4A6377] bg-[#F5F8FA]/40' },
+    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#A9BCCD] text-primary-ink bg-accent/40' },
+    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#E0D0AE] text-[#7A5F2C] bg-[#FBF8F1]/40' },
+    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#D8C49A] text-[#8A6D34] bg-[#FAF6EE]/40' },
+    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#C6B085] text-[#6F5626] bg-[#F8F4EA]/40' },
 ];
 
 export const AgentDiagram = () => {

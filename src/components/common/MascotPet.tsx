@@ -165,14 +165,14 @@ export const MascotPet = () => {
                 {/* Close/Dismiss Button */}
                 <button 
                     onClick={handleDismiss}
-                    className="absolute -top-4 -right-4 w-7 h-7 bg-white rounded-full border border-[var(--color-border)] shadow-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 flex items-center justify-center z-10 transition-colors opacity-0 group-hover:opacity-100"
+                    className="absolute -top-4 -right-4 w-7 h-7 bg-white rounded-full border border-[var(--color-border)] shadow-md text-muted hover:text-[#A98C55] hover:bg-rose-50 flex items-center justify-center z-10 transition-colors opacity-0 group-hover:opacity-100"
                     title="Dismiss permanently"
                 >
                     <LuX className="w-4 h-4" />
                 </button>
 
                 {/* Speech Bubble */}
-                <div className={`absolute -top-12 -left-16 whitespace-nowrap bg-white border border-[var(--color-border)] shadow-[0_10px_25px_rgba(0,0,0,0.1)] rounded-2xl p-2 px-4 text-xs md:text-sm font-bold text-[var(--color-primary)] transition-all duration-300 transform scale-0 group-hover:scale-100 origin-bottom-right ${isVisible && !isClicked ? 'animate-[bounce_2s_infinite] delay-300 scale-100' : ''} ${isClicked ? 'scale-110 !text-rose-500' : ''}`}>
+                <div className={`absolute -top-12 -left-16 whitespace-nowrap bg-white border border-[var(--color-border)] shadow-[0_10px_25px_rgba(0,0,0,0.1)] rounded-2xl p-2 px-4 text-xs md:text-sm font-bold text-[var(--color-primary)] transition-all duration-300 transform scale-0 group-hover:scale-100 origin-bottom-right ${isVisible && !isClicked ? 'animate-[bounce_2s_infinite] delay-300 scale-100' : ''} ${isClicked ? 'scale-110 !text-[#A98C55]' : ''}`}>
                     {message}
                     {/* Bubble tail */}
                     <div className="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-b border-r border-[var(--color-border)] transform rotate-45"></div>

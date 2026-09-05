@@ -73,7 +73,7 @@ export const AboutPage = () => {
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-[1.1]">
                         Building Digital Solutions.
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-violet-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary-ink)]">
                             Empowering Businesses.
                         </span>
                     </h1>

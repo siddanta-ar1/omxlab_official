@@ -28,7 +28,7 @@ export const WhatWeBuild = () => {
                     <Link
                         key={service.id}
                         href={`/services/${service.id}`}
-                        className="group relative overflow-hidden bg-gradient-to-br from-white to-slate-50/50 border border-slate-200/60 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] hover:to-indigo-50/30 flex flex-col items-start gap-5"
+                        className="group relative overflow-hidden bg-gradient-to-br from-white to-body/50 border border-border/60 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] hover:to-accent/30 flex flex-col items-start gap-5"
                     >
                         {/* Real SVG Icon */}
                         <ServiceIcon name={service.icon} />
@@ -58,7 +58,7 @@ export const WhatWeBuild = () => {
             <div className="mt-12 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link
                     href="/services"
-                    className="w-full sm:w-auto justify-center bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all shadow-lg shadow-primary/20"
+                    className="w-full sm:w-auto justify-center bg-primary hover:bg-primary-hover text-secondary px-6 py-3.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all shadow-lg shadow-primary/20"
                 >
                     View all services <span>→</span>
                 </Link>

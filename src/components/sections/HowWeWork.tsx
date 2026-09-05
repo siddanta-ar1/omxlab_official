@@ -158,7 +158,7 @@ export const HowWeWork = () => {
                                         onClick={() => handleStepClick(index)}
                                         className={`w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-500 cursor-pointer ${
                                             isActive 
-                                                ? 'bg-[var(--color-primary)] text-white shadow-[0_0_30px_rgba(16,80,224,0.4)] scale-110'
+                                                ? 'bg-[var(--color-primary)] text-secondary shadow-[0_0_30px_rgba(194,169,122,0.55)] scale-110'
                                                 : 'bg-white border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:scale-105 hover:shadow-lg'
                                         }`}
                                         style={{ transform: `rotate(${counterRotation}deg)`, transition: 'transform 700ms ease-in-out, background-color 500ms, transform 500ms' }}

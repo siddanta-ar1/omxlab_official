@@ -24,7 +24,7 @@ export const ResearchCollaborate = () => {
                                 studying properly?
                             </h2>
 
-                            <p className="text-slate-300 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+                            <p className="text-soft text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
                                 We partner with universities, product teams, and open-source
                                 maintainers on scoped investigations. If you have the problem and
                                 the data, we will bring the engineers and publish what we find
@@ -47,7 +47,7 @@ export const ResearchCollaborate = () => {
                                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] block mb-4 opacity-90">
                                         Research Digest
                                     </span>
-                                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                                    <p className="text-soft text-sm sm:text-base leading-relaxed mb-6">
                                         One email when we publish — a short summary, the method, and
                                         the caveats. No newsletter cadence, no marketing. We send it
                                         roughly once a month, and only when there is something real

@@ -14,7 +14,7 @@ const logos = [
 
 export const TrustedBy = () => {
     return (
-        <section className="w-full bg-slate-50/80 border-y border-border py-6 overflow-hidden">
+        <section className="w-full bg-body/80 border-y border-border py-6 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-8 px-6">
 
                 {/* Left Fixed Label */}

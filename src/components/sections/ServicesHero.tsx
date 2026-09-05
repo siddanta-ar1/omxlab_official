@@ -72,7 +72,7 @@ export const ServicesHero = () => {
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-[1.1]">
                     Software That Ships.
                     <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-violet-500">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary-ink)]">
                         Teams That Stay.
                     </span>
                 </h1>
@@ -88,7 +88,7 @@ export const ServicesHero = () => {
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
                     <Link
                         href="/contact"
-                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all shadow-lg shadow-[var(--color-primary)]/25 cursor-pointer hover:-translate-y-1"
+                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all shadow-lg shadow-[var(--color-primary)]/25 cursor-pointer hover:-translate-y-1"
                     >
                         Schedule a call <span>→</span>
                     </Link>

@@ -24,7 +24,7 @@ export const OpenRoles = () => {
                                 hiring for right now.
                             </h2>
 
-                            <p className="text-slate-300 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+                            <p className="text-soft text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
                                 Our active job postings live on LinkedIn — engineering, QA, design, and operations roles in Kathmandu and the US. The list there is always current.
                             </p>
 
@@ -45,7 +45,7 @@ export const OpenRoles = () => {
                                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] block mb-4 opacity-90">
                                         We're Always Building.
                                     </span>
-                                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                                    <p className="text-soft text-sm sm:text-base leading-relaxed mb-6">
                                         If you don't see a role that fits, send us your story anyway. We meet talented people constantly—engineers, EMs, operators—and we add the ones we want to work with to our Talent Pool. When the right fit opens, we reach out first.
                                     </p>
                                 </div>

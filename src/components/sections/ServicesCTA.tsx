@@ -24,7 +24,7 @@ export const ServicesCTA = () => {
                                 slowing you down.
                             </h2>
 
-                            <p className="text-slate-300 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+                            <p className="text-soft text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
                                 A first call is thirty minutes and costs nothing. We will tell you
                                 whether we are the right fit — including when the honest answer is
                                 that you need something smaller than you asked for.
@@ -52,7 +52,7 @@ export const ServicesCTA = () => {
                                             'An honest read on feasibility and cost',
                                             'A written summary within two working days',
                                         ].map((item) => (
-                                            <li key={item} className="flex items-start gap-2.5 text-slate-300 text-sm sm:text-base leading-relaxed">
+                                            <li key={item} className="flex items-start gap-2.5 text-soft text-sm sm:text-base leading-relaxed">
                                                 <span className="text-[var(--color-accent)] font-bold">✓</span>
                                                 <span>{item}</span>
                                             </li>

@@ -9,42 +9,42 @@ const areas = [
         category: 'Agents',
         description:
             'How autonomous coding agents plan, review, and ship. We study orchestration topologies, hand-off protocols, and where human oversight pays for itself.',
-        icon: <LuCpu className="w-7 h-7 text-blue-500" strokeWidth={2} />,
+        icon: <LuCpu className="w-7 h-7 text-[#5B7C99]" strokeWidth={2} />,
     },
     {
         title: 'Applied Machine Learning',
         category: 'Machine Learning',
         description:
             'Retrieval, evaluation, and fine-tuning for domain-specific workloads. We publish what actually moves accuracy on messy enterprise data, not benchmark scores.',
-        icon: <LuBrainCircuit className="w-7 h-7 text-emerald-500" strokeWidth={2} />,
+        icon: <LuBrainCircuit className="w-7 h-7 text-[#52738F]" strokeWidth={2} />,
     },
     {
         title: 'Distributed Systems',
         category: 'Systems',
         description:
             'Consistency, back-pressure, and failure semantics under real production load. Our findings feed straight back into the platforms we operate for clients.',
-        icon: <LuNetwork className="w-7 h-7 text-indigo-500" strokeWidth={2} />,
+        icon: <LuNetwork className="w-7 h-7 text-[#2A3340]" strokeWidth={2} />,
     },
     {
         title: 'Security & Privacy',
         category: 'Security',
         description:
             'Threat models for LLM-backed products: prompt injection, data exfiltration, and supply-chain integrity across an agent toolchain.',
-        icon: <LuShieldAlert className="w-7 h-7 text-rose-500" strokeWidth={2} />,
+        icon: <LuShieldAlert className="w-7 h-7 text-[#A98C55]" strokeWidth={2} />,
     },
     {
         title: 'Developer Experience',
         category: 'Developer Experience',
         description:
             'We instrument our own delivery pipeline — cycle time, review latency, defect escape rate — and treat DX as a measurable engineering discipline.',
-        icon: <LuActivity className="w-7 h-7 text-amber-500" strokeWidth={2} />,
+        icon: <LuActivity className="w-7 h-7 text-[#C2A97A]" strokeWidth={2} />,
     },
     {
         title: 'Human-AI Interaction',
         category: 'Human-AI',
         description:
             'Interfaces for supervising non-deterministic systems. When should a tool ask, when should it act, and how do you keep an operator genuinely in the loop?',
-        icon: <LuUsers className="w-7 h-7 text-violet-500" strokeWidth={2} />,
+        icon: <LuUsers className="w-7 h-7 text-[#8A6D34]" strokeWidth={2} />,
     },
 ];
 
@@ -77,7 +77,7 @@ export const ResearchAreas = () => {
                             className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50 flex flex-col items-start gap-4"
                         >
                             {/* Icon Container with subtle background tint */}
-                            <div className="w-14 h-14 rounded-2xl bg-white border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] group-hover:-translate-y-1">
+                            <div className="w-14 h-14 rounded-2xl bg-white border border-border shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] group-hover:-translate-y-1">
                                 {area.icon}
                             </div>
 

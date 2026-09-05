@@ -12,19 +12,19 @@ import type { ContactValues, ContactErrors } from '@/lib/contact';
 import { LuPhone, LuMail, LuMapPin, LuMessageSquare, LuSend, LuHeadphones } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-blue-500', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMail, color: 'text-emerald-500', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-violet-500', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuMapPin, color: 'text-indigo-500', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuHeadphones, color: 'text-amber-500', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuSend, color: 'text-rose-500', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuPhone, color: 'text-[#5B7C99]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuMail, color: 'text-[#52738F]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#8A6D34]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuMapPin, color: 'text-[#2A3340]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuHeadphones, color: 'text-[#C2A97A]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuSend, color: 'text-[#A98C55]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-blue-500', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuMapPin, color: 'text-indigo-500', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-violet-500', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuHeadphones, color: 'text-amber-500', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuPhone, color: 'text-[#5B7C99]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuMapPin, color: 'text-[#2A3340]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#8A6D34]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuHeadphones, color: 'text-[#C2A97A]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 // Defined at module scope: a component created inside render is a new type on
@@ -449,7 +449,7 @@ export const ContactPage = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-semibold text-sm px-8 py-3.5 rounded-lg transition-all duration-300 shadow-md cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary font-semibold text-sm px-8 py-3.5 rounded-lg transition-all duration-300 shadow-md cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
                                         <>

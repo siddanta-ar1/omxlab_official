@@ -16,8 +16,8 @@ const mockCommunities = [
 ];
 
 const CommunityCard = ({ src }: { src: string }) => (
-    <div className="w-[280px] md:w-[360px] flex-shrink-0 bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-white/10 transition-all duration-300 cursor-pointer">
-        <div className="h-6 bg-gray-900 border-b border-gray-800 flex items-center px-3 gap-1.5">
+    <div className="w-[280px] md:w-[360px] flex-shrink-0 bg-navy-soft rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer">
+        <div className="h-6 bg-secondary border-b border-white/10 flex items-center px-3 gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
@@ -27,9 +27,9 @@ const CommunityCard = ({ src }: { src: string }) => (
             alt="Community Preview"
             className="w-full h-[160px] object-cover opacity-90 hover:opacity-100 transition-opacity"
         />
-        <div className="p-4 bg-gray-900">
-            <div className="h-4 bg-gray-800 rounded w-2/3 mb-2"></div>
-            <div className="h-3 bg-gray-800 rounded w-1/2"></div>
+        <div className="p-4 bg-secondary">
+            <div className="h-4 bg-navy-soft rounded w-2/3 mb-2"></div>
+            <div className="h-3 bg-navy-soft rounded w-1/2"></div>
         </div>
     </div>
 );
@@ -40,19 +40,19 @@ export const ViewFromInside = () => {
     const row3 = [...mockCommunities.slice(3, 12), ...mockCommunities.slice(0, 3)].slice(0, 6);
 
     return (
-        <section className="bg-[#0b0f19] text-white py-24 overflow-hidden relative">
+        <section className="bg-secondary text-white py-24 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 
                 {/* Header Section */}
                 <div className="mb-6">
-                    <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase">Discourse Discover</span>
+                    <span className="text-muted text-sm font-semibold tracking-wider uppercase">Discourse Discover</span>
                 </div>
                 
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-4xl mb-6">
                     See Discourse in action across the internet's best communities
                 </h2>
                 
-                <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-10 leading-relaxed">
+                <p className="text-muted text-lg md:text-xl max-w-3xl mb-10 leading-relaxed">
                     Don't just take our word for it—explore thousands of thriving communities built on Discourse, from open source projects to game developers, from product communities to AI leaders.
                 </p>
                 

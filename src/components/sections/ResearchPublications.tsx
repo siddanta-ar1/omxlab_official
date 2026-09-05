@@ -62,7 +62,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                 key={tab}
                                 onClick={() => selectTab(tab)}
                                 className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
-                                    ? 'bg-[var(--color-primary)] text-white shadow-sm'
+                                    ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
                                     : 'text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
@@ -86,7 +86,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                 <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                                     <div className="lg:col-span-8">
                                         <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono font-bold uppercase tracking-widest">
-                                            <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-white">
+                                            <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary">
                                                 Latest
                                             </span>
                                             <span className="text-[var(--color-primary)]">

@@ -100,7 +100,7 @@ const TimelineNode = ({
             className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-20 last:mb-0 ${flexDirection} group`}
         >
             {/* Timeline central dot (Candy-like bouncy dot) */}
-            <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 w-8 h-8 md:w-10 md:h-10 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-white border-4 border-[var(--color-border)] group-hover:border-[var(--color-primary)] shadow-sm group-hover:shadow-[0_0_20px_rgba(16,80,224,0.3)] transition-all duration-300 z-10 flex items-center justify-center group-hover:scale-125">
+            <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 w-8 h-8 md:w-10 md:h-10 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-white border-4 border-[var(--color-border)] group-hover:border-[var(--color-primary)] shadow-sm group-hover:shadow-[0_0_20px_rgba(194,169,122,0.45)] transition-all duration-300 z-10 flex items-center justify-center group-hover:scale-125">
                 <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100" />
             </div>
 

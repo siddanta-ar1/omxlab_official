@@ -78,7 +78,7 @@ export const DeliveryProcess = () => {
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     {/* Left Sidebar - Step Navigation */}
-                    <div className="w-full md:w-1/3 bg-slate-50/80 border-b md:border-b-0 md:border-r border-[var(--color-border)] p-4 md:p-6 relative">
+                    <div className="w-full md:w-1/3 bg-body/80 border-b md:border-b-0 md:border-r border-[var(--color-border)] p-4 md:p-6 relative">
                         <div className="space-y-2 relative z-10">
                             {deliveryProcess.map((step, index: number) => {
                                 const isActive = activeStep === index;
@@ -92,7 +92,7 @@ export const DeliveryProcess = () => {
                                                 : 'hover:bg-slate-100/50'
                                         }`}
                                     >
-                                        <div className={`font-mono text-sm font-bold transition-colors ${isActive ? 'text-[var(--color-primary)]' : 'text-slate-400 group-hover:text-slate-600'}`}>
+                                        <div className={`font-mono text-sm font-bold transition-colors ${isActive ? 'text-[var(--color-primary)]' : 'text-muted group-hover:text-muted'}`}>
                                             {step.number}
                                         </div>
                                         <div className={`font-bold transition-colors ${isActive ? 'text-[var(--color-secondary)]' : 'text-[var(--color-muted)] group-hover:text-[var(--color-secondary)]'}`}>

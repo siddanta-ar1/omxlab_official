@@ -1,5 +1,6 @@
 import React from 'react';
 import { LuInstagram, LuLinkedin, LuFacebook } from 'react-icons/lu';
+import { OmxLockup } from '@/components/common/OmxLockup';
 
 export const Footer = () => {
     return (
@@ -12,13 +13,11 @@ export const Footer = () => {
                     {/* Brand Column */}
                     <div className="md:col-span-4 flex flex-col justify-between">
                         <div>
-                            <div className="flex items-center gap-3 mb-4">
-                                <img
-                                    src="/logo-small.png"
-                                    alt="OMX Lab Logo"
-                                    className="h-12 sm:h-16 w-auto object-contain rounded-lg"
-                                />
-                            </div>
+                            <OmxLockup
+                                variant="exact"
+                                className="h-14 sm:h-16 w-auto mb-4 text-secondary"
+                                title="OMX Lab"
+                            />
 
                             <p className="text-[var(--color-muted)] text-sm leading-relaxed max-w-xs">
                                 At OMX Lab, we build custom software that helps businesses innovate, streamline operations, and deliver seamless digital experiences.

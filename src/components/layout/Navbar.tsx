@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { OmxLockup } from '@/components/common/OmxLockup';
 
 /**
  * Next has no NavLink, so this reproduces react-router's active-state API:
@@ -47,18 +48,12 @@ export const Navbar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border shadow-sm transition-all duration-300">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
                 <div className="flex items-center justify-between">
                     {/* Clickable Brand Logo -> Home */}
                     <Link href="/" className="flex items-center hover:opacity-85 transition-opacity" onClick={closeMobileMenu}>
-                    <img
-                        src="/logo-lockup.png"
-                        alt="OMX Lab"
-                        width="740"
-                        height="200"
-                        className="h-8 md:h-9 w-auto object-contain"
-                    />
+                    <OmxLockup className="h-9 md:h-10 w-auto text-secondary" title="OMX Lab" />
                 </Link>
 
                 {/* Navigation Links (Desktop) */}
@@ -93,7 +88,7 @@ export const Navbar = () => {
                 {/* Action Button (Desktop) */}
                 <Link
                     href="/contact"
-                    className="hidden md:flex bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-md hover:shadow-primary/25 cursor-pointer"
+                    className="hidden md:flex bg-primary hover:bg-primary-hover text-secondary px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-md hover:shadow-primary/25 cursor-pointer"
                 >
                     Schedule a call <span>→</span>
                 </Link>
@@ -146,7 +141,7 @@ export const Navbar = () => {
                     <Link
                         href="/contact"
                         onClick={closeMobileMenu}
-                        className="m-4 bg-primary hover:bg-primary-hover text-white px-5 py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                        className="m-4 bg-primary hover:bg-primary-hover text-secondary px-5 py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
                     >
                         Schedule a call <span>→</span>
                     </Link>

@@ -17,7 +17,7 @@ const NotFound = () => (
             </p>
             <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-lg shadow-[var(--color-primary)]/20"
+                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-lg shadow-[var(--color-primary)]/20"
             >
                 <span>←</span> Back to Projects
             </Link>
@@ -245,7 +245,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                 <div className="mt-7 pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
                                     <Link
                                         href="/contact"
-                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
                                     >
                                         Start a similar project <span>→</span>
                                     </Link>

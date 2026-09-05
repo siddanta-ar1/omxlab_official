@@ -9,21 +9,24 @@ import {
 } from '@/data/ecosystem';
 import type { Team } from '@/data/ecosystem';
 import { EcosystemIcon } from '@/components/common/EcosystemIcon';
+import { OmxMark } from '@/components/common/OmxMark';
 
-// Pastel tint per team.
+// Brand ramp per team. The keys are historical; the values walk the OMX
+// palette (navy -> steel -> soft -> gold) instead of a rainbow, so twelve
+// categories stay distinguishable without leaving the brand.
 const tones = {
-    cyan: { border: 'border-cyan-300', text: 'text-cyan-700', bg: 'bg-cyan-50', dot: 'bg-cyan-400', stroke: '#22b8cf' },
-    blue: { border: 'border-blue-300', text: 'text-blue-700', bg: 'bg-blue-50', dot: 'bg-blue-400', stroke: '#3b82f6' },
-    lime: { border: 'border-lime-400', text: 'text-lime-800', bg: 'bg-lime-50', dot: 'bg-lime-400', stroke: '#84cc16' },
-    amber: { border: 'border-amber-300', text: 'text-amber-700', bg: 'bg-amber-50', dot: 'bg-amber-400', stroke: '#f59e0b' },
-    pink: { border: 'border-pink-300', text: 'text-pink-700', bg: 'bg-pink-50', dot: 'bg-pink-400', stroke: '#ec4899' },
-    teal: { border: 'border-teal-300', text: 'text-teal-700', bg: 'bg-teal-50', dot: 'bg-teal-400', stroke: '#14b8a6' },
-    orange: { border: 'border-orange-300', text: 'text-orange-700', bg: 'bg-orange-50', dot: 'bg-orange-400', stroke: '#f97316' },
-    emerald: { border: 'border-emerald-300', text: 'text-emerald-700', bg: 'bg-emerald-50', dot: 'bg-emerald-400', stroke: '#10b981' },
-    violet: { border: 'border-violet-300', text: 'text-violet-700', bg: 'bg-violet-50', dot: 'bg-violet-400', stroke: '#8b5cf6' },
-    sky: { border: 'border-sky-300', text: 'text-sky-700', bg: 'bg-sky-50', dot: 'bg-sky-400', stroke: '#0ea5e9' },
-    rose: { border: 'border-rose-300', text: 'text-rose-700', bg: 'bg-rose-50', dot: 'bg-rose-400', stroke: '#f43f5e' },
-    indigo: { border: 'border-indigo-300', text: 'text-indigo-700', bg: 'bg-indigo-50', dot: 'bg-indigo-400', stroke: '#6366f1' },
+    cyan: { border: 'border-[#BDCCD9]', text: 'text-[#4A6377]', bg: 'bg-[#F5F8FA]', dot: 'bg-[#8FA6BD]', stroke: '#8FA6BD' },
+    blue: { border: 'border-[#A9BCCD]', text: 'text-[#3D5670]', bg: 'bg-[#F2F6F9]', dot: 'bg-[#5B7C99]', stroke: '#5B7C99' },
+    lime: { border: 'border-[#E0D0AE]', text: 'text-[#7A5F2C]', bg: 'bg-[#FBF8F1]', dot: 'bg-[#D8C49A]', stroke: '#D8C49A' },
+    amber: { border: 'border-[#D8C49A]', text: 'text-[#8A6D34]', bg: 'bg-[#FAF6EE]', dot: 'bg-[#C2A97A]', stroke: '#C2A97A' },
+    pink: { border: 'border-[#C6B085]', text: 'text-[#6F5626]', bg: 'bg-[#F8F4EA]', dot: 'bg-[#A98C55]', stroke: '#A98C55' },
+    teal: { border: 'border-[#B4C4D2]', text: 'text-[#445D73]', bg: 'bg-[#F3F7FA]', dot: 'bg-[#7B96AE]', stroke: '#7B96AE' },
+    orange: { border: 'border-[#CEB68C]', text: 'text-[#7F6530]', bg: 'bg-[#F9F5EC]', dot: 'bg-[#B99C68]', stroke: '#B99C68' },
+    emerald: { border: 'border-[#9FB4C7]', text: 'text-[#36506A]', bg: 'bg-[#F1F5F9]', dot: 'bg-[#52738F]', stroke: '#52738F' },
+    violet: { border: 'border-[#9BA6B4]', text: 'text-[#2A3340]', bg: 'bg-[#F4F5F7]', dot: 'bg-[#3E4A5A]', stroke: '#3E4A5A' },
+    sky: { border: 'border-[#C8D5E0]', text: 'text-[#50697D]', bg: 'bg-[#F6F9FB]', dot: 'bg-[#9DB2C4]', stroke: '#9DB2C4' },
+    rose: { border: 'border-[#CDBB93]', text: 'text-[#755925]', bg: 'bg-[#F9F6EF]', dot: 'bg-[#AF9560]', stroke: '#AF9560' },
+    indigo: { border: 'border-[#AEB7C2]', text: 'text-[#1E2530]', bg: 'bg-[#F3F4F6]', dot: 'bg-[#2A3340]', stroke: '#2A3340' },
 };
 
 // Entrance order, so the animation radiates outward from the hub.
@@ -88,7 +91,7 @@ const TeamCard = ({
                 <span className={`block ${s.name} leading-tight font-mono font-bold uppercase tracking-tight break-words leading-[1.15]`}>
                     {team.name}
                 </span>
-                <span className={`block ${s.role} text-slate-500 leading-tight truncate`}>
+                <span className={`block ${s.role} text-muted leading-tight truncate`}>
                     {team.role}
                 </span>
             </div>
@@ -162,11 +165,11 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
             className={`relative rounded-2xl border border-border bg-surface/95 backdrop-blur-md ring-1 ring-black/[0.03] shadow-xl shadow-slate-200/50 overflow-hidden ${dense ? 'p-4 lg:p-3' : 'p-5 sm:p-7'}`}
         >
             {/* Ambient wash */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-violet-500/[0.05] animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-[#5B7C99]/[0.06] animate-pulse" style={{ animationDuration: '4s' }} />
 
             {/* Panel header */}
             <div className={`relative z-10 flex flex-wrap items-start justify-between gap-2 ${dense ? 'mb-4 lg:mb-3' : 'mb-6'}`}>
-                <div className="bg-slate-200/70 border border-border rounded-lg px-2.5 py-1.5">
+                <div className="bg-border/70 border border-border rounded-lg px-2.5 py-1.5">
                     <span className={`block ${dense ? 'text-[10px] lg:text-[8px]' : 'text-[10px] sm:text-xs'} font-mono font-bold uppercase tracking-widest text-secondary leading-snug`}>
                         Company Services<br />Ecosystem &amp; Interconnect
                     </span>
@@ -174,20 +177,20 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
 
                 <div className="flex flex-col gap-1 items-end">
                     <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#7B96AE]" />
                         Data_Sync
                         <span className="flex gap-0.5">
                             {[0, 1, 2, 3].map((i) => (
                                 <span
                                     key={i}
-                                    className="eco-blink w-1 h-1 rounded-full bg-emerald-400"
+                                    className="eco-blink w-1 h-1 rounded-full bg-[#7B96AE]"
                                     style={{ animationDelay: `${i * 300}ms` }}
                                 />
                             ))}
                         </span>
                     </span>
                     <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-rose-400" style={{ animationDelay: '900ms' }} />
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#C2A97A]" style={{ animationDelay: '900ms' }} />
                         Security_Alert
                     </span>
                 </div>
@@ -232,10 +235,8 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                             />
                             <span className="absolute inset-6 rounded-full bg-primary/5 blur-xl" />
 
-                            <img
-                                src="/logo-mark.png"
-                                alt=""
-                                className={`relative z-10 ${dense ? 'w-9 h-9 lg:w-7 lg:h-7' : 'w-10 h-10 sm:w-12 sm:h-12'} object-contain`}
+                            <OmxMark
+                                className={`relative z-10 text-secondary ${dense ? 'w-9 h-9 lg:w-7 lg:h-7' : 'w-10 h-10 sm:w-12 sm:h-12'}`}
                             />
                         </div>
 
@@ -333,7 +334,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                             <span className="eco-breathe absolute inset-0 rounded-full border-2 border-primary/30" />
                             <span className="eco-breathe absolute inset-3 rounded-full border border-primary/20" style={{ animationDelay: '1.2s' }} />
                             <span className="absolute inset-6 rounded-full bg-primary/5 blur-xl" />
-                            <img src="/logo-mark.png" alt="" className={`relative z-10 ${dense ? 'w-10 h-10' : 'w-12 h-12'} object-contain`} />
+                            <OmxMark className={`relative z-10 text-secondary ${dense ? 'w-10 h-10' : 'w-12 h-12'}`} />
                         </div>
                         <span className={`mt-3 px-3 py-1 rounded-md bg-body border border-border ${dense ? 'text-[10px]' : 'text-xs'} font-mono font-bold uppercase tracking-widest text-muted whitespace-nowrap`}>
                             Integrated Services Engine

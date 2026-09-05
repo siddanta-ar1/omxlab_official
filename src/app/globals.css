@@ -1,14 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1050E0;
-  --color-primary-hover: #083BB2;
-  --color-secondary: #0F0F10;
-  --color-accent: #EEF4FF;
+  /* --- OMX Lab brand palette ------------------------------------------- */
+  --color-navy: #0F1115;
+  --color-steel: #5B7C99;
+  --color-soft: #8FA6BD;
+  --color-gold: #C2A97A;
+  --color-white: #E7EAF0;
+  --color-navy-soft: #1A1F29;
+
+  /* --- Semantic tokens -------------------------------------------------
+     Light theme: navy carries the type, steel the secondary copy, and gold
+     is reserved for actions and accents so it stays valuable. */
+  --color-primary: #C2A97A;
+  --color-primary-hover: #A98C55;
+  --color-secondary: #0F1115;
+  --color-accent: #F5F1E8;
   --color-surface: #FFFFFF;
-  --color-body: #FAFAFC;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
+  --color-body: #F7F9FB;
+  --color-muted: #5B7C99;
+  --color-border: #DCE3EB;
+
+  /* Deeper gold for text on light fills — the brand gold alone sits at
+     roughly 2.2:1 on white, which is below the contrast floor for copy. */
+  --color-primary-ink: #8A6D34;
+}
+
+/* Assemble the mark's rings from the inside out. The paths are filled, so the
+   reveal is a scale/fade about the viewBox centre rather than a stroke draw. */
+@keyframes omx-mark-bloom {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.omx-mark-piece {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: omx-mark-bloom 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .omx-mark-piece {
+    animation: none;
+  }
 }
 
 /* Custom Infinite Marquee Animation (Right to Left) */
@@ -67,13 +107,13 @@
   100% {
     transform: scale(1);
     opacity: 0.5;
-    box-shadow: 0 0 10px rgba(16, 80, 224, 0.1);
+    box-shadow: 0 0 10px rgba(194, 169, 122, 0.15);
   }
 
   50% {
     transform: scale(1.05);
     opacity: 0.9;
-    box-shadow: 0 0 25px rgba(16, 80, 224, 0.3);
+    box-shadow: 0 0 25px rgba(194, 169, 122, 0.4);
   }
 }
 

@@ -22,7 +22,7 @@ export const HaKomxClub = () => {
                 
                 {/* Ambient Background Glows */}
                 <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-purple-500/10 to-[var(--color-accent)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-[#5B7C99]/10 to-[var(--color-accent)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
                     <div
                         className="absolute inset-0 opacity-[0.04]"
                         style={{
@@ -69,7 +69,7 @@ export const HaKomxClub = () => {
                             
                             <button 
                                 onClick={() => setIsModalOpen(true)}
-                                className="group relative inline-flex flex-col items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 bg-[var(--color-primary)] rounded-full hover:bg-[var(--color-primary-hover)] hover:shadow-[0_0_40px_rgba(16,80,224,0.4)] hover:-translate-y-1 overflow-hidden"
+                                className="group relative inline-flex flex-col items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 bg-[var(--color-primary)] rounded-full hover:bg-[var(--color-primary-hover)] hover:shadow-[0_0_40px_rgba(194,169,122,0.55)] hover:-translate-y-1 overflow-hidden"
                             >
                                 <span className="relative z-10 flex items-center gap-2 text-lg">
                                     Apply to Join <LuRocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -94,7 +94,7 @@ export const HaKomxClub = () => {
                     <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
                         <button 
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                            className="absolute top-4 right-4 p-2 text-muted hover:text-muted hover:bg-slate-100 rounded-full transition-colors"
                         >
                             <LuX className="w-5 h-5" />
                         </button>
@@ -143,7 +143,7 @@ export const HaKomxClub = () => {
                                         </div>
                                         <button 
                                             type="submit"
-                                            className="w-full py-3.5 mt-2 bg-[var(--color-primary)] text-white font-bold rounded-xl hover:bg-[var(--color-primary-hover)] transition-colors"
+                                            className="w-full py-3.5 mt-2 bg-[var(--color-primary)] text-secondary font-bold rounded-xl hover:bg-[var(--color-primary-hover)] transition-colors"
                                         >
                                             Submit Application
                                         </button>
