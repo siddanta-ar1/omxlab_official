@@ -37,10 +37,10 @@ export const Navbar = () => {
 
     // Helper function for active link styling
     const navLinkStyle = ({ isActive }: { isActive: boolean }) =>
-        `transition-colors ${isActive ? 'text-primary font-semibold' : 'hover:text-primary'}`;
+        `transition-colors ${isActive ? 'text-primary-ink font-semibold' : 'hover:text-primary-ink'}`;
 
     const mobileNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
-        `block px-4 py-3 text-base transition-colors ${isActive ? 'text-primary font-semibold' : 'text-secondary hover:text-primary'}`;
+        `block px-4 py-3 text-base transition-colors ${isActive ? 'text-primary-ink font-semibold' : 'text-secondary hover:text-primary-ink'}`;
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
@@ -48,7 +48,7 @@ export const Navbar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border shadow-sm transition-all duration-300">
+        <header className="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md border-b border-border shadow-sm transition-all duration-300">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
                 <div className="flex items-center justify-between">
                     {/* Clickable Brand Logo -> Home */}
@@ -70,16 +70,16 @@ export const Navbar = () => {
                         onMouseEnter={() => setIsAboutOpen(true)}
                         onMouseLeave={() => setIsAboutOpen(false)}
                     >
-                        <button className="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer">
+                        <button className="flex items-center gap-1 hover:text-primary-ink transition-colors cursor-pointer">
                             About
                             <span className={`text-xs transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`}>▾</span>
                         </button>
 
                         {isAboutOpen && (
                             <div className="absolute top-full left-1/2 -translate-x-1/2 w-36 bg-surface border border-border rounded-xl shadow-xl py-2 flex flex-col z-50">
-                                <Link href="/about" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary">About Us</Link>
-                                <Link href="/team" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary">Team</Link>
-                                <Link href="/contact" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary">Contact</Link>
+                                <Link href="/about" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">About Us</Link>
+                                <Link href="/team" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">Team</Link>
+                                <Link href="/contact" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">Contact</Link>
                             </div>
                         )}
                     </div>
@@ -121,7 +121,7 @@ export const Navbar = () => {
 
                     {/* About accordion */}
                     <button
-                        className="flex items-center justify-between px-4 py-3 text-base text-secondary hover:text-primary transition-colors cursor-pointer"
+                        className="flex items-center justify-between px-4 py-3 text-base text-secondary hover:text-primary-ink transition-colors cursor-pointer"
                         onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
                     >
                         About
@@ -132,9 +132,9 @@ export const Navbar = () => {
                             isMobileAboutOpen ? 'max-h-40' : 'max-h-0'
                         }`}
                     >
-                        <Link href="/about" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary" onClick={closeMobileMenu}>About Us</Link>
-                        <Link href="/team" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary" onClick={closeMobileMenu}>Team</Link>
-                        <Link href="/contact" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary" onClick={closeMobileMenu}>Contact</Link>
+                        <Link href="/about" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary-ink" onClick={closeMobileMenu}>About Us</Link>
+                        <Link href="/team" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary-ink" onClick={closeMobileMenu}>Team</Link>
+                        <Link href="/contact" className="block px-8 py-2.5 text-sm text-secondary hover:text-primary-ink" onClick={closeMobileMenu}>Contact</Link>
                     </div>
 
                     {/* Action Button (Mobile) */}

@@ -22,7 +22,7 @@ export const HaKomxClub = () => {
                 
                 {/* Ambient Background Glows */}
                 <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-[#5B7C99]/10 to-[var(--color-accent)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-[#22D3EE]/10 to-[var(--color-highlight)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
                     <div
                         className="absolute inset-0 opacity-[0.04]"
                         style={{
@@ -33,27 +33,27 @@ export const HaKomxClub = () => {
                 </div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white/60 backdrop-blur-xl border border-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2.5rem] p-8 md:p-16 text-center overflow-hidden relative">
+                    <div className="bg-surface/60 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-8 md:p-16 text-center overflow-hidden relative">
                         
                         {/* Inner Decorative Elements */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent rounded-bl-[100px] pointer-events-none" />
-                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[var(--color-accent)]/20 to-transparent rounded-tr-[80px] pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[var(--color-highlight)]/20 to-transparent rounded-tr-[80px] pointer-events-none" />
                         
                         {/* Floating Icons */}
-                        <div className="absolute top-12 left-12 md:top-20 md:left-24 text-[var(--color-primary)]/40 animate-float-slow hidden md:block">
+                        <div className="absolute top-12 left-12 md:top-20 md:left-24 text-[var(--color-primary-ink)]/40 animate-float-slow hidden md:block">
                             <LuSparkles className="w-8 h-8" />
                         </div>
-                        <div className="absolute bottom-16 right-12 md:bottom-20 md:right-24 text-[var(--color-primary)]/40 animate-float-fast hidden md:block">
+                        <div className="absolute bottom-16 right-12 md:bottom-20 md:right-24 text-[var(--color-primary-ink)]/40 animate-float-fast hidden md:block">
                             <LuRocket className="w-10 h-10" />
                         </div>
 
                         <div className="relative z-10 flex flex-col items-center">
                             {/* Premium Glassmorphism Icon instead of gradient block */}
-                            <div className="w-20 h-20 md:w-24 md:h-24 bg-white/80 backdrop-blur-md border border-[var(--color-border)] shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-2xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-300">
-                                <LuUsers className="w-10 h-10 md:w-12 md:h-12 text-[var(--color-primary)]" />
+                            <div className="w-20 h-20 md:w-24 md:h-24 bg-surface/80 backdrop-blur-md border border-[var(--color-border)] shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-2xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-300">
+                                <LuUsers className="w-10 h-10 md:w-12 md:h-12 text-[var(--color-primary-ink)]" />
                             </div>
                             
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
                                 Join Our Community
                             </div>
                             
@@ -86,15 +86,15 @@ export const HaKomxClub = () => {
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                     {/* Backdrop */}
                     <div 
-                        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+                        className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
                         onClick={() => setIsModalOpen(false)}
                     />
                     
                     {/* Modal Content */}
-                    <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+                    <div className="relative bg-surface rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
                         <button 
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 p-2 text-muted hover:text-muted hover:bg-slate-100 rounded-full transition-colors"
+                            className="absolute top-4 right-4 p-2 text-muted hover:text-muted hover:bg-white/10 rounded-full transition-colors"
                         >
                             <LuX className="w-5 h-5" />
                         </button>

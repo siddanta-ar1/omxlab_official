@@ -17,7 +17,7 @@ const mockCommunities = [
 
 const CommunityCard = ({ src }: { src: string }) => (
     <div className="w-[280px] md:w-[360px] flex-shrink-0 bg-navy-soft rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer">
-        <div className="h-6 bg-secondary border-b border-white/10 flex items-center px-3 gap-1.5">
+        <div className="h-6 bg-surface border-b border-white/10 flex items-center px-3 gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
@@ -27,7 +27,7 @@ const CommunityCard = ({ src }: { src: string }) => (
             alt="Community Preview"
             className="w-full h-[160px] object-cover opacity-90 hover:opacity-100 transition-opacity"
         />
-        <div className="p-4 bg-secondary">
+        <div className="p-4 bg-surface">
             <div className="h-4 bg-navy-soft rounded w-2/3 mb-2"></div>
             <div className="h-3 bg-navy-soft rounded w-1/2"></div>
         </div>
@@ -40,7 +40,7 @@ export const ViewFromInside = () => {
     const row3 = [...mockCommunities.slice(3, 12), ...mockCommunities.slice(0, 3)].slice(0, 6);
 
     return (
-        <section className="bg-secondary text-white py-24 overflow-hidden relative">
+        <section className="bg-surface text-white py-24 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 
                 {/* Header Section */}
@@ -56,7 +56,7 @@ export const ViewFromInside = () => {
                     Don't just take our word for it—explore thousands of thriving communities built on Discourse, from open source projects to game developers, from product communities to AI leaders.
                 </p>
                 
-                <a href="#" className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition-colors duration-300 shadow-lg">
+                <a href="#" className="bg-white text-ink font-semibold py-3 px-8 rounded-full hover:bg-white/90 transition-colors duration-300 shadow-lg">
                     Explore the communities powered by Discourse
                 </a>
             </div>

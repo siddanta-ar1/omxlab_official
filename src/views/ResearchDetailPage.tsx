@@ -59,7 +59,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                     {/* Breadcrumb */}
                     <Link
                         href="/research"
-                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group"
+                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
                     >
                         <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
                         All Research
@@ -67,7 +67,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
 
                     {/* Meta Row */}
                     <div className="flex flex-wrap items-center gap-3 mb-5 text-xs font-mono font-bold uppercase tracking-widest">
-                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)]">
+                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
                             {paper.category}
                         </span>
                         <span className="text-[var(--color-muted)]">
@@ -94,13 +94,13 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                         <article className="lg:col-span-8">
                             {/* Key Findings callout */}
                             <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 mb-12 shadow-sm">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)] block mb-5">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-5">
                                     Key Findings
                                 </span>
                                 <ul className="space-y-4">
                                     {paper.findings.map((finding, index) => (
                                         <li key={index} className="flex items-start gap-3">
-                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
+                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
                                                 {String(index + 1).padStart(2, '0')}
                                             </span>
                                             <span className="text-[var(--color-secondary)] text-sm sm:text-base leading-relaxed">
@@ -135,7 +135,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                             {/* Demo notice */}
                             <div className="mt-10 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] p-5">
                                 <p className="text-xs font-mono text-[var(--color-muted)] leading-relaxed">
-                                    <span className="font-bold text-[var(--color-primary)] uppercase tracking-widest">
+                                    <span className="font-bold text-[var(--color-primary-ink)] uppercase tracking-widest">
                                         Demo content
                                     </span>{' '}
                                     — this article is placeholder copy for layout review. Replace the
@@ -153,7 +153,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
 
                                 <dl className="space-y-5">
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Authors
                                         </dt>
                                         <dd className="space-y-1">
@@ -169,7 +169,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Published
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -178,7 +178,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Reading Time
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -187,7 +187,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-2">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-2">
                                             Topics
                                         </dt>
                                         <dd className="flex flex-wrap gap-2">
@@ -241,7 +241,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                                 className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col transition-all hover:shadow-lg hover:border-[var(--color-primary)]/40"
                             >
                                 <div className="flex items-center justify-between gap-3 mb-5">
-                                    <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-bold uppercase tracking-wider">
+                                    <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
                                         {item.type}
                                     </span>
                                     <span className="text-xs font-mono text-[var(--color-muted)]">
@@ -249,7 +249,7 @@ export const ResearchDetailPage = ({ id }: { id: string }) => {
                                     </span>
                                 </div>
 
-                                <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                     {item.title}
                                 </h3>
 

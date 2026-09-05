@@ -12,7 +12,7 @@ export const WhatWeBuild = () => {
 
             {/* Main Title */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-secondary tracking-tight mb-6">
-                OMX Lab is a <span className="text-primary">Tech Shop.</span> We <span className="text-primary">Build Things.</span>
+                OMX Lab is a <span className="text-primary-ink">Tech Shop.</span> We <span className="text-primary-ink">Build Things.</span>
             </h2>
 
             {/* Paragraph intro */}
@@ -28,13 +28,13 @@ export const WhatWeBuild = () => {
                     <Link
                         key={service.id}
                         href={`/services/${service.id}`}
-                        className="group relative overflow-hidden bg-gradient-to-br from-white to-body/50 border border-border/60 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] hover:to-accent/30 flex flex-col items-start gap-5"
+                        className="group relative overflow-hidden bg-gradient-to-br from-white to-body/50 border border-border/60 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)] hover:to-accent/30 flex flex-col items-start gap-5"
                     >
                         {/* Real SVG Icon */}
                         <ServiceIcon name={service.icon} />
 
                         {/* Title */}
-                        <h3 className="text-lg font-bold text-secondary tracking-tight mt-1 group-hover:text-primary transition-colors">
+                        <h3 className="text-lg font-bold text-secondary tracking-tight mt-1 group-hover:text-primary-ink transition-colors">
                             {service.title}
                         </h3>
 
@@ -44,7 +44,7 @@ export const WhatWeBuild = () => {
                         </p>
 
                         {/* Affordance */}
-                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-primary">
+                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-primary-ink">
                             <span className="border-b border-primary/30 pb-0.5">
                                 Explore service
                             </span>

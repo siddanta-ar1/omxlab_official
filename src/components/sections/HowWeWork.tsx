@@ -89,7 +89,7 @@ export const HowWeWork = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-semibold mb-6 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                         Our Process
                     </div>
@@ -113,8 +113,8 @@ export const HowWeWork = () => {
                     ></div>
                     
                     {/* Center Content Bubble */}
-                    <div className="absolute w-[60%] h-[60%] left-[20%] top-[20%] bg-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] rounded-full border border-[var(--color-border)] flex flex-col items-center justify-center p-4 md:p-8 text-center z-20 transition-all duration-500">
-                        <div className="text-[var(--color-primary)] font-mono font-bold text-xl md:text-3xl mb-1 md:mb-3 opacity-90 transition-all duration-300">
+                    <div className="absolute w-[60%] h-[60%] left-[20%] top-[20%] bg-surface shadow-[0_20px_50px_-12px_rgba(0,0,0,0.55)] rounded-full border border-[var(--color-border)] flex flex-col items-center justify-center p-4 md:p-8 text-center z-20 transition-all duration-500">
+                        <div className="text-[var(--color-primary-ink)] font-mono font-bold text-xl md:text-3xl mb-1 md:mb-3 opacity-90 transition-all duration-300">
                             {steps[activeStep].id}
                         </div>
                         <h3 className="text-lg md:text-2xl font-bold text-[var(--color-secondary)] mb-2 md:mb-4 transition-all duration-300">
@@ -159,7 +159,7 @@ export const HowWeWork = () => {
                                         className={`w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-500 cursor-pointer ${
                                             isActive 
                                                 ? 'bg-[var(--color-primary)] text-secondary shadow-[0_0_30px_rgba(194,169,122,0.55)] scale-110'
-                                                : 'bg-white border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] hover:scale-105 hover:shadow-lg'
+                                                : 'bg-surface border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] hover:scale-105 hover:shadow-lg'
                                         }`}
                                         style={{ transform: `rotate(${counterRotation}deg)`, transition: 'transform 700ms ease-in-out, background-color 500ms, transform 500ms' }}
                                         aria-label={`Step ${step.id}: ${step.title}`}
@@ -174,8 +174,8 @@ export const HowWeWork = () => {
                 </div>
                 
                 {/* Mobile description fallback */}
-                <div className="sm:hidden mt-8 max-w-sm mx-auto text-center bg-white p-6 rounded-2xl border border-[var(--color-border)] shadow-sm">
-                    <h3 className="font-bold text-lg mb-3 text-[var(--color-primary)]">
+                <div className="sm:hidden mt-8 max-w-sm mx-auto text-center bg-surface p-6 rounded-2xl border border-[var(--color-border)] shadow-sm">
+                    <h3 className="font-bold text-lg mb-3 text-[var(--color-primary-ink)]">
                         {steps[activeStep].title}
                     </h3>
                     <p className="text-[var(--color-muted)] text-sm leading-relaxed">

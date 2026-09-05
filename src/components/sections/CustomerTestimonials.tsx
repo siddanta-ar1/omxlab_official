@@ -3,7 +3,7 @@ import { FiCheckCircle, FiUsers, FiBookOpen, FiMail } from 'react-icons/fi';
 
 export const CustomerTestimonials = () => {
     return (
-        <section className="bg-white py-24 border-t border-border font-sans">
+        <section className="bg-surface py-24 border-t border-border font-sans">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Testimonials */}
@@ -14,10 +14,10 @@ export const CustomerTestimonials = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
                         {/* Card 1 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-white flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-secondary">
-                                    <span className="w-8 h-8 bg-black rounded-md flex items-center justify-center text-white text-sm">C</span> carwow
+                                    <span className="w-8 h-8 bg-surface rounded-md flex items-center justify-center text-white text-sm">C</span> carwow
                                 </h3>
                                 <p className="text-secondary mb-8 leading-relaxed text-lg">
                                     "...if you want the conversation forgotten, put it on Slack. If it matters, put it on Discourse."
@@ -30,7 +30,7 @@ export const CustomerTestimonials = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-white flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-secondary">Local Guides</h3>
                                 <p className="text-secondary mb-8 leading-relaxed text-lg">
@@ -44,7 +44,7 @@ export const CustomerTestimonials = () => {
                         </div>
 
                         {/* Card 3 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-white flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-secondary">
                                     <span className="w-6 h-6 bg-green-500 rounded-sm"></span> Katalon
@@ -60,7 +60,7 @@ export const CustomerTestimonials = () => {
                         </div>
                     </div>
                     
-                    <a href="#" className="text-sm font-bold text-muted hover:text-black hover:underline transition-colors">
+                    <a href="#" className="text-sm font-bold text-muted hover:text-secondary hover:underline transition-colors">
                         See what others love about Discourse &rarr;
                     </a>
                 </div>
@@ -73,21 +73,21 @@ export const CustomerTestimonials = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
                         <div className="p-10 bg-body rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#8A6D34]">
+                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#A78BFA]">
                                 <FiCheckCircle size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Expert support team</h4>
                             <p className="text-muted text-base leading-relaxed mb-8">Our advocates aren't reading from scripts. They're engineers who know Discourse inside out and can help you architect the right solution.</p>
-                            <a href="#" className="text-sm font-bold text-secondary hover:text-[#8A6D34] flex items-center gap-1 transition-colors">Meet our team &rarr;</a>
+                            <a href="#" className="text-sm font-bold text-secondary hover:text-primary-ink flex items-center gap-1 transition-colors">Meet our team &rarr;</a>
                         </div>
                         
                         <div className="p-10 bg-accent/60 rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#2A3340]">
+                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#C4B5FD]">
                                 <FiUsers size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Community forum</h4>
                             <p className="text-muted text-base leading-relaxed mb-8">Join a community of builders, moderators, and enthusiasts who love helping others get the most out of Discourse — from setup tips to advanced customizations.</p>
-                            <a href="#" className="text-sm font-bold text-secondary hover:text-[#2A3340] flex items-center gap-1 transition-colors">Join the Discourse community &rarr;</a>
+                            <a href="#" className="text-sm font-bold text-secondary hover:text-primary-ink flex items-center gap-1 transition-colors">Join the Discourse community &rarr;</a>
                         </div>
                         
                         <div className="p-10 bg-accent/70 rounded-3xl border border-border hover:shadow-lg transition-shadow">
@@ -128,7 +128,7 @@ export const CustomerTestimonials = () => {
                             />
                             <button 
                                 type="submit" 
-                                className="bg-secondary text-white px-8 py-3 rounded-xl font-bold hover:bg-navy-soft transition-colors shadow-sm"
+                                className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-hover transition-colors shadow-sm"
                             >
                                 Subscribe
                             </button>

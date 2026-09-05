@@ -109,7 +109,7 @@ export const MascotPet = () => {
         const newParticles = Array.from({ length: 8 }).map((_, i) => ({
             id: Date.now() + i,
             angle: (i * 45) * (Math.PI / 180),
-            color: ['#1050E0', '#EEF4FF', '#f43f5e', '#f59e0b', '#10b981'][Math.floor(Math.random() * 5)]
+            color: ['#A78BFA', '#EEF4FF', '#f43f5e', '#f59e0b', '#10b981'][Math.floor(Math.random() * 5)]
         }));
         
         setParticles(newParticles);
@@ -165,17 +165,17 @@ export const MascotPet = () => {
                 {/* Close/Dismiss Button */}
                 <button 
                     onClick={handleDismiss}
-                    className="absolute -top-4 -right-4 w-7 h-7 bg-white rounded-full border border-[var(--color-border)] shadow-md text-muted hover:text-[#A98C55] hover:bg-rose-50 flex items-center justify-center z-10 transition-colors opacity-0 group-hover:opacity-100"
+                    className="absolute -top-4 -right-4 w-7 h-7 bg-surface rounded-full border border-[var(--color-border)] shadow-md text-muted hover:text-[#818CF8] hover:bg-rose-50 flex items-center justify-center z-10 transition-colors opacity-0 group-hover:opacity-100"
                     title="Dismiss permanently"
                 >
                     <LuX className="w-4 h-4" />
                 </button>
 
                 {/* Speech Bubble */}
-                <div className={`absolute -top-12 -left-16 whitespace-nowrap bg-white border border-[var(--color-border)] shadow-[0_10px_25px_rgba(0,0,0,0.1)] rounded-2xl p-2 px-4 text-xs md:text-sm font-bold text-[var(--color-primary)] transition-all duration-300 transform scale-0 group-hover:scale-100 origin-bottom-right ${isVisible && !isClicked ? 'animate-[bounce_2s_infinite] delay-300 scale-100' : ''} ${isClicked ? 'scale-110 !text-[#A98C55]' : ''}`}>
+                <div className={`absolute -top-12 -left-16 whitespace-nowrap bg-surface border border-[var(--color-border)] shadow-[0_10px_25px_rgba(0,0,0,0.5)] rounded-2xl p-2 px-4 text-xs md:text-sm font-bold text-[var(--color-primary-ink)] transition-all duration-300 transform scale-0 group-hover:scale-100 origin-bottom-right ${isVisible && !isClicked ? 'animate-[bounce_2s_infinite] delay-300 scale-100' : ''} ${isClicked ? 'scale-110 !text-[#818CF8]' : ''}`}>
                     {message}
                     {/* Bubble tail */}
-                    <div className="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-b border-r border-[var(--color-border)] transform rotate-45"></div>
+                    <div className="absolute bottom-[-6px] right-6 w-3 h-3 bg-surface border-b border-r border-[var(--color-border)] transform rotate-45"></div>
                 </div>
 
                 {/* Particle Container (Explosion Effect) */}
@@ -197,7 +197,7 @@ export const MascotPet = () => {
                 )}
 
                 {/* The Mascot Image */}
-                <div className={`w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden bg-[var(--color-accent)] animate-float transition-all duration-500 ${isClicked ? 'rotate-[360deg] scale-110' : 'group-hover:scale-105'}`}>
+                <div className={`w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.55)] overflow-hidden bg-[var(--color-accent)] animate-float transition-all duration-500 ${isClicked ? 'rotate-[360deg] scale-110' : 'group-hover:scale-105'}`}>
                     <img 
                         src={activeMascot.image} 
                         alt="OMX Lab Mascot" 

@@ -8,13 +8,13 @@ const floatingIcons = [
     { id: 2, Icon: LuGlobe, color: 'text-[#0284C7]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
     { id: 3, Icon: LuSprout, color: 'text-[#16A34A]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
     { id: 4, Icon: LuGraduationCap, color: 'text-[#9333EA]', pos: 'top-[20%] right-[15%]', size: 'text-5xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuUsers, color: 'text-[#F59E0B]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 5, Icon: LuUsers, color: 'text-[#38BDF8]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
     { id: 6, Icon: LuRocket, color: 'text-[#DB2777]', pos: 'bottom-[25%] right-[10%]', size: 'text-4xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
     { id: 1, Icon: LuHeartHandshake, color: 'text-[#E11D48]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuUsers, color: 'text-[#F59E0B]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 2, Icon: LuUsers, color: 'text-[#38BDF8]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
     { id: 3, Icon: LuSprout, color: 'text-[#16A34A]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
     { id: 4, Icon: LuGraduationCap, color: 'text-[#9333EA]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
@@ -41,7 +41,7 @@ export const InitiativesHero = () => {
                     {floatingIcons.map((item) => (
                         <div 
                             key={item.id} 
-                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -53,7 +53,7 @@ export const InitiativesHero = () => {
                     {mobileFloatingIcons.map((item) => (
                         <div 
                             key={`mobile-${item.id}`} 
-                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -64,7 +64,7 @@ export const InitiativesHero = () => {
             {/* Centered Content */}
             <div className="relative z-20 max-w-4xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-center text-center gap-8">
                 {/* Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary)] text-xs sm:text-sm font-semibold shadow-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary-ink)] text-xs sm:text-sm font-semibold shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                     Initiatives
                 </div>
@@ -94,7 +94,7 @@ export const InitiativesHero = () => {
                     </a>
                     <Link
                         href="/contact"
-                        className="border border-[var(--color-border)] bg-white/80 backdrop-blur-sm hover:bg-white text-[var(--color-secondary)] px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
+                        className="border border-[var(--color-border)] bg-surface/80 backdrop-blur-sm hover:bg-surface text-[var(--color-secondary)] px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
                     >
                         Partner with us <span className="text-xs">↗</span>
                     </Link>
@@ -104,7 +104,7 @@ export const InitiativesHero = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-10 pt-10 border-t border-[var(--color-border)]/50 w-full max-w-3xl">
                     {initiativeStats.map((stat) => (
                         <div key={stat.label} className="flex flex-col items-center text-center">
-                            <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary)] tracking-tight leading-none">
+                            <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none">
                                 {stat.value}
                             </span>
                             <span className="mt-3 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)]">

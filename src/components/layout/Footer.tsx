@@ -30,7 +30,7 @@ export const Footer = () => {
                                 href="https://www.instagram.com/omxlabofficial/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] transition-colors"
                                 aria-label="Instagram"
                             >
                                 <LuInstagram className="w-4 h-4" strokeWidth={2} />
@@ -40,7 +40,7 @@ export const Footer = () => {
                                 href="https://linkedin.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] transition-colors"
                                 aria-label="LinkedIn"
                             >
                                 <LuLinkedin className="w-4 h-4" strokeWidth={2} />
@@ -50,7 +50,7 @@ export const Footer = () => {
                                 href="https://www.facebook.com/profile.php?id=61592215359202"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+                                className="w-8 h-8 rounded-full border border-[var(--color-border)] flex items-center justify-center hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] transition-colors"
                                 aria-label="Facebook"
                             >
                                 <LuFacebook className="w-4 h-4" strokeWidth={2} />
@@ -65,27 +65,27 @@ export const Footer = () => {
                         </h4>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="/services" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/services" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Services
                                 </a>
                             </li>
                             <li>
-                                <a href="/initiatives" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/initiatives" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Initiatives
                                 </a>
                             </li>
                             <li>
-                                <a href="/research" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/research" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Research
                                 </a>
                             </li>
                             <li>
-                                <a href="/projects" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/projects" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Projects
                                 </a>
                             </li>
                             <li>
-                                <a href="/career" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/career" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Career
                                 </a>
                             </li>
@@ -99,17 +99,17 @@ export const Footer = () => {
                         </h4>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="/about" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/about" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="/team" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/team" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Team
                                 </a>
                             </li>
                             <li>
-                                <a href="/contact" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                                <a href="/contact" className="text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors">
                                     Contact
                                 </a>
                             </li>
@@ -125,7 +125,7 @@ export const Footer = () => {
                         {/* Offices */}
                         <div className="grid grid-cols-2 gap-4 text-xs text-[var(--color-muted)] mb-6">
                             <div>
-                                <span className="font-mono font-bold text-[var(--color-primary)] uppercase block mb-1">
+                                <span className="font-mono font-bold text-[var(--color-primary-ink)] uppercase block mb-1">
                                     NEPAL
                                 </span>
                                 <p>Chitwan</p>
@@ -135,13 +135,13 @@ export const Footer = () => {
 
                         {/* Email */}
                         <div>
-                            <span className="font-mono font-bold text-xs uppercase text-[var(--color-primary)] block mb-1">
+                            <span className="font-mono font-bold text-xs uppercase text-[var(--color-primary-ink)] block mb-1">
                                 @ Email
                             </span>
 
                             <a
                                 href="mailto:contact@omxlab.tech"
-                                className="text-sm font-medium text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors"
+                                className="text-sm font-medium text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] transition-colors"
                             >
                                 contact@omxlab.tech
                             </a>

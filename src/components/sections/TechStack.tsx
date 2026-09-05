@@ -26,7 +26,7 @@ export const TechStack = () => {
                             key={group.group}
                             className="bg-[var(--color-body)] border border-[var(--color-border)] rounded-2xl p-6"
                         >
-                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)] block mb-4">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-4">
                                 {group.group}
                             </span>
                             <div className="flex flex-wrap gap-2">

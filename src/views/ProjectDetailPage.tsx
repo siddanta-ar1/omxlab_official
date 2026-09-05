@@ -36,7 +36,7 @@ const Chapter = ({
     paragraphs: string[];
 }) => (
     <div className="py-8 first:pt-0 last:pb-0 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start group">
-        <div className="md:col-span-2 text-[var(--color-primary)] font-mono font-bold text-lg tracking-wider transition-colors duration-200 group-hover:text-[var(--color-primary-hover)]">
+        <div className="md:col-span-2 text-[var(--color-primary-ink)] font-mono font-bold text-lg tracking-wider transition-colors duration-200 group-hover:text-[var(--color-primary-hover)]">
             {number}
         </div>
         <div className="md:col-span-10">
@@ -88,7 +88,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                     {/* Breadcrumb */}
                     <Link
                         href="/projects"
-                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group"
+                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
                     >
                         <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
                         All Projects
@@ -96,7 +96,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
 
                     {/* Meta Row */}
                     <div className="flex flex-wrap items-center gap-3 mb-5 text-xs font-mono font-bold uppercase tracking-widest">
-                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)]">
+                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
                             {project.category}
                         </span>
                         <span className="text-[var(--color-muted)]">
@@ -126,7 +126,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-10 pt-8 border-t border-[var(--color-border)]">
                         {project.stats.map((stat) => (
                             <div key={stat.label} className="flex flex-col items-start">
-                                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary)] tracking-tight leading-none">
+                                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none">
                                     {stat.value}
                                 </span>
                                 <span className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)]">
@@ -153,11 +153,11 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
 
                             {/* Testimonial */}
                             {project.testimonial && (
-                                <figure className="mt-10 relative overflow-hidden rounded-3xl bg-[var(--color-secondary)] text-white p-8 sm:p-10 shadow-2xl">
+                                <figure className="mt-10 relative overflow-hidden rounded-3xl bg-[var(--color-surface)] text-white p-8 sm:p-10 shadow-2xl">
                                     <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--color-primary)]/20 rounded-full blur-3xl pointer-events-none" />
 
                                     <blockquote className="relative z-10">
-                                        <span className="text-4xl font-extrabold text-[var(--color-accent)] leading-none block mb-4">
+                                        <span className="text-4xl font-extrabold text-[var(--color-highlight)] leading-none block mb-4">
                                             "
                                         </span>
                                         <p className="text-lg sm:text-xl text-white font-medium leading-relaxed mb-6">
@@ -170,7 +170,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                             <span className="block text-sm font-semibold text-white">
                                                 {project.testimonial.name}
                                             </span>
-                                            <span className="block text-xs font-mono uppercase tracking-widest text-[var(--color-accent)] mt-0.5 opacity-90">
+                                            <span className="block text-xs font-mono uppercase tracking-widest text-[var(--color-highlight)] mt-0.5 opacity-90">
                                                 {project.testimonial.role}
                                             </span>
                                         </div>
@@ -181,7 +181,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                             {/* Demo notice */}
                             <div className="mt-8 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] p-5">
                                 <p className="text-xs font-mono text-[var(--color-muted)] leading-relaxed">
-                                    <span className="font-bold text-[var(--color-primary)] uppercase tracking-widest">
+                                    <span className="font-bold text-[var(--color-primary-ink)] uppercase tracking-widest">
                                         Demo content
                                     </span>{' '}
                                     — this case study is placeholder copy for layout review. Replace
@@ -199,7 +199,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
 
                                 <dl className="space-y-5">
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Client
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -208,7 +208,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Category
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -217,7 +217,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Timeline
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -226,7 +226,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-2">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-2">
                                             Stack
                                         </dt>
                                         <dd className="flex flex-wrap gap-2">
@@ -290,7 +290,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
 
                                 <div className="p-8 flex flex-col grow">
                                     <div className="flex items-center justify-between gap-3 mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-bold uppercase tracking-wider">
+                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
                                             {item.category}
                                         </span>
                                         <span className="text-xs font-mono text-[var(--color-muted)]">
@@ -298,7 +298,7 @@ export const ProjectDetailPage = ({ id }: { id: string }) => {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                         {item.title}
                                     </h3>
 

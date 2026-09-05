@@ -16,7 +16,7 @@ export const ServicesGrid = () => {
                 </span>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
-                    Six capabilities, <span className="text-[var(--color-primary)]">one accountable team.</span>
+                    Six capabilities, <span className="text-[var(--color-primary-ink)]">one accountable team.</span>
                 </h2>
 
                 <p className="text-[var(--color-muted)] text-base sm:text-lg max-w-3xl leading-relaxed mb-10">
@@ -30,7 +30,7 @@ export const ServicesGrid = () => {
                         <Link
                             key={service.id}
                             href={`/services/${service.id}`}
-                            className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50 flex flex-col items-start gap-4"
+                            className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50 flex flex-col items-start gap-4"
                         >
                             {/* Icon Container with subtle background tint */}
                             <div className="w-12 h-12 rounded-lg bg-[var(--color-accent)]/60 flex items-center justify-center">
@@ -38,7 +38,7 @@ export const ServicesGrid = () => {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight mt-1 group-hover:text-[var(--color-primary)] transition-colors">
+                            <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight mt-1 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                 {service.title}
                             </h3>
 
@@ -48,7 +48,7 @@ export const ServicesGrid = () => {
                             </p>
 
                             {/* Affordance */}
-                            <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)]">
+                            <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)]">
                                 <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                     Explore service
                                 </span>

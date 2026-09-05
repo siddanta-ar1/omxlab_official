@@ -23,7 +23,7 @@ export const ResearchProcess = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16 md:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-semibold mb-6 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                         How we work
                     </div>
@@ -100,7 +100,7 @@ const TimelineNode = ({
             className={`relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12 md:mb-20 last:mb-0 ${flexDirection} group`}
         >
             {/* Timeline central dot (Candy-like bouncy dot) */}
-            <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 w-8 h-8 md:w-10 md:h-10 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-white border-4 border-[var(--color-border)] group-hover:border-[var(--color-primary)] shadow-sm group-hover:shadow-[0_0_20px_rgba(194,169,122,0.45)] transition-all duration-300 z-10 flex items-center justify-center group-hover:scale-125">
+            <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 w-8 h-8 md:w-10 md:h-10 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-surface border-4 border-[var(--color-border)] group-hover:border-[var(--color-primary)] shadow-sm group-hover:shadow-[0_0_20px_rgba(194,169,122,0.45)] transition-all duration-300 z-10 flex items-center justify-center group-hover:scale-125">
                 <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100" />
             </div>
 
@@ -108,7 +108,7 @@ const TimelineNode = ({
             <div className={`w-full md:w-[45%] pl-16 md:pl-0 pt-0 ${textAlignment}`}>
                 <div 
                     // Candy/bouncy transition effect using cubic-bezier
-                    className={`bg-white p-6 md:p-8 rounded-3xl border border-[var(--color-border)] shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-1000 ${
+                    className={`bg-surface p-6 md:p-8 rounded-3xl border border-[var(--color-border)] shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.5)] hover:-translate-y-1 transition-all duration-1000 ${
                         isVisible 
                             ? 'opacity-100 translate-x-0 scale-100' 
                             : `opacity-0 ${transformStart} max-md:${transformMobileStart} scale-95`
@@ -118,7 +118,7 @@ const TimelineNode = ({
                         transitionDelay: `${index * 50}ms` 
                     }}
                 >
-                    <div className="text-[var(--color-primary)] font-mono font-bold text-lg md:text-2xl tracking-wider mb-2 opacity-80 group-hover:opacity-100 group-hover:text-[var(--color-primary-hover)] transition-colors">
+                    <div className="text-[var(--color-primary-ink)] font-mono font-bold text-lg md:text-2xl tracking-wider mb-2 opacity-80 group-hover:opacity-100 group-hover:text-[var(--color-primary-hover)] transition-colors">
                         {step.number}
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold text-[var(--color-secondary)] mb-3">

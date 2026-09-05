@@ -12,7 +12,7 @@ export const WhyJoinUs = () => {
                 </span>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
-                    What you actually get <span className="text-[var(--color-primary)]">working here.</span>
+                    What you actually get <span className="text-[var(--color-primary-ink)]">working here.</span>
                 </h2>
 
                 <p className="text-[var(--color-muted)] text-base sm:text-lg max-w-3xl leading-relaxed mb-10">
@@ -25,7 +25,7 @@ export const WhyJoinUs = () => {
                     {benefits.map((benefit) => (
                         <div
                             key={benefit.title}
-                            className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50 flex flex-col items-start gap-4"
+                            className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50 flex flex-col items-start gap-4"
                         >
                             {/* Premium Icon Container */}
                             <BenefitIcon name={benefit.icon} />
@@ -46,7 +46,7 @@ export const WhyJoinUs = () => {
                 {/* How We Work */}
                 <div className="max-w-3xl mb-10">
                     <div className="mb-4">
-                        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                             How we work
                         </span>
                     </div>
@@ -65,9 +65,9 @@ export const WhyJoinUs = () => {
                     {values.map((value) => (
                         <div
                             key={value.number}
-                            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50"
+                            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
                                 {value.number}
                             </div>
 

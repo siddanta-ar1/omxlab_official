@@ -8,13 +8,13 @@ export const OurMission = () => {
                 {/* Header Block */}
                 <div className="max-w-3xl mb-16">
                     <div className="mb-4">
-                        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                             Our Mission & Values
                         </span>
                     </div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
-                        Building software that <span className="text-[var(--color-primary)]">empowers growth</span> and long-term capability.
+                        Building software that <span className="text-[var(--color-primary-ink)]">empowers growth</span> and long-term capability.
                     </h2>
 
                     <p className="text-[var(--color-muted)] text-base sm:text-lg leading-relaxed">
@@ -26,9 +26,9 @@ export const OurMission = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     {/* Card 1 */}
-                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
+                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
                         <div>
-                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
                                 01
                             </div>
                             <h3 className="text-xl font-bold text-[var(--color-secondary)] mb-3">
@@ -41,9 +41,9 @@ export const OurMission = () => {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
+                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
                         <div>
-                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
                                 02
                             </div>
                             <h3 className="text-xl font-bold text-[var(--color-secondary)] mb-3">
@@ -56,9 +56,9 @@ export const OurMission = () => {
                     </div>
 
                     {/* Card 3 */}
-                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
+                    <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50">
                         <div>
-                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
                                 03
                             </div>
                             <h3 className="text-xl font-bold text-[var(--color-secondary)] mb-3">

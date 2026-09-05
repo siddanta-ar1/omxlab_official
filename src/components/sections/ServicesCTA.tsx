@@ -5,7 +5,7 @@ export const ServicesCTA = () => {
         <section className="bg-[var(--color-body)] py-16 md:py-20 border-t border-[var(--color-border)]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Dark Floating Card with Subtle Gradient */}
-                <div className="relative overflow-hidden rounded-3xl bg-[var(--color-secondary)] text-white p-8 sm:p-12 md:p-16 shadow-2xl">
+                <div className="relative overflow-hidden rounded-3xl bg-[var(--color-surface)] text-white p-8 sm:p-12 md:p-16 shadow-2xl">
 
                     {/* Subtle Ambient Background Light */}
                     <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--color-primary)]/20 rounded-full blur-3xl pointer-events-none" />
@@ -15,7 +15,7 @@ export const ServicesCTA = () => {
 
                         {/* Left Content Column */}
                         <div className="lg:col-span-7 flex flex-col items-start">
-                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-accent)] mb-3 opacity-90">
+                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-3 opacity-90">
                                 Start Here
                             </span>
 
@@ -43,7 +43,7 @@ export const ServicesCTA = () => {
                         <div className="lg:col-span-5">
                             <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between h-full">
                                 <div>
-                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-accent)] block mb-4 opacity-90">
+                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-highlight)] block mb-4 opacity-90">
                                         What To Expect
                                     </span>
                                     <ul className="space-y-3 mb-6">
@@ -53,7 +53,7 @@ export const ServicesCTA = () => {
                                             'A written summary within two working days',
                                         ].map((item) => (
                                             <li key={item} className="flex items-start gap-2.5 text-soft text-sm sm:text-base leading-relaxed">
-                                                <span className="text-[var(--color-accent)] font-bold">✓</span>
+                                                <span className="text-[var(--color-highlight)] font-bold">✓</span>
                                                 <span>{item}</span>
                                             </li>
                                         ))}
@@ -62,9 +62,9 @@ export const ServicesCTA = () => {
 
                                 <a
                                     href="mailto:contact@omxlab.tech"
-                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-white uppercase group hover:text-[var(--color-accent)] transition-colors duration-200 mt-2"
+                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-white uppercase group hover:text-[var(--color-highlight)] transition-colors duration-200 mt-2"
                                 >
-                                    <span className="border-b border-white/30 group-hover:border-[var(--color-accent)] pb-0.5">
+                                    <span className="border-b border-white/30 group-hover:border-[var(--color-highlight)] pb-0.5">
                                         Or email us directly
                                     </span>
                                     <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>

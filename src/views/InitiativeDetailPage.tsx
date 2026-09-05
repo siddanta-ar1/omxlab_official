@@ -56,7 +56,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                     {/* Breadcrumb */}
                     <Link
                         href="/initiatives"
-                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group"
+                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
                     >
                         <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
                         All Initiatives
@@ -67,7 +67,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                         <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary">
                             {initiative.status}
                         </span>
-                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)]">
+                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
                             {initiative.category}
                         </span>
                         <span className="text-[var(--color-muted)]">Since {initiative.year}</span>
@@ -95,7 +95,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-10 pt-8 border-t border-[var(--color-border)]">
                         {initiative.stats.map((stat) => (
                             <div key={stat.label} className="flex flex-col items-start">
-                                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary)] tracking-tight leading-none">
+                                <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none">
                                     {stat.value}
                                 </span>
                                 <span className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)]">
@@ -131,13 +131,13 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
 
                             {/* What's involved */}
                             <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 shadow-sm mb-12">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)] block mb-5">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-5">
                                     What's Involved
                                 </span>
                                 <ul className="space-y-4">
                                     {initiative.activities.map((activity, index) => (
                                         <li key={activity} className="flex items-start gap-3">
-                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
+                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
                                                 {String(index + 1).padStart(2, '0')}
                                             </span>
                                             <span className="text-[var(--color-secondary)] text-sm sm:text-base leading-relaxed">
@@ -166,7 +166,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                             {/* Demo notice */}
                             <div className="mt-10 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] p-5">
                                 <p className="text-xs font-mono text-[var(--color-muted)] leading-relaxed">
-                                    <span className="font-bold text-[var(--color-primary)] uppercase tracking-widest">
+                                    <span className="font-bold text-[var(--color-primary-ink)] uppercase tracking-widest">
                                         Demo content
                                     </span>{' '}
                                     — this programme description is placeholder copy for layout
@@ -184,7 +184,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
 
                                 <dl className="space-y-5">
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Status
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -193,7 +193,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Focus
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -202,7 +202,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Running Since
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -211,7 +211,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                                     </div>
 
                                     <div>
-                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] mb-1.5">
+                                        <dt className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] mb-1.5">
                                             Cost To Participants
                                         </dt>
                                         <dd className="text-sm font-medium text-[var(--color-secondary)]">
@@ -268,7 +268,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
 
                                 <div className="p-8 flex flex-col grow">
                                     <div className="flex items-center justify-between gap-3 mb-4">
-                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-bold uppercase tracking-wider">
+                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
                                             {item.category}
                                         </span>
                                         <span className="text-xs font-mono text-[var(--color-muted)]">
@@ -276,7 +276,7 @@ export const InitiativeDetailPage = ({ id }: { id: string }) => {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                         {item.title}
                                     </h3>
 

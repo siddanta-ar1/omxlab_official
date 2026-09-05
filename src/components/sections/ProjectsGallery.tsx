@@ -38,7 +38,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
 
                 {/* Section Header */}
                 <div className="mb-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                         Case Studies
                     </span>
                 </div>
@@ -63,7 +63,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                 onClick={() => selectTab(tab)}
                                 className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
                                     ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
-                                    : 'text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-accent)]'
+                                    : 'text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
                                 {tab}
@@ -78,7 +78,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                         {featured && (
                             <Link
                                 href={`/projects/${featured.id}`}
-                                className="group block rounded-3xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] mb-6 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
+                                className="group block rounded-3xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] mb-6 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-12">
                                     {/* Image */}
@@ -97,13 +97,13 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                     {/* Content */}
                                     <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-center">
                                         <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono font-bold uppercase tracking-widest">
-                                            <span className="text-[var(--color-primary)]">{featured.category}</span>
+                                            <span className="text-[var(--color-primary-ink)]">{featured.category}</span>
                                             <span className="text-[var(--color-muted)]">
                                                 {featured.client} · {featured.year}
                                             </span>
                                         </div>
 
-                                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary)] transition-colors">
+                                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                             {featured.title}
                                         </h3>
 
@@ -115,7 +115,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                         <div className="grid grid-cols-3 gap-4 pb-6 mb-6 border-b border-[var(--color-border)]">
                                             {featured.stats.map((stat) => (
                                                 <div key={stat.label}>
-                                                    <span className="block text-lg font-extrabold font-mono text-[var(--color-primary)] leading-none">
+                                                    <span className="block text-lg font-extrabold font-mono text-[var(--color-primary-ink)] leading-none">
                                                         {stat.value}
                                                     </span>
                                                     <span className="mt-1.5 block text-[11px] text-[var(--color-muted)] leading-snug">
@@ -125,7 +125,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                             ))}
                                         </div>
 
-                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary)] uppercase">
+                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary-ink)] uppercase">
                                             <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                                 Read case study
                                             </span>
@@ -142,7 +142,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                 <Link
                                     key={project.id}
                                     href={`/projects/${project.id}`}
-                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
+                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
                                 >
                                     {/* Thumbnail */}
                                     <div className="relative overflow-hidden h-48">
@@ -157,7 +157,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                     <div className="p-8 flex flex-col grow">
                                         {/* Meta Row */}
                                         <div className="flex items-center justify-between gap-3 mb-4">
-                                            <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-bold uppercase tracking-wider">
+                                            <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
                                                 {project.category}
                                             </span>
                                             <span className="text-xs font-mono text-[var(--color-muted)]">
@@ -165,7 +165,7 @@ export const ProjectsGallery = ({ activeType }: { activeType?: string }) => {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                        <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                             {project.title}
                                         </h3>
 

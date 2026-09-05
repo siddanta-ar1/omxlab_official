@@ -12,19 +12,19 @@ import type { ContactValues, ContactErrors } from '@/lib/contact';
 import { LuPhone, LuMail, LuMapPin, LuMessageSquare, LuSend, LuHeadphones } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-[#5B7C99]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMail, color: 'text-[#52738F]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-[#8A6D34]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuMapPin, color: 'text-[#2A3340]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuHeadphones, color: 'text-[#C2A97A]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuSend, color: 'text-[#A98C55]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuPhone, color: 'text-[#22D3EE]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuMail, color: 'text-[#38BDF8]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#A78BFA]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuMapPin, color: 'text-[#C4B5FD]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuHeadphones, color: 'text-[#8B5CF6]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuSend, color: 'text-[#818CF8]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-[#5B7C99]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuMapPin, color: 'text-[#2A3340]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-[#8A6D34]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuHeadphones, color: 'text-[#C2A97A]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuPhone, color: 'text-[#22D3EE]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuMapPin, color: 'text-[#C4B5FD]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#A78BFA]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuHeadphones, color: 'text-[#8B5CF6]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 // Defined at module scope: a component created inside render is a new type on
@@ -141,7 +141,7 @@ export const ContactPage = () => {
                     {floatingIcons.map((item) => (
                         <div 
                             key={item.id} 
-                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -153,7 +153,7 @@ export const ContactPage = () => {
                     {mobileFloatingIcons.map((item) => (
                         <div 
                             key={`mobile-${item.id}`} 
-                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -161,7 +161,7 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-semibold mb-6 border border-[var(--color-border)]">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-semibold mb-6 border border-[var(--color-border)]">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse"></span>
                         Get In Touch
                     </div>
@@ -169,7 +169,7 @@ export const ContactPage = () => {
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--color-secondary)] leading-tight max-w-4xl mx-auto">
                         Let's Build
                         <br />
-                        <span className="text-[var(--color-primary)]">
+                        <span className="text-[var(--color-primary-ink)]">
                             Something Great
                         </span>
                     </h1>
@@ -189,7 +189,7 @@ export const ContactPage = () => {
                     {/* LEFT SIDE: CONTACT INFO */}
                     <div className="lg:col-span-5 space-y-8">
                         <div>
-                            <span className="text-xs font-semibold text-[var(--color-primary)] block mb-2">
+                            <span className="text-xs font-semibold text-[var(--color-primary-ink)] block mb-2">
                                 Contact Directory
                             </span>
                             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-secondary)] tracking-tight">
@@ -207,14 +207,14 @@ export const ContactPage = () => {
                                 href="mailto:contact@omxlab.tech"
                                 className="group flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
                             >
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
+                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <span className="text-xs font-medium text-[var(--color-muted)] block">Email Us</span>
-                                    <span className="text-[var(--color-secondary)] text-sm font-semibold group-hover:text-[var(--color-primary)] transition-colors">
+                                    <span className="text-[var(--color-secondary)] text-sm font-semibold group-hover:text-[var(--color-primary-ink)] transition-colors">
                                         contact@omxlab.tech
                                     </span>
                                 </div>
@@ -225,14 +225,14 @@ export const ContactPage = () => {
                                 href="tel:+9779860590678"
                                 className="group flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
                             >
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
+                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <span className="text-xs font-medium text-[var(--color-muted)] block">Call Us</span>
-                                    <span className="text-[var(--color-secondary)] text-sm font-semibold group-hover:text-[var(--color-primary)] transition-colors">
+                                    <span className="text-[var(--color-secondary)] text-sm font-semibold group-hover:text-[var(--color-primary-ink)] transition-colors">
                                         +977 98XXXXXXX
                                     </span>
                                 </div>
@@ -240,7 +240,7 @@ export const ContactPage = () => {
 
                             {/* Location */}
                             <div className="flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-border)]">
+                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -266,9 +266,9 @@ export const ContactPage = () => {
                                     href="https://www.instagram.com/omxlabofficial/"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-border)] text-[var(--color-secondary)] hover:text-[var(--color-primary)] border border-[var(--color-border)] text-sm font-medium transition"
+                                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-border)] text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] border border-[var(--color-border)] text-sm font-medium transition"
                                 >
-                                    <svg className="w-5 h-5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-[var(--color-primary-ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
                                         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" strokeWidth="2" />
                                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
@@ -279,7 +279,7 @@ export const ContactPage = () => {
 
                             {/* Registration Badge */}
                             <div className="p-5 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm relative overflow-hidden">
-                                <div className="flex items-center gap-2 text-xs text-[var(--color-primary)] font-semibold mb-2">
+                                <div className="flex items-center gap-2 text-xs text-[var(--color-primary-ink)] font-semibold mb-2">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
@@ -306,7 +306,7 @@ export const ContactPage = () => {
                                 Send Us a Message
                             </h3>
                             <p className="text-[var(--color-muted)] text-xs sm:text-sm mt-1.5 flex items-center gap-1.5">
-                                <svg className="w-4 h-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 text-[var(--color-primary-ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <span>We typically reply within 1–2 business days.</span>
@@ -318,7 +318,7 @@ export const ContactPage = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="space-y-1.5">
                                     <label htmlFor="fullName" className="text-xs font-medium text-[var(--color-muted)] block">
-                                        Full Name <span className="text-[var(--color-primary)]">*</span>
+                                        Full Name <span className="text-[var(--color-primary-ink)]">*</span>
                                     </label>
                                     <input
                                         id="fullName"
@@ -336,7 +336,7 @@ export const ContactPage = () => {
                                 </div>
                                 <div className="space-y-1.5">
                                     <label htmlFor="email" className="text-xs font-medium text-[var(--color-muted)] block">
-                                        Email Address <span className="text-[var(--color-primary)]">*</span>
+                                        Email Address <span className="text-[var(--color-primary-ink)]">*</span>
                                     </label>
                                     <input
                                         id="email"
@@ -396,7 +396,7 @@ export const ContactPage = () => {
                             {/* Message */}
                             <div className="space-y-1.5">
                                 <label htmlFor="message" className="text-xs font-medium text-[var(--color-muted)] block">
-                                    Message <span className="text-[var(--color-primary)]">*</span>
+                                    Message <span className="text-[var(--color-primary-ink)]">*</span>
                                 </label>
                                 <textarea
                                     id="message"
@@ -473,7 +473,7 @@ export const ContactPage = () => {
                                     Or email us at{' '}
                                     <a
                                         href={`mailto:${CONTACT_EMAIL}`}
-                                        className="text-[var(--color-primary)] font-medium hover:underline"
+                                        className="text-[var(--color-primary-ink)] font-medium hover:underline"
                                     >
                                         {CONTACT_EMAIL}
                                     </a>

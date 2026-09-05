@@ -11,7 +11,7 @@ export const AnimatedAppIcons = () => {
         { icon: <FaDocker />, name: 'Docker', color: 'text-[#2496ED]' },
         { icon: <FaPython />, name: 'Python', color: 'text-[#3776AB]' },
         { icon: <SiFigma />, name: 'Figma', color: 'text-[#F24E1E]' },
-        { icon: <SiVercel />, name: 'Vercel', color: 'text-black' },
+        { icon: <SiVercel />, name: 'Vercel', color: 'text-white' },
         { icon: <SiMongodb />, name: 'MongoDB', color: 'text-[#47A248]' },
         { icon: <SiTypescript />, name: 'TypeScript', color: 'text-[#3178C6]' },
         { icon: <SiTailwindcss />, name: 'Tailwind CSS', color: 'text-[#06B6D4]' },
@@ -35,7 +35,7 @@ export const AnimatedAppIcons = () => {
                     {marqueeItems.map((app, index) => (
                         <div 
                             key={`${app.name}-${index}`} 
-                            className="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
+                            className="flex items-center gap-3 px-6 py-4 bg-surface rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
                         >
                             <div className={`text-3xl ${app.color} group-hover:scale-110 transition-transform duration-300`}>
                                 {app.icon}

@@ -3,19 +3,19 @@ import { OurMission } from '@/components/sections/OurMisson';
 import { LuBuilding2, LuCompass, LuTarget, LuUsers, LuAward, LuHandshake } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuBuilding2, color: 'text-[#6366f1]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuCompass, color: 'text-[#14b8a6]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuTarget, color: 'text-[#f43f5e]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuUsers, color: 'text-[#8b5cf6]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuAward, color: 'text-[#f59e0b]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuHandshake, color: 'text-[#06b6d4]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuBuilding2, color: 'text-[#818CF8]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuCompass, color: 'text-[#22D3EE]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuTarget, color: 'text-[#C4B5FD]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuUsers, color: 'text-[#A78BFA]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuAward, color: 'text-[#38BDF8]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuHandshake, color: 'text-[#22D3EE]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuBuilding2, color: 'text-[#6366f1]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuUsers, color: 'text-[#8b5cf6]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuTarget, color: 'text-[#f43f5e]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuAward, color: 'text-[#f59e0b]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuBuilding2, color: 'text-[#818CF8]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuUsers, color: 'text-[#A78BFA]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuTarget, color: 'text-[#C4B5FD]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuAward, color: 'text-[#38BDF8]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const AboutPage = () => {
@@ -41,7 +41,7 @@ export const AboutPage = () => {
                         {floatingIcons.map((item) => (
                             <div 
                                 key={item.id} 
-                                className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                                className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                             >
                                 <item.Icon className={`${item.size} ${item.color}`} />
                             </div>
@@ -53,7 +53,7 @@ export const AboutPage = () => {
                         {mobileFloatingIcons.map((item) => (
                             <div 
                                 key={`mobile-${item.id}`} 
-                                className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                                className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                             >
                                 <item.Icon className={`${item.size} ${item.color}`} />
                             </div>
@@ -64,7 +64,7 @@ export const AboutPage = () => {
                 {/* Centered Content */}
                 <div className="relative z-20 max-w-4xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-center text-center gap-8">
                     {/* Pill Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary)] text-xs sm:text-sm font-semibold shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary-ink)] text-xs sm:text-sm font-semibold shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                         About OMX Lab
                     </div>

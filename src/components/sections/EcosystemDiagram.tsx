@@ -12,7 +12,7 @@ export const EcosystemDiagram = () => {
                     How We Deliver
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-secondary tracking-tight mb-6">
-                    One engine. <span className="text-primary">Every discipline.</span>
+                    One engine. <span className="text-primary-ink">Every discipline.</span>
                 </h2>
                 <p className="text-muted text-base sm:text-lg max-w-3xl leading-relaxed mb-10">
                     Delivery runs through a single integrated engine, with specialist teams

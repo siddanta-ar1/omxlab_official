@@ -58,7 +58,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                     {/* Breadcrumb */}
                     <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group"
+                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
                     >
                         <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
                         All Services
@@ -72,7 +72,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                         {service.title}
                     </h1>
 
-                    <p className="text-[var(--color-primary)] text-lg sm:text-xl font-semibold max-w-3xl mb-4">
+                    <p className="text-[var(--color-primary-ink)] text-lg sm:text-xl font-semibold max-w-3xl mb-4">
                         {service.tagline}
                     </p>
 
@@ -106,13 +106,13 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
 
                             {/* Deliverables */}
                             <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 shadow-sm">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)] block mb-5">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-5">
                                     What's Included
                                 </span>
                                 <ul className="space-y-4">
                                     {service.deliverables.map((item, index) => (
                                         <li key={item} className="flex items-start gap-3">
-                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
+                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
                                                 {String(index + 1).padStart(2, '0')}
                                             </span>
                                             <span className="text-[var(--color-secondary)] text-sm sm:text-base leading-relaxed">
@@ -135,7 +135,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                                 <div className="grid grid-cols-2 gap-4 mb-7">
                                     {service.outcomes.map((outcome) => (
                                         <div key={outcome.label}>
-                                            <span className="text-2xl font-extrabold font-mono text-[var(--color-primary)] tracking-tight leading-none block">
+                                            <span className="text-2xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none block">
                                                 {outcome.value}
                                             </span>
                                             <span className="mt-2 text-xs text-[var(--color-muted)] leading-snug block">
@@ -147,7 +147,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
 
                                 {/* Stack */}
                                 <div className="pt-6 border-t border-[var(--color-border)]">
-                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary)] block mb-3">
+                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] block mb-3">
                                         Typical Stack
                                     </span>
                                     <div className="flex flex-wrap gap-2">
@@ -205,7 +205,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                                     <ServiceIcon name={item.icon} />
                                 </div>
 
-                                <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight mt-1 group-hover:text-[var(--color-primary)] transition-colors">
+                                <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight mt-1 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                     {item.title}
                                 </h3>
 
@@ -213,7 +213,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                                     {item.summary}
                                 </p>
 
-                                <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary)]">
+                                <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)]">
                                     <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                         Explore service
                                     </span>

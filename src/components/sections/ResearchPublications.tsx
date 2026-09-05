@@ -38,7 +38,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
 
                 {/* Section Header */}
                 <div className="mb-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                         Publications
                     </span>
                 </div>
@@ -63,7 +63,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                 onClick={() => selectTab(tab)}
                                 className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
                                     ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
-                                    : 'text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-accent)]'
+                                    : 'text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
                                 {tab}
@@ -89,7 +89,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                             <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary">
                                                 Latest
                                             </span>
-                                            <span className="text-[var(--color-primary)]">
+                                            <span className="text-[var(--color-primary-ink)]">
                                                 {featured.category}
                                             </span>
                                             <span className="text-[var(--color-muted)]">
@@ -97,7 +97,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                             </span>
                                         </div>
 
-                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary)] transition-colors">
+                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                             {featured.title}
                                         </h3>
 
@@ -105,7 +105,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                             {featured.abstract}
                                         </p>
 
-                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary)] uppercase">
+                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary-ink)] uppercase">
                                             <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                                 Read the paper
                                             </span>
@@ -144,7 +144,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                 >
                                     {/* Meta Row */}
                                     <div className="flex items-center justify-between gap-3 mb-5">
-                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-bold uppercase tracking-wider">
+                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
                                             {paper.type}
                                         </span>
                                         <span className="text-xs font-mono text-[var(--color-muted)]">
@@ -152,7 +152,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                         </span>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                    <h3 className="text-lg font-bold text-[var(--color-secondary)] tracking-tight leading-snug mb-3 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                         {paper.title}
                                     </h3>
 

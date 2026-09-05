@@ -1,11 +1,11 @@
 import React from 'react';
 
 const teams = [
-    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#BDCCD9] text-[#4A6377] bg-[#F5F8FA]/40' },
-    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#A9BCCD] text-primary-ink bg-accent/40' },
-    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#E0D0AE] text-[#7A5F2C] bg-[#FBF8F1]/40' },
-    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#D8C49A] text-[#8A6D34] bg-[#FAF6EE]/40' },
-    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#C6B085] text-[#6F5626] bg-[#F8F4EA]/40' },
+    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#17607A] text-[#98E8F6] bg-[#0E2739]/60' },
+    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#1E567A] text-[#9FDCF6] bg-[#102439]/60' },
+    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#21507A] text-[#A3D6F6] bg-[#112239]/60' },
+    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#372B7A] text-[#BDAAF5] bg-[#181739]/60' },
+    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#3A267A] text-[#C0A4F5] bg-[#191539]/60' },
 ];
 
 export const AgentDiagram = () => {
@@ -13,8 +13,8 @@ export const AgentDiagram = () => {
         <div className="bg-surface/90 backdrop-blur-md rounded-3xl border border-border/80 p-6 md:p-8 shadow-xl shadow-slate-200/50 max-w-lg mx-auto w-full">
             {/* Top Engineer Node */}
             <div className="flex flex-col items-center justify-center mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center shadow-md mb-2">
-                    <span className="text-primary font-mono font-bold text-xl">X</span>
+                <div className="w-12 h-12 rounded-2xl bg-surface flex items-center justify-center shadow-md mb-2">
+                    <span className="text-primary-ink font-mono font-bold text-xl">X</span>
                 </div>
                 <span className="text-[11px] tracking-widest font-mono font-bold text-muted uppercase px-3 py-1 bg-body rounded-md border border-border">
                     AGENTIC ENGINEER

@@ -4,10 +4,10 @@ import { LuCode, LuMonitorSmartphone, LuCloud, LuShieldCheck, LuSparkles, LuServ
 
 const floatingIcons = [
     { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMonitorSmartphone, color: 'text-[#06B6D4]', pos: 'top-[30%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 2, Icon: LuMonitorSmartphone, color: 'text-[#22D3EE]', pos: 'top-[30%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
     { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[25%] left-[15%]', size: 'text-5xl', animation: 'animate-float-slow' },
     { id: 4, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuSparkles, color: 'text-[#8B5CF6]', pos: 'top-[40%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 5, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'top-[40%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
     { id: 6, Icon: LuServer, color: 'text-[#3178C6]', pos: 'bottom-[30%] right-[12%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
@@ -15,7 +15,7 @@ const mobileFloatingIcons = [
     { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
     { id: 2, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
     { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuSparkles, color: 'text-[#8B5CF6]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 4, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const ServicesHero = () => {
@@ -40,7 +40,7 @@ export const ServicesHero = () => {
                     {floatingIcons.map((item) => (
                         <div 
                             key={item.id} 
-                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -52,7 +52,7 @@ export const ServicesHero = () => {
                     {mobileFloatingIcons.map((item) => (
                         <div 
                             key={`mobile-${item.id}`} 
-                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -63,7 +63,7 @@ export const ServicesHero = () => {
             {/* Centered Content */}
             <div className="relative z-20 max-w-4xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-center text-center gap-8">
                 {/* Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary)] text-xs sm:text-sm font-semibold shadow-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary-ink)] text-xs sm:text-sm font-semibold shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                     Services
                 </div>
@@ -94,7 +94,7 @@ export const ServicesHero = () => {
                     </Link>
                     <a
                         href="#capabilities"
-                        className="border border-[var(--color-border)] bg-white/80 backdrop-blur-sm hover:bg-white text-[var(--color-secondary)] px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
+                        className="border border-[var(--color-border)] bg-surface/80 backdrop-blur-sm hover:bg-surface text-[var(--color-secondary)] px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
                     >
                         Browse capabilities <span className="text-xs">↓</span>
                     </a>
@@ -103,13 +103,13 @@ export const ServicesHero = () => {
                 {/* Bottom Feature Checkmarks */}
                 <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-[var(--color-border)]/50 text-sm text-[var(--color-muted)] font-medium w-full max-w-2xl mt-4">
                     <div className="flex items-center gap-2">
-                        <span className="text-[var(--color-primary)] font-bold">✓</span> Senior engineers only
+                        <span className="text-[var(--color-primary-ink)] font-bold">✓</span> Senior engineers only
                     </div>
                     <div className="flex items-center gap-2">
-                        <span className="text-[var(--color-primary)] font-bold">✓</span> Working build every sprint
+                        <span className="text-[var(--color-primary-ink)] font-bold">✓</span> Working build every sprint
                     </div>
                     <div className="flex items-center gap-2">
-                        <span className="text-[var(--color-primary)] font-bold">✓</span> Full IP transfer
+                        <span className="text-[var(--color-primary-ink)] font-bold">✓</span> Full IP transfer
                     </div>
                 </div>
             </div>

@@ -2,19 +2,19 @@ import { careerStats } from '@/data/career';
 import { LuBriefcase, LuGraduationCap, LuCode, LuSparkles, LuAward, LuActivity } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuBriefcase, color: 'text-[#52738F]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuCode, color: 'text-[#5B7C99]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuSparkles, color: 'text-[#8A6D34]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuGraduationCap, color: 'text-[#2A3340]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuAward, color: 'text-[#C2A97A]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuActivity, color: 'text-[#A98C55]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuBriefcase, color: 'text-[#38BDF8]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuCode, color: 'text-[#22D3EE]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuGraduationCap, color: 'text-[#C4B5FD]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuAward, color: 'text-[#8B5CF6]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuActivity, color: 'text-[#818CF8]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuBriefcase, color: 'text-[#52738F]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuAward, color: 'text-[#C2A97A]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuSparkles, color: 'text-[#8A6D34]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuGraduationCap, color: 'text-[#2A3340]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuBriefcase, color: 'text-[#38BDF8]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuAward, color: 'text-[#8B5CF6]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuGraduationCap, color: 'text-[#C4B5FD]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const CareerHero = () => {
@@ -40,7 +40,7 @@ export const CareerHero = () => {
                 {floatingIcons.map((item) => (
                     <div 
                         key={item.id} 
-                        className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-white/70 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                        className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                     >
                         <item.Icon className={`${item.size} ${item.color}`} />
                     </div>
@@ -52,7 +52,7 @@ export const CareerHero = () => {
                 {mobileFloatingIcons.map((item) => (
                     <div 
                         key={`mobile-${item.id}`} 
-                        className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                        className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                     >
                         <item.Icon className={`${item.size} ${item.color}`} />
                     </div>
@@ -60,7 +60,7 @@ export const CareerHero = () => {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] text-xs font-mono font-semibold tracking-widest uppercase mb-6 border border-[var(--color-border)]">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-semibold tracking-widest uppercase mb-6 border border-[var(--color-border)]">
                     <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                     Career
                 </div>
@@ -68,7 +68,7 @@ export const CareerHero = () => {
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--color-secondary)] leading-tight max-w-4xl mx-auto">
                     Good Engineers.
                     <br />
-                    <span className="text-[var(--color-primary)]">
+                    <span className="text-[var(--color-primary-ink)]">
                         Room To Get Better.
                     </span>
                 </h1>
@@ -100,7 +100,7 @@ export const CareerHero = () => {
                 <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 mt-16 pt-8 border-t border-[var(--color-border)] max-w-3xl mx-auto w-full">
                     {careerStats.map((stat) => (
                         <div key={stat.label} className="flex flex-col items-center">
-                            <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary)] tracking-tight leading-none">
+                            <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none">
                                 {stat.value}
                             </span>
                             <span className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)]">

@@ -58,7 +58,7 @@ export const DeliveryProcess = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-semibold mb-6 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                         How we deliver
                     </div>
@@ -73,7 +73,7 @@ export const DeliveryProcess = () => {
 
                 {/* Interactive Command Center */}
                 <div 
-                    className="max-w-5xl mx-auto bg-white/60 backdrop-blur-xl border border-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[450px]"
+                    className="max-w-5xl mx-auto bg-surface/60 backdrop-blur-xl border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[450px]"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
@@ -88,11 +88,11 @@ export const DeliveryProcess = () => {
                                         onClick={() => handleStepClick(index)}
                                         className={`w-full text-left px-4 py-4 rounded-xl transition-all duration-300 relative group flex items-center gap-4 ${
                                             isActive 
-                                                ? 'bg-white shadow-sm border border-[var(--color-primary)]/20' 
-                                                : 'hover:bg-slate-100/50'
+                                                ? 'bg-surface shadow-sm border border-[var(--color-primary)]/20' 
+                                                : 'hover:bg-white/5'
                                         }`}
                                     >
-                                        <div className={`font-mono text-sm font-bold transition-colors ${isActive ? 'text-[var(--color-primary)]' : 'text-muted group-hover:text-muted'}`}>
+                                        <div className={`font-mono text-sm font-bold transition-colors ${isActive ? 'text-[var(--color-primary-ink)]' : 'text-muted group-hover:text-muted'}`}>
                                             {step.number}
                                         </div>
                                         <div className={`font-bold transition-colors ${isActive ? 'text-[var(--color-secondary)]' : 'text-[var(--color-muted)] group-hover:text-[var(--color-secondary)]'}`}>
@@ -117,16 +117,16 @@ export const DeliveryProcess = () => {
                     {/* Right Main Content Area */}
                     <div className="w-full md:w-2/3 p-8 md:p-12 relative flex items-center">
                         {/* Huge Background Icon */}
-                        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[var(--color-primary)]/[0.03] transition-all duration-700 ease-in-out">
+                        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[var(--color-primary-ink)]/[0.03] transition-all duration-700 ease-in-out">
                             <ActiveIcon className="w-[350px] h-[350px]" />
                         </div>
                         
                         <div key={activeStep} className="relative z-10">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] shadow-lg flex items-center justify-center animate-[bounce_2s_infinite]">
+                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-highlight)] shadow-lg flex items-center justify-center animate-[bounce_2s_infinite]">
                                     <ActiveIcon className="w-8 h-8 text-white" />
                                 </div>
-                                <div className="text-6xl font-black text-[var(--color-primary)]/10 font-mono tracking-tighter">
+                                <div className="text-6xl font-black text-[var(--color-primary-ink)]/10 font-mono tracking-tighter">
                                     {deliveryProcess[activeStep].number}
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ export const DeliveryProcess = () => {
                                     <div 
                                         key={i} 
                                         className={`h-1.5 rounded-full transition-all duration-500 ${
-                                            i === activeStep ? 'w-8 bg-[var(--color-primary)]' : 'w-2 bg-slate-200'
+                                            i === activeStep ? 'w-8 bg-[var(--color-primary)]' : 'w-2 bg-white/20'
                                         }`}
                                     />
                                 ))}

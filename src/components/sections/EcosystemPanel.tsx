@@ -12,21 +12,21 @@ import { EcosystemIcon } from '@/components/common/EcosystemIcon';
 import { OmxMark } from '@/components/common/OmxMark';
 
 // Brand ramp per team. The keys are historical; the values walk the OMX
-// palette (navy -> steel -> soft -> gold) instead of a rainbow, so twelve
+// palette (Electric Violet -> Quantum Blue) instead of a rainbow, so twelve
 // categories stay distinguishable without leaving the brand.
 const tones = {
-    cyan: { border: 'border-[#BDCCD9]', text: 'text-[#4A6377]', bg: 'bg-[#F5F8FA]', dot: 'bg-[#8FA6BD]', stroke: '#8FA6BD' },
-    blue: { border: 'border-[#A9BCCD]', text: 'text-[#3D5670]', bg: 'bg-[#F2F6F9]', dot: 'bg-[#5B7C99]', stroke: '#5B7C99' },
-    lime: { border: 'border-[#E0D0AE]', text: 'text-[#7A5F2C]', bg: 'bg-[#FBF8F1]', dot: 'bg-[#D8C49A]', stroke: '#D8C49A' },
-    amber: { border: 'border-[#D8C49A]', text: 'text-[#8A6D34]', bg: 'bg-[#FAF6EE]', dot: 'bg-[#C2A97A]', stroke: '#C2A97A' },
-    pink: { border: 'border-[#C6B085]', text: 'text-[#6F5626]', bg: 'bg-[#F8F4EA]', dot: 'bg-[#A98C55]', stroke: '#A98C55' },
-    teal: { border: 'border-[#B4C4D2]', text: 'text-[#445D73]', bg: 'bg-[#F3F7FA]', dot: 'bg-[#7B96AE]', stroke: '#7B96AE' },
-    orange: { border: 'border-[#CEB68C]', text: 'text-[#7F6530]', bg: 'bg-[#F9F5EC]', dot: 'bg-[#B99C68]', stroke: '#B99C68' },
-    emerald: { border: 'border-[#9FB4C7]', text: 'text-[#36506A]', bg: 'bg-[#F1F5F9]', dot: 'bg-[#52738F]', stroke: '#52738F' },
-    violet: { border: 'border-[#9BA6B4]', text: 'text-[#2A3340]', bg: 'bg-[#F4F5F7]', dot: 'bg-[#3E4A5A]', stroke: '#3E4A5A' },
-    sky: { border: 'border-[#C8D5E0]', text: 'text-[#50697D]', bg: 'bg-[#F6F9FB]', dot: 'bg-[#9DB2C4]', stroke: '#9DB2C4' },
-    rose: { border: 'border-[#CDBB93]', text: 'text-[#755925]', bg: 'bg-[#F9F6EF]', dot: 'bg-[#AF9560]', stroke: '#AF9560' },
-    indigo: { border: 'border-[#AEB7C2]', text: 'text-[#1E2530]', bg: 'bg-[#F3F4F6]', dot: 'bg-[#2A3340]', stroke: '#2A3340' },
+    cyan: { border: 'border-[#17607A]', text: 'text-[#98E8F6]', bg: 'bg-[#0E2739]', dot: 'bg-[#22D3EE]', stroke: '#22D3EE' },
+    blue: { border: 'border-[#1E567A]', text: 'text-[#9FDCF6]', bg: 'bg-[#102439]', dot: 'bg-[#32B7EE]', stroke: '#32B7EE' },
+    lime: { border: 'border-[#27467A]', text: 'text-[#AAC9F6]', bg: 'bg-[#131F39]', dot: 'bg-[#4B8DEE]', stroke: '#4B8DEE' },
+    amber: { border: 'border-[#2D3B7A]', text: 'text-[#B1BDF5]', bg: 'bg-[#151C39]', dot: 'bg-[#5B72ED]', stroke: '#5B72ED' },
+    pink: { border: 'border-[#34317A]', text: 'text-[#B9B0F5]', bg: 'bg-[#171839]', dot: 'bg-[#6C56ED]', stroke: '#6C56ED' },
+    teal: { border: 'border-[#21507A]', text: 'text-[#A3D6F6]', bg: 'bg-[#112239]', dot: 'bg-[#3BA9EE]', stroke: '#3BA9EE' },
+    orange: { border: 'border-[#2A417A]', text: 'text-[#AEC3F5]', bg: 'bg-[#141D39]', dot: 'bg-[#5380ED]', stroke: '#5380ED' },
+    emerald: { border: 'border-[#244B7A]', text: 'text-[#A7CFF6]', bg: 'bg-[#122139]', dot: 'bg-[#439BEE]', stroke: '#439BEE' },
+    violet: { border: 'border-[#3A267A]', text: 'text-[#C0A4F5]', bg: 'bg-[#191539]', dot: 'bg-[#7C3AED]', stroke: '#7C3AED' },
+    sky: { border: 'border-[#1A5B7A]', text: 'text-[#9BE2F6]', bg: 'bg-[#0F2639]', dot: 'bg-[#2AC5EE]', stroke: '#2AC5EE' },
+    rose: { border: 'border-[#30367A]', text: 'text-[#B5B6F5]', bg: 'bg-[#161A39]', dot: 'bg-[#6364ED]', stroke: '#6364ED' },
+    indigo: { border: 'border-[#372B7A]', text: 'text-[#BDAAF5]', bg: 'bg-[#181739]', dot: 'bg-[#7448ED]', stroke: '#7448ED' },
 };
 
 // Entrance order, so the animation radiates outward from the hub.
@@ -165,7 +165,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
             className={`relative rounded-2xl border border-border bg-surface/95 backdrop-blur-md ring-1 ring-black/[0.03] shadow-xl shadow-slate-200/50 overflow-hidden ${dense ? 'p-4 lg:p-3' : 'p-5 sm:p-7'}`}
         >
             {/* Ambient wash */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-[#5B7C99]/[0.06] animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-[#22D3EE]/[0.06] animate-pulse" style={{ animationDuration: '4s' }} />
 
             {/* Panel header */}
             <div className={`relative z-10 flex flex-wrap items-start justify-between gap-2 ${dense ? 'mb-4 lg:mb-3' : 'mb-6'}`}>
@@ -177,20 +177,20 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
 
                 <div className="flex flex-col gap-1 items-end">
                     <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#7B96AE]" />
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#94A3B8]" />
                         Data_Sync
                         <span className="flex gap-0.5">
                             {[0, 1, 2, 3].map((i) => (
                                 <span
                                     key={i}
-                                    className="eco-blink w-1 h-1 rounded-full bg-[#7B96AE]"
+                                    className="eco-blink w-1 h-1 rounded-full bg-[#94A3B8]"
                                     style={{ animationDelay: `${i * 300}ms` }}
                                 />
                             ))}
                         </span>
                     </span>
                     <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#C2A97A]" style={{ animationDelay: '900ms' }} />
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" style={{ animationDelay: '900ms' }} />
                         Security_Alert
                     </span>
                 </div>
@@ -202,7 +202,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                     
                     {/* Background Network Lines to link every feature visually */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block z-[-1] opacity-40">
-                    <g stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="text-primary/50">
+                    <g stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="text-primary-ink/50">
                         {/* Links to Left Rail */}
                         <path d="M 50% 15% C 35% 15%, 25% 20%, 15% 20%" fill="none" />
                         <path d="M 50% 15% C 35% 15%, 25% 50%, 15% 50%" fill="none" />
@@ -309,7 +309,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
         {/* Bottom row with network lines */}
             <div className="hidden lg:block relative mt-3 lg:mt-4">
                 <svg className="absolute top-[-20px] left-0 w-full h-[40px] pointer-events-none hidden lg:block z-[-1] opacity-40">
-                    <g stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="text-primary/50">
+                    <g stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" className="text-primary-ink/50">
                         <path d="M 50% 0 L 10% 40" fill="none" />
                         <path d="M 50% 0 L 30% 40" fill="none" />
                         <path d="M 50% 0 L 50% 40" fill="none" />
@@ -343,7 +343,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
 
                     {/* Core Teams Grid */}
                     <div className="w-full">
-                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary/70 mb-3">Core Teams</span>
+                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary-ink/70 mb-3">Core Teams</span>
                         <div className={`grid grid-cols-2 sm:grid-cols-3 ${gap}`}>
                             {coreTeams.map((team) => (
                                 <TeamCard key={team.id} team={team} visible={visible} hovered={hovered} onHover={setHovered} dense={dense} />
@@ -353,7 +353,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
 
                     {/* Satellite Teams Carousel */}
                     <div className="w-full">
-                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary/70 mb-3">Satellite Integrated Teams</span>
+                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary-ink/70 mb-3">Satellite Integrated Teams</span>
                         <div className="flex overflow-x-auto gap-3 pb-4 px-1 -mx-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                             <div className="flex gap-3 w-max hide-scroll">
                                 {satelliteTeams.map((team) => (

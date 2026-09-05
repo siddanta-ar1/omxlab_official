@@ -26,7 +26,7 @@ export const MemberCard = ({
                         className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center text-[var(--color-primary)] opacity-40">
+                    <div className="w-full h-full flex items-center justify-center text-[var(--color-primary-ink)] opacity-40">
                         <svg
                             className="w-20 h-20"
                             fill="none"
@@ -67,7 +67,7 @@ export const MemberCard = ({
                             href={linkedinUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-[var(--color-primary)] hover:text-secondary text-xs font-semibold transition-colors duration-200"
+                            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-[var(--color-primary-ink)] hover:text-secondary text-xs font-semibold transition-colors duration-200"
                         >
                             <span>Connect on LinkedIn</span>
                             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
