@@ -36,9 +36,9 @@ parser.add_argument('--components', type=pathlib.Path,
 args = parser.parse_args()
 SRC, OUT, CMP = str(args.src), str(args.out), str(args.components)
 
-# Logo files ship in Deep Space for light grounds; the app icon is a solid
-# Electric Violet tile with a Soft White mark, which is what survives 16px.
-INK, TILE, GLYPH = '#0B1020', '#7C3AED', '#F8FAFC'
+# Logo files ship in Obsidian for light grounds; the app icon is a solid
+# Indigo tile with a White mark, which is what survives 16px.
+INK, TILE, GLYPH = '#05070A', '#4F46E5', '#F8FAFC'
 
 def poly_d(pts, prec=2):
     return 'M' + 'L'.join(f'{x:.{prec}f} {y:.{prec}f}' for x, y in pts) + 'Z'

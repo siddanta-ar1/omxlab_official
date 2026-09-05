@@ -109,7 +109,7 @@ export const MascotPet = () => {
         const newParticles = Array.from({ length: 8 }).map((_, i) => ({
             id: Date.now() + i,
             angle: (i * 45) * (Math.PI / 180),
-            color: ['#A78BFA', '#EEF4FF', '#f43f5e', '#f59e0b', '#10b981'][Math.floor(Math.random() * 5)]
+            color: ['#818CF8', '#EEF4FF', '#f43f5e', '#f59e0b', '#10b981'][Math.floor(Math.random() * 5)]
         }));
         
         setParticles(newParticles);

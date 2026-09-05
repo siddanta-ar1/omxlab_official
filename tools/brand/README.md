@@ -17,7 +17,7 @@ npm run brand:assets          # or: python3 tools/brand/build_assets.py
 | `public/logo-mark.svg` | mark alone, Deep Space fill |
 | `public/logo-lockup.svg` | the supplied lockup proportions |
 | `public/logo-lockup-compact.svg` | wordmark lifted for tight spots |
-| `public/favicon.svg` | violet tile, Soft White mark |
+| `public/favicon.svg` | indigo tile, White mark |
 | `public/favicon.ico` | packed by hand with 16/32/48 |
 | `public/favicon-{16,32,48}.png` | |
 | `public/apple-touch-icon.png` | 180px, square |

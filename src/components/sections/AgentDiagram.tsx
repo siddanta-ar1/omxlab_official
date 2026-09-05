@@ -1,11 +1,11 @@
 import React from 'react';
 
 const teams = [
-    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#17607A] text-[#98E8F6] bg-[#0E2739]/60' },
-    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#1E567A] text-[#9FDCF6] bg-[#102439]/60' },
-    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#21507A] text-[#A3D6F6] bg-[#112239]/60' },
-    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#372B7A] text-[#BDAAF5] bg-[#181739]/60' },
-    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#3A267A] text-[#C0A4F5] bg-[#191539]/60' },
+    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#0C536B] text-[#8BDBEA] bg-[#051C22]/60' },
+    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#114C6C] text-[#91D2EB] bg-[#071A23]/60' },
+    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#13486C] text-[#94CDEC] bg-[#081823]/60' },
+    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#252D70] text-[#A9AEF1] bg-[#0D1024]/60' },
+    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#272971] text-[#ACA9F2] bg-[#0E0F24]/60' },
 ];
 
 export const AgentDiagram = () => {

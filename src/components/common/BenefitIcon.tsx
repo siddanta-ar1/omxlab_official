@@ -9,9 +9,9 @@ import {
 
 const icons = {
     review: { Icon: LuCircleCheck, color: 'text-[#38BDF8]' },
-    compass: { Icon: LuCompass, color: 'text-[#C4B5FD]' },
-    clock: { Icon: LuClock, color: 'text-[#8B5CF6]' },
-    book: { Icon: LuBookOpen, color: 'text-[#A78BFA]' },
+    compass: { Icon: LuCompass, color: 'text-[#A5B4FC]' },
+    clock: { Icon: LuClock, color: 'text-[#6366F1]' },
+    book: { Icon: LuBookOpen, color: 'text-[#818CF8]' },
     flask: { Icon: LuFlaskConical, color: 'text-[#22D3EE]' },
     heart: { Icon: LuHeart, color: 'text-[#818CF8]' },
 };

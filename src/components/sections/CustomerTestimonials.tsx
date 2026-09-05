@@ -73,7 +73,7 @@ export const CustomerTestimonials = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
                         <div className="p-10 bg-body rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#A78BFA]">
+                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#818CF8]">
                                 <FiCheckCircle size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Expert support team</h4>
@@ -82,7 +82,7 @@ export const CustomerTestimonials = () => {
                         </div>
                         
                         <div className="p-10 bg-accent/60 rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#C4B5FD]">
+                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#A5B4FC]">
                                 <FiUsers size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Community forum</h4>

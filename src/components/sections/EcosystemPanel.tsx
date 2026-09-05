@@ -12,21 +12,21 @@ import { EcosystemIcon } from '@/components/common/EcosystemIcon';
 import { OmxMark } from '@/components/common/OmxMark';
 
 // Brand ramp per team. The keys are historical; the values walk the OMX
-// palette (Electric Violet -> Quantum Blue) instead of a rainbow, so twelve
+// palette (Indigo -> Electric Cyan) instead of a rainbow, so twelve
 // categories stay distinguishable without leaving the brand.
 const tones = {
-    cyan: { border: 'border-[#17607A]', text: 'text-[#98E8F6]', bg: 'bg-[#0E2739]', dot: 'bg-[#22D3EE]', stroke: '#22D3EE' },
-    blue: { border: 'border-[#1E567A]', text: 'text-[#9FDCF6]', bg: 'bg-[#102439]', dot: 'bg-[#32B7EE]', stroke: '#32B7EE' },
-    lime: { border: 'border-[#27467A]', text: 'text-[#AAC9F6]', bg: 'bg-[#131F39]', dot: 'bg-[#4B8DEE]', stroke: '#4B8DEE' },
-    amber: { border: 'border-[#2D3B7A]', text: 'text-[#B1BDF5]', bg: 'bg-[#151C39]', dot: 'bg-[#5B72ED]', stroke: '#5B72ED' },
-    pink: { border: 'border-[#34317A]', text: 'text-[#B9B0F5]', bg: 'bg-[#171839]', dot: 'bg-[#6C56ED]', stroke: '#6C56ED' },
-    teal: { border: 'border-[#21507A]', text: 'text-[#A3D6F6]', bg: 'bg-[#112239]', dot: 'bg-[#3BA9EE]', stroke: '#3BA9EE' },
-    orange: { border: 'border-[#2A417A]', text: 'text-[#AEC3F5]', bg: 'bg-[#141D39]', dot: 'bg-[#5380ED]', stroke: '#5380ED' },
-    emerald: { border: 'border-[#244B7A]', text: 'text-[#A7CFF6]', bg: 'bg-[#122139]', dot: 'bg-[#439BEE]', stroke: '#439BEE' },
-    violet: { border: 'border-[#3A267A]', text: 'text-[#C0A4F5]', bg: 'bg-[#191539]', dot: 'bg-[#7C3AED]', stroke: '#7C3AED' },
-    sky: { border: 'border-[#1A5B7A]', text: 'text-[#9BE2F6]', bg: 'bg-[#0F2639]', dot: 'bg-[#2AC5EE]', stroke: '#2AC5EE' },
-    rose: { border: 'border-[#30367A]', text: 'text-[#B5B6F5]', bg: 'bg-[#161A39]', dot: 'bg-[#6364ED]', stroke: '#6364ED' },
-    indigo: { border: 'border-[#372B7A]', text: 'text-[#BDAAF5]', bg: 'bg-[#181739]', dot: 'bg-[#7448ED]', stroke: '#7448ED' },
+    cyan: { border: 'border-[#0C536B]', text: 'text-[#8BDBEA]', bg: 'bg-[#051C22]', dot: 'bg-[#06B6D4]', stroke: '#06B6D4' },
+    blue: { border: 'border-[#114C6C]', text: 'text-[#91D2EB]', bg: 'bg-[#071A23]', dot: 'bg-[#13A2D7]', stroke: '#13A2D7' },
+    lime: { border: 'border-[#18406E]', text: 'text-[#9AC4EE]', bg: 'bg-[#091623]', dot: 'bg-[#2783DC]', stroke: '#2783DC' },
+    amber: { border: 'border-[#1D386F]', text: 'text-[#A0BBEF]', bg: 'bg-[#0B1324]', dot: 'bg-[#346FDF]', stroke: '#346FDF' },
+    pink: { border: 'border-[#223070]', text: 'text-[#A6B2F0]', bg: 'bg-[#0C1124]', dot: 'bg-[#425AE2]', stroke: '#425AE2' },
+    teal: { border: 'border-[#13486C]', text: 'text-[#94CDEC]', bg: 'bg-[#081823]', dot: 'bg-[#1A97D9]', stroke: '#1A97D9' },
+    orange: { border: 'border-[#1B3C6E]', text: 'text-[#9DC0EE]', bg: 'bg-[#0A1523]', dot: 'bg-[#2E79DD]', stroke: '#2E79DD' },
+    emerald: { border: 'border-[#16446D]', text: 'text-[#97C9ED]', bg: 'bg-[#081723]', dot: 'bg-[#218DDA]', stroke: '#218DDA' },
+    violet: { border: 'border-[#272971]', text: 'text-[#ACA9F2]', bg: 'bg-[#0E0F24]', dot: 'bg-[#4F46E5]', stroke: '#4F46E5' },
+    sky: { border: 'border-[#0E506B]', text: 'text-[#8ED7EB]', bg: 'bg-[#061B22]', dot: 'bg-[#0DACD6]', stroke: '#0DACD6' },
+    rose: { border: 'border-[#20356F]', text: 'text-[#A3B7EF]', bg: 'bg-[#0B1224]', dot: 'bg-[#3B65E0]', stroke: '#3B65E0' },
+    indigo: { border: 'border-[#252D70]', text: 'text-[#A9AEF1]', bg: 'bg-[#0D1024]', dot: 'bg-[#4850E3]', stroke: '#4850E3' },
 };
 
 // Entrance order, so the animation radiates outward from the hub.
@@ -190,7 +190,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                         </span>
                     </span>
                     <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" style={{ animationDelay: '900ms' }} />
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#6366F1]" style={{ animationDelay: '900ms' }} />
                         Security_Alert
                     </span>
                 </div>

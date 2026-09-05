@@ -7,7 +7,7 @@ const floatingIcons = [
     { id: 2, Icon: LuMonitorSmartphone, color: 'text-[#22D3EE]', pos: 'top-[30%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
     { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[25%] left-[15%]', size: 'text-5xl', animation: 'animate-float-slow' },
     { id: 4, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'top-[40%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 5, Icon: LuSparkles, color: 'text-[#818CF8]', pos: 'top-[40%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
     { id: 6, Icon: LuServer, color: 'text-[#3178C6]', pos: 'bottom-[30%] right-[12%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
@@ -15,7 +15,7 @@ const mobileFloatingIcons = [
     { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
     { id: 2, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
     { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuSparkles, color: 'text-[#A78BFA]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 4, Icon: LuSparkles, color: 'text-[#818CF8]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const ServicesHero = () => {

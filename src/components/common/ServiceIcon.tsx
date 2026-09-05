@@ -4,9 +4,9 @@ import { LuCode, LuAppWindow, LuSmartphone, LuCloud, LuSparkles, LuShieldCheck }
 const icons = {
     code: { Icon: LuCode, color: 'text-[#22D3EE]' },
     browser: { Icon: LuAppWindow, color: 'text-[#38BDF8]' },
-    device: { Icon: LuSmartphone, color: 'text-[#8B5CF6]' },
-    cloud: { Icon: LuCloud, color: 'text-[#C4B5FD]' },
-    spark: { Icon: LuSparkles, color: 'text-[#A78BFA]' },
+    device: { Icon: LuSmartphone, color: 'text-[#6366F1]' },
+    cloud: { Icon: LuCloud, color: 'text-[#A5B4FC]' },
+    spark: { Icon: LuSparkles, color: 'text-[#818CF8]' },
     shield: { Icon: LuShieldCheck, color: 'text-[#94A3B8]' },
 };
 

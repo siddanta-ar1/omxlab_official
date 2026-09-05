@@ -23,7 +23,7 @@ const areas = [
         category: 'Systems',
         description:
             'Consistency, back-pressure, and failure semantics under real production load. Our findings feed straight back into the platforms we operate for clients.',
-        icon: <LuNetwork className="w-7 h-7 text-[#C4B5FD]" strokeWidth={2} />,
+        icon: <LuNetwork className="w-7 h-7 text-[#A5B4FC]" strokeWidth={2} />,
     },
     {
         title: 'Security & Privacy',
@@ -37,14 +37,14 @@ const areas = [
         category: 'Developer Experience',
         description:
             'We instrument our own delivery pipeline — cycle time, review latency, defect escape rate — and treat DX as a measurable engineering discipline.',
-        icon: <LuActivity className="w-7 h-7 text-[#8B5CF6]" strokeWidth={2} />,
+        icon: <LuActivity className="w-7 h-7 text-[#6366F1]" strokeWidth={2} />,
     },
     {
         title: 'Human-AI Interaction',
         category: 'Human-AI',
         description:
             'Interfaces for supervising non-deterministic systems. When should a tool ask, when should it act, and how do you keep an operator genuinely in the loop?',
-        icon: <LuUsers className="w-7 h-7 text-[#A78BFA]" strokeWidth={2} />,
+        icon: <LuUsers className="w-7 h-7 text-[#818CF8]" strokeWidth={2} />,
     },
 ];
 

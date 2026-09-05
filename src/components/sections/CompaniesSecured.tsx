@@ -18,7 +18,7 @@ export const CompaniesSecured = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 
                 <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-4 tracking-tight">
-                    Top Companies <span className="text-[#A78BFA]">We Secured</span>
+                    Top Companies <span className="text-[#818CF8]">We Secured</span>
                 </h2>
                 
                 <p className="text-muted text-sm md:text-base mb-8 font-mono tracking-tight lowercase">

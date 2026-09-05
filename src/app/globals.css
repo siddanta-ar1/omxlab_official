@@ -2,40 +2,37 @@
 
 @theme {
   /* --- OMX Lab brand palette ------------------------------------------- */
-  --color-deep-space: #0B1020;
-  --color-midnight: #111A33;
-  --color-violet: #7C3AED;
-  --color-quantum: #22D3EE;
-  --color-soft-white: #F8FAFC;
-  --color-slate: #94A3B8;
-  --color-ice: #F8FAFC;
+  --color-obsidian: #05070A;
+  --color-deep-navy: #0F172A;
+  --color-indigo: #4F46E5;
+  --color-electric-cyan: #06B6D4;
+  --color-white: #F8FAFC;
+  --color-gray: #64748B;
 
   /* --- Semantic tokens -------------------------------------------------
-     Dark theme: Deep Space is the page, Midnight Navy the raised surfaces,
-     Soft White carries the type, Slate the secondary copy, and Electric
-     Violet is reserved for actions and accents so it stays valuable. */
-  --color-primary: #7C3AED;
-  --color-primary-hover: #8B5CF6;
+     Obsidian is the page, Deep Navy the raised surfaces, White carries the
+     type, and Indigo is reserved for actions and accents so it stays
+     valuable. Electric Cyan is the second accent, for highlights. */
+  --color-primary: #4F46E5;
+  --color-primary-hover: #6366F1;
   --color-secondary: #F8FAFC;
-  --color-highlight: #22D3EE;
-  --color-accent: #16203B;
-  --color-surface: #111A33;
-  --color-body: #0B1020;
-  --color-muted: #94A3B8;
-  --color-border: #1E2A47;
+  --color-highlight: #06B6D4;
+  --color-accent: #0A1120;
+  --color-surface: #0F172A;
+  --color-body: #05070A;
+  --color-border: #1B2540;
 
-  /* Light values, for type and hairlines that sit on a filled or dark
-     element rather than on the page. */
-  --color-white: #F8FAFC;
+  /* Obsidian as a foreground, for the rare light-background element. */
+  --color-ink: #05070A;
+  --color-navy-soft: #0F172A;
   --color-soft: #A3B2C7;
-  --color-navy-soft: #111A33;
 
-  /* Deep Space as a foreground, for the rare light-background section. */
-  --color-ink: #0B1020;
-
-  /* Lifted violet for text — the brand violet sits at roughly 3.3:1 on Deep
-     Space, which is below the contrast floor for copy. */
-  --color-primary-ink: #A78BFA;
+  /* Two lifted values, because the brand pair sits below the contrast floor
+     for copy: Indigo reaches 3.2:1 on Obsidian and brand Gray 4.2:1, against
+     a 4.5:1 minimum. Fills, borders, gradients and hairlines keep the brand
+     values above; only type uses these. */
+  --color-primary-ink: #818CF8;
+  --color-muted: #94A3B8;
 }
 
 /* Assemble the mark's rings from the inside out. The paths are filled, so the
@@ -119,13 +116,13 @@
   100% {
     transform: scale(1);
     opacity: 0.5;
-    box-shadow: 0 0 10px rgba(124, 58, 237, 0.25);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.25);
   }
 
   50% {
     transform: scale(1.05);
     opacity: 0.9;
-    box-shadow: 0 0 25px rgba(124, 58, 237, 0.55);
+    box-shadow: 0 0 25px rgba(79, 70, 229, 0.55);
   }
 }
 

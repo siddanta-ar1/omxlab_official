@@ -5,8 +5,8 @@ import { LuFlaskConical, LuMicroscope, LuBookOpen, LuBrainCircuit, LuTelescope, 
 
 const floatingIcons = [
     { id: 1, Icon: LuFlaskConical, color: 'text-[#38BDF8]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMicroscope, color: 'text-[#A78BFA]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuBrainCircuit, color: 'text-[#C4B5FD]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 2, Icon: LuMicroscope, color: 'text-[#818CF8]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuBrainCircuit, color: 'text-[#A5B4FC]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
     { id: 4, Icon: LuBookOpen, color: 'text-[#38BDF8]', pos: 'top-[20%] right-[15%]', size: 'text-5xl', animation: 'animate-float-delayed' },
     { id: 5, Icon: LuTelescope, color: 'text-[#94A3B8]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
     { id: 6, Icon: LuLightbulb, color: 'text-[#eab308]', pos: 'bottom-[25%] right-[10%]', size: 'text-4xl', animation: 'animate-float-slow' },
@@ -15,7 +15,7 @@ const floatingIcons = [
 const mobileFloatingIcons = [
     { id: 1, Icon: LuFlaskConical, color: 'text-[#38BDF8]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
     { id: 2, Icon: LuTelescope, color: 'text-[#94A3B8]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuBrainCircuit, color: 'text-[#C4B5FD]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 3, Icon: LuBrainCircuit, color: 'text-[#A5B4FC]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
     { id: 4, Icon: LuBookOpen, color: 'text-[#38BDF8]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
