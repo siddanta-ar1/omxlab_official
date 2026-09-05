@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "brand:assets": "python3 tools/brand/build_assets.py"
   },
   "dependencies": {
     "lenis": "^1.3.25",
