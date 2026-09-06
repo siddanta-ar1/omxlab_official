@@ -1,38 +1,101 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- OMX Lab brand palette ------------------------------------------- */
-  --color-obsidian: #05070A;
-  --color-deep-navy: #0F172A;
-  --color-indigo: #4F46E5;
-  --color-electric-cyan: #06B6D4;
-  --color-white: #F8FAFC;
-  --color-gray: #64748B;
+  /* --- Palette, read off sagea.space ------------------------------------
+     A near-monochrome light system: white and a warm-grey band carry the
+     page, near-black carries the type, and a single blue is the only
+     saturated colour on the site. */
+  --color-white: #FFFFFF;
+  --color-band: #F5F5F5;
+  --color-ink: #0A0A0A;
+  --color-blue: #2563EB;
 
-  /* --- Semantic tokens -------------------------------------------------
-     Obsidian is the page, Deep Navy the raised surfaces, White carries the
-     type, and Indigo is reserved for actions and accents so it stays
-     valuable. Electric Cyan is the second accent, for highlights. */
-  --color-primary: #4F46E5;
-  --color-primary-hover: #6366F1;
-  --color-secondary: #F8FAFC;
-  --color-highlight: #06B6D4;
-  --color-accent: #0A1120;
-  --color-surface: #0F172A;
-  --color-body: #05070A;
-  --color-border: #1B2540;
+  /* --- Semantic tokens ------------------------------------------------- */
+  --color-body: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-secondary: #0A0A0A;
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-highlight: #0EA5E9;
+  --color-accent: #F5F5F5;
+  --color-border: #E5E5E5;
+  --color-navy-soft: #F5F5F5;
 
-  /* Obsidian as a foreground, for the rare light-background element. */
-  --color-ink: #05070A;
-  --color-navy-soft: #0F172A;
-  --color-soft: #A3B2C7;
+  /* SAGEA sets secondary copy in #737373, which lands at 4.35:1 on its own
+     grey band -- just under the floor. A hair darker holds AA everywhere
+     and is indistinguishable at reading sizes. */
+  --color-muted: #666666;
+  --color-soft: #8A8A8A;
+  --color-primary-ink: #2563EB;
 
-  /* Two lifted values, because the brand pair sits below the contrast floor
-     for copy: Indigo reaches 3.2:1 on Obsidian and brand Gray 4.2:1, against
-     a 4.5:1 minimum. Fills, borders, gradients and hairlines keep the brand
-     values above; only type uses these. */
-  --color-primary-ink: #818CF8;
-  --color-muted: #94A3B8;
+  /* --- Type ------------------------------------------------------------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+
+  /* SAGEA corners are square or nearly so; nothing is a pill. */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+/* The reference draws structure with hairlines rather than shadow, so the
+   page needs a real border colour on every box and almost no elevation. */
+body {
+  background-color: var(--color-body);
+  color: var(--color-secondary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The signature micro-label: 9-11px mono, uppercase, widely tracked. Used
+   for eyebrows, card categories and spec bullets. */
+.omx-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.omx-label-xs {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.omx-label-wide {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+/* Underline that grows from the left on hover, as on the reference's nav
+   and card links. */
+.omx-underline {
+  position: relative;
+}
+
+.omx-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 0;
+  background-color: currentColor;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.omx-underline:hover::after,
+.group:hover .omx-underline::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .omx-underline::after {
+    transition: none;
+  }
 }
 
 /* Assemble the mark's rings from the inside out. The paths are filled, so the
@@ -116,13 +179,13 @@
   100% {
     transform: scale(1);
     opacity: 0.5;
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.18);
   }
 
   50% {
     transform: scale(1.05);
     opacity: 0.9;
-    box-shadow: 0 0 25px rgba(79, 70, 229, 0.55);
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.40);
   }
 }
 
@@ -163,7 +226,7 @@
 /* Hover lift sits on top of the entrance transform */
 .eco-card.is-visible:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.18);
   z-index: 10;
 }
 
@@ -295,7 +358,7 @@
 /* Tell the browser this is a dark surface so native controls -- select
    dropdowns, scrollbars, form widgets -- render dark too. */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {

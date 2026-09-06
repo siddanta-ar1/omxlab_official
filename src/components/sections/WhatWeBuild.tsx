@@ -6,12 +6,12 @@ export const WhatWeBuild = () => {
     return (
         <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
             {/* Subtitle / Category Header */}
-            <span className="text-xs font-bold font-mono tracking-widest text-muted uppercase block mb-3">
+            <span className="text-xs font-bold omx-label tracking-[0.08em] text-muted uppercase block mb-3">
                 WHAT WE BUILD
             </span>
 
             {/* Main Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-secondary tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary tracking-tight mb-6">
                 OMX Lab is a <span className="text-primary-ink">Tech Shop.</span> We <span className="text-primary-ink">Build Things.</span>
             </h2>
 
@@ -23,12 +23,12 @@ export const WhatWeBuild = () => {
             </p>
 
             {/* Service Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[var(--color-border)]">
                 {services.map((service) => (
                     <Link
                         key={service.id}
                         href={`/services/${service.id}`}
-                        className="group relative overflow-hidden bg-gradient-to-br from-white to-body/50 border border-border/60 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)] hover:to-accent/30 flex flex-col items-start gap-5"
+                        className="group relative overflow-hidden bg-gradient-to-br from-white to-body/50 border border-border/60 rounded-[4px] p-8 transition-all duration-300 hover:to-accent/30 flex flex-col items-start gap-5"
                     >
                         {/* Real SVG Icon */}
                         <ServiceIcon name={service.icon} />
@@ -44,7 +44,7 @@ export const WhatWeBuild = () => {
                         </p>
 
                         {/* Affordance */}
-                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-primary-ink">
+                        <span className="inline-flex items-center gap-2 text-xs omx-label font-bold uppercase tracking-[0.08em] text-primary-ink">
                             <span className="border-b border-primary/30 pb-0.5">
                                 Explore service
                             </span>
@@ -58,13 +58,13 @@ export const WhatWeBuild = () => {
             <div className="mt-12 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link
                     href="/services"
-                    className="w-full sm:w-auto justify-center bg-primary hover:bg-primary-hover text-secondary px-6 py-3.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all shadow-lg shadow-primary/20"
+                    className="w-full sm:w-auto justify-center bg-primary hover:bg-primary-hover text-white px-6 py-3.5 rounded-[3px] font-medium text-sm flex items-center gap-2 transition-all shadow-primary/20"
                 >
                     View all services <span>→</span>
                 </Link>
                 <Link
                     href="/projects"
-                    className="w-full sm:w-auto justify-center border border-border bg-surface hover:bg-body text-secondary px-6 py-3.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all"
+                    className="w-full sm:w-auto justify-center border border-border bg-surface hover:bg-body text-secondary px-6 py-3.5 rounded-[3px] font-medium text-sm flex items-center gap-2 transition-all"
                 >
                     See our work <span className="text-xs">↗</span>
                 </Link>

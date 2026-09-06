@@ -43,8 +43,7 @@ export const DeliveryProcess = () => {
         <section className="relative overflow-hidden bg-[var(--color-body)] py-20 md:py-32 border-t border-[var(--color-border)]">
             {/* Background effects */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent" />
-                <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--color-primary)]/20 blur-[120px]" />
+                <div className="absolute inset-x-0 top-0 h-full bg-[var(--color-accent)]" />
                 <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-[var(--color-accent)]/20 blur-[120px]" />
                 <div
                     className="absolute inset-0 opacity-[0.03]"
@@ -58,11 +57,11 @@ export const DeliveryProcess = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm">
-                        <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
+                    <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                         How we deliver
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-6">
                         From first conversation to handover.
                     </h2>
                     <p className="text-[var(--color-muted)] text-lg md:text-xl">
@@ -73,7 +72,7 @@ export const DeliveryProcess = () => {
 
                 {/* Interactive Command Center */}
                 <div 
-                    className="max-w-5xl mx-auto bg-surface/60 backdrop-blur-xl border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)] rounded-3xl overflow-hidden flex flex-col md:flex-row min-h-[450px]"
+                    className="max-w-5xl mx-auto bg-surface/60 backdrop-blur-xl border border-black/10 rounded-[4px] overflow-hidden flex flex-col md:flex-row min-h-[450px]"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
@@ -86,10 +85,10 @@ export const DeliveryProcess = () => {
                                     <button
                                         key={step.number}
                                         onClick={() => handleStepClick(index)}
-                                        className={`w-full text-left px-4 py-4 rounded-xl transition-all duration-300 relative group flex items-center gap-4 ${
+                                        className={`w-full text-left px-4 py-4 rounded-[3px] transition-all duration-300 relative group flex items-center gap-4 ${
                                             isActive 
                                                 ? 'bg-surface shadow-sm border border-[var(--color-primary)]/20' 
-                                                : 'hover:bg-white/5'
+                                                : 'hover:bg-black/1'
                                         }`}
                                     >
                                         <div className={`font-mono text-sm font-bold transition-colors ${isActive ? 'text-[var(--color-primary-ink)]' : 'text-muted group-hover:text-muted'}`}>
@@ -123,7 +122,7 @@ export const DeliveryProcess = () => {
                         
                         <div key={activeStep} className="relative z-10">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-highlight)] shadow-lg flex items-center justify-center animate-[bounce_2s_infinite]">
+                                <div className="w-16 h-16 rounded-[3px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-highlight)] flex items-center justify-center animate-[bounce_2s_infinite]">
                                     <ActiveIcon className="w-8 h-8 text-white" />
                                 </div>
                                 <div className="text-6xl font-black text-[var(--color-primary-ink)]/10 font-mono tracking-tighter">
@@ -131,7 +130,7 @@ export const DeliveryProcess = () => {
                                 </div>
                             </div>
                             
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-[var(--color-secondary)] mb-6 animate-[fadeInUp_0.5s_ease-out]">
+                            <h3 className="text-3xl md:text-4xl font-bold text-[var(--color-secondary)] mb-6 animate-[fadeInUp_0.5s_ease-out]">
                                 {deliveryProcess[activeStep].title}
                             </h3>
                             
@@ -144,7 +143,7 @@ export const DeliveryProcess = () => {
                                     <div 
                                         key={i} 
                                         className={`h-1.5 rounded-full transition-all duration-500 ${
-                                            i === activeStep ? 'w-8 bg-[var(--color-primary)]' : 'w-2 bg-white/20'
+                                            i === activeStep ? 'w-8 bg-[var(--color-primary)]' : 'w-2 bg-black/2'
                                         }`}
                                     />
                                 ))}

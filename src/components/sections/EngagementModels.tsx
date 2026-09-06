@@ -8,12 +8,12 @@ export const EngagementModels = () => {
                 {/* Header Block */}
                 <div className="max-w-3xl mb-12">
                     <div className="mb-4">
-                        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                        <span className="inline-block px-4 py-1.5 rounded-[3px] text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                             Engagement Models
                         </span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-6">
                         Three ways to <span className="text-[var(--color-primary-ink)]">work with us.</span>
                     </h2>
 
@@ -25,13 +25,13 @@ export const EngagementModels = () => {
                 </div>
 
                 {/* Model Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-[var(--color-border)]">
                     {engagementModels.map((model) => (
                         <div
                             key={model.number}
-                            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col transition-all duration-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-2 hover:border-[var(--color-primary)]/50"
+                            className="bg-[var(--color-surface)] border-r border-b border-[var(--color-border)] p-8 flex flex-col transition-all duration-300 hover:bg-[var(--color-accent)]"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-lg flex items-center justify-center mb-6">
                                 {model.number}
                             </div>
 

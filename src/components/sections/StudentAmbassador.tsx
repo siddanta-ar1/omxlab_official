@@ -71,8 +71,7 @@ export const StudentAmbassador = () => {
         <section id="student-ambassador" className="relative py-24 md:py-32 bg-[var(--color-surface)] border-t border-[var(--color-border)] overflow-hidden">
             {/* Background Effects */}
             <div className="pointer-events-none absolute inset-0 z-0">
-                <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent" />
-                <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[var(--color-primary)]/10 blur-[120px]" />
+                <div className="absolute inset-x-0 top-0 h-full bg-[var(--color-accent)]" />
                 <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[var(--color-accent)]/10 blur-[100px]" />
                 <div
                     className="absolute inset-0 opacity-[0.03]"
@@ -86,11 +85,11 @@ export const StudentAmbassador = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm hover:scale-105 transition-transform cursor-default">
-                        <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
+                    <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                         Campus Program
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-6">
                         Student Ambassador Program
                     </h2>
                     <p className="text-[var(--color-muted)] text-lg md:text-xl">
@@ -115,13 +114,13 @@ export const StudentAmbassador = () => {
                                 <div 
                                     key={step.id} 
                                     onClick={() => handleStepClick(index)}
-                                    className={`relative z-10 flex items-center gap-6 p-4 rounded-2xl cursor-pointer transition-all duration-300 ${
-                                        isActive ? 'bg-surface shadow-[0_8px_30px_rgb(0,0,0,0.45)] border border-[var(--color-primary)]/20 scale-105' : 'hover:bg-white/5 hover:scale-[1.02]'
+                                    className={`relative z-10 flex items-center gap-6 p-4 rounded-[3px] cursor-pointer transition-all duration-300 ${
+                                        isActive ? 'bg-surface border border-[var(--color-primary)]/20 scale-105' : 'hover:bg-black/1 hover:scale-[1.02]'
                                     }`}
                                 >
                                     <div className={`w-14 h-14 shrink-0 rounded-full flex items-center justify-center transition-all duration-500 ${
                                         isActive 
-                                            ? 'bg-[var(--color-primary)] text-secondary shadow-[0_0_20px_rgba(194,169,122,0.45)]' 
+                                            ? 'bg-[var(--color-primary)] text-white' 
                                             : 'bg-surface border border-[var(--color-border)] text-[var(--color-muted)]'
                                     }`}>
                                         <step.icon className={`w-6 h-6 ${isActive ? 'animate-bounce' : ''}`} />
@@ -144,7 +143,7 @@ export const StudentAmbassador = () => {
 
                     {/* Right: Active Step Details (Glassmorphism Card) */}
                     <div className="w-full lg:w-1/2 h-full min-h-[350px]">
-                        <div className="h-full bg-surface/80 backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-8 md:p-12 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] flex flex-col justify-center relative overflow-hidden group transition-all">
+                        <div className="h-full bg-surface/80 backdrop-blur-xl border border-[var(--color-border)] rounded-[4px] p-8 md:p-12 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] flex flex-col justify-center relative overflow-hidden group transition-all">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary)]/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110" />
                             
                             <div className="flex items-center gap-4 mb-6">
@@ -175,7 +174,7 @@ export const StudentAmbassador = () => {
                             </div>
                             
                             <div className="mt-8 pt-6 border-t border-[var(--color-border)]">
-                                <button className="w-full py-3 px-6 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-surface)] text-secondary font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
+                                <button className="w-full py-3 px-6 rounded-[3px] bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-medium transition-colors duration-300 flex items-center justify-center gap-2">
                                     Apply Now
                                     <LuChevronRight className="w-4 h-4" />
                                 </button>

@@ -38,12 +38,12 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
 
                 {/* Section Header */}
                 <div className="mb-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                    <span className="inline-block px-4 py-1.5 rounded-[3px] text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                         Programmes
                     </span>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-4">
                     What we're running.
                 </h2>
 
@@ -53,7 +53,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                 </p>
 
                 {/* Filter Tabs */}
-                <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-2 shadow-sm w-full md:w-fit mb-10">
+                <div className="flex flex-wrap items-center gap-2 rounded-[3px] border border-[var(--color-border)] bg-[var(--color-surface)] p-2 shadow-sm w-full md:w-fit mb-10">
                     {tabs.map((tab) => {
                         const isActive = activeTab === tab;
 
@@ -61,8 +61,8 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                             <button
                                 key={tab}
                                 onClick={() => selectTab(tab)}
-                                className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
-                                    ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
+                                className={`font-semibold text-sm transition-all duration-200 rounded-[3px] py-2 px-5 cursor-pointer ${isActive
+                                    ? 'bg-[var(--color-primary)] text-white shadow-sm'
                                     : 'text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
@@ -78,7 +78,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                         {featured && (
                             <Link
                                 href={`/initiatives/${featured.id}`}
-                                className="group block rounded-3xl overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] mb-6 transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
+                                className="group block rounded-[4px] overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] mb-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-12">
                                     {/* Image */}
@@ -89,19 +89,19 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary)]/60 via-transparent to-transparent" />
-                                        <span className="absolute top-5 left-5 px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary text-xs font-mono font-bold uppercase tracking-widest">
+                                        <span className="absolute top-5 left-5 px-3 py-1 rounded-[3px] bg-[var(--color-primary)] text-white text-xs omx-label font-bold uppercase tracking-[0.08em]">
                                             {featured.status}
                                         </span>
                                     </div>
 
                                     {/* Content */}
                                     <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-center">
-                                        <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono font-bold uppercase tracking-widest">
+                                        <div className="flex flex-wrap items-center gap-3 mb-4 text-xs omx-label font-bold uppercase tracking-[0.08em]">
                                             <span className="text-[var(--color-primary-ink)]">{featured.category}</span>
                                             <span className="text-[var(--color-muted)]">Since {featured.year}</span>
                                         </div>
 
-                                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
+                                        <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                             {featured.title}
                                         </h3>
 
@@ -113,7 +113,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                         <div className="grid grid-cols-3 gap-4 pb-6 mb-6 border-b border-[var(--color-border)]">
                                             {featured.stats.map((stat) => (
                                                 <div key={stat.label}>
-                                                    <span className="block text-lg font-extrabold font-mono text-[var(--color-primary-ink)] leading-none">
+                                                    <span className="block text-lg font-bold font-mono text-[var(--color-primary-ink)] leading-none">
                                                         {stat.value}
                                                     </span>
                                                     <span className="mt-1.5 block text-[11px] text-[var(--color-muted)] leading-snug">
@@ -123,7 +123,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                             ))}
                                         </div>
 
-                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary-ink)] uppercase">
+                                        <span className="inline-flex items-center gap-2 text-xs omx-label font-bold tracking-[0.08em] text-[var(--color-primary-ink)] uppercase">
                                             <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                                 Learn more
                                             </span>
@@ -140,7 +140,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                 <Link
                                     key={initiative.id}
                                     href={`/initiatives/${initiative.id}`}
-                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
+                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[var(--color-primary)]/50"
                                 >
                                     {/* Thumbnail */}
                                     <div className="relative overflow-hidden h-48">
@@ -150,7 +150,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-secondary)]/50 to-transparent" />
-                                        <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[var(--color-surface)]/90 text-[var(--color-primary-ink)] text-[11px] font-mono font-bold uppercase tracking-wider">
+                                        <span className="absolute top-4 left-4 px-3 py-1 rounded-[3px] bg-[var(--color-surface)]/90 text-[var(--color-primary-ink)] text-[11px] omx-label font-bold uppercase tracking-wider">
                                             {initiative.status}
                                         </span>
                                     </div>
@@ -158,7 +158,7 @@ export const InitiativesGrid = ({ activeFocus }: { activeFocus?: string }) => {
                                     <div className="p-8 flex flex-col grow">
                                         {/* Meta Row */}
                                         <div className="flex items-center justify-between gap-3 mb-4">
-                                            <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
+                                            <span className="px-3 py-1 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs omx-label font-bold uppercase tracking-wider">
                                                 {initiative.category}
                                             </span>
                                             <span className="text-xs font-mono text-[var(--color-muted)]">

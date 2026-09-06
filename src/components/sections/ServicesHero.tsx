@@ -3,30 +3,28 @@ import Link from 'next/link';
 import { LuCode, LuMonitorSmartphone, LuCloud, LuShieldCheck, LuSparkles, LuServer } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMonitorSmartphone, color: 'text-[#22D3EE]', pos: 'top-[30%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[25%] left-[15%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuSparkles, color: 'text-[#818CF8]', pos: 'top-[40%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuServer, color: 'text-[#3178C6]', pos: 'bottom-[30%] right-[12%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[15%] left-[4%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuMonitorSmartphone, color: 'text-[#0891B2]', pos: 'top-[30%] left-[6%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[25%] left-[9%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[20%] right-[5%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuSparkles, color: 'text-[#4F46E5]', pos: 'top-[40%] right-[7%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuServer, color: 'text-[#3178C6]', pos: 'bottom-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
     { id: 1, Icon: LuCode, color: 'text-[#61DAFB]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
     { id: 2, Icon: LuShieldCheck, color: 'text-[#47A248]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
     { id: 3, Icon: LuCloud, color: 'text-[#FF9900]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuSparkles, color: 'text-[#818CF8]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 4, Icon: LuSparkles, color: 'text-[#4F46E5]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 export const ServicesHero = () => {
     return (
-        <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center bg-[var(--color-surface)] border-b border-[var(--color-border)]">
+        <section className="relative overflow-hidden flex items-center justify-center bg-[var(--color-surface)] border-b border-[var(--color-border)]">
 
             {/* Background color and glows */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent" />
-                <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-[var(--color-primary)]/20 blur-[120px]" />
-                <div className="absolute top-1/3 left-0 w-[400px] h-[400px] rounded-full bg-[var(--color-primary)]/10 blur-[100px]" />
+                <div className="absolute inset-x-0 top-0 h-full bg-[var(--color-accent)]" />
                 <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
@@ -40,7 +38,7 @@ export const ServicesHero = () => {
                     {floatingIcons.map((item) => (
                         <div 
                             key={item.id} 
-                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-black/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-[3px] flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -52,7 +50,7 @@ export const ServicesHero = () => {
                     {mobileFloatingIcons.map((item) => (
                         <div 
                             key={`mobile-${item.id}`} 
-                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-black/10 rounded-[3px] flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -61,15 +59,15 @@ export const ServicesHero = () => {
             </div>
 
             {/* Centered Content */}
-            <div className="relative z-20 max-w-4xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-center text-center gap-8">
+            <div className="relative z-20 max-w-4xl mx-auto px-6 lg:px-8 py-24 lg:py-28 flex flex-col items-center text-center gap-8">
                 {/* Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface/80 backdrop-blur-sm border border-primary/20 text-[var(--color-primary-ink)] text-xs sm:text-sm font-semibold shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
+                <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                     Services
                 </div>
                 
                 {/* Main Heading */}
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-[1.1]">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[var(--color-secondary)] tracking-tight leading-[1.1]">
                     Software That Ships.
                     <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary-ink)]">
@@ -88,13 +86,13 @@ export const ServicesHero = () => {
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
                     <Link
                         href="/contact"
-                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all shadow-lg shadow-[var(--color-primary)]/25 cursor-pointer hover:-translate-y-1"
+                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-8 py-4 rounded-[3px] font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1"
                     >
                         Schedule a call <span>→</span>
                     </Link>
                     <a
                         href="#capabilities"
-                        className="border border-[var(--color-border)] bg-surface/80 backdrop-blur-sm hover:bg-surface text-[var(--color-secondary)] px-8 py-4 rounded-xl font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
+                        className="border border-[var(--color-border)] bg-surface/80 backdrop-blur-sm hover:bg-surface text-[var(--color-secondary)] px-8 py-4 rounded-[3px] font-medium text-base flex items-center gap-2 transition-all cursor-pointer hover:-translate-y-1 shadow-sm"
                     >
                         Browse capabilities <span className="text-xs">↓</span>
                     </a>

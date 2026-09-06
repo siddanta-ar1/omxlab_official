@@ -12,21 +12,21 @@ import { EcosystemIcon } from '@/components/common/EcosystemIcon';
 import { OmxMark } from '@/components/common/OmxMark';
 
 // Brand ramp per team. The keys are historical; the values walk the OMX
-// palette (Indigo -> Electric Cyan) instead of a rainbow, so twelve
+// palette (blue -> cyan) instead of a rainbow, so twelve
 // categories stay distinguishable without leaving the brand.
 const tones = {
-    cyan: { border: 'border-[#0C536B]', text: 'text-[#8BDBEA]', bg: 'bg-[#051C22]', dot: 'bg-[#06B6D4]', stroke: '#06B6D4' },
-    blue: { border: 'border-[#114C6C]', text: 'text-[#91D2EB]', bg: 'bg-[#071A23]', dot: 'bg-[#13A2D7]', stroke: '#13A2D7' },
-    lime: { border: 'border-[#18406E]', text: 'text-[#9AC4EE]', bg: 'bg-[#091623]', dot: 'bg-[#2783DC]', stroke: '#2783DC' },
-    amber: { border: 'border-[#1D386F]', text: 'text-[#A0BBEF]', bg: 'bg-[#0B1324]', dot: 'bg-[#346FDF]', stroke: '#346FDF' },
-    pink: { border: 'border-[#223070]', text: 'text-[#A6B2F0]', bg: 'bg-[#0C1124]', dot: 'bg-[#425AE2]', stroke: '#425AE2' },
-    teal: { border: 'border-[#13486C]', text: 'text-[#94CDEC]', bg: 'bg-[#081823]', dot: 'bg-[#1A97D9]', stroke: '#1A97D9' },
-    orange: { border: 'border-[#1B3C6E]', text: 'text-[#9DC0EE]', bg: 'bg-[#0A1523]', dot: 'bg-[#2E79DD]', stroke: '#2E79DD' },
-    emerald: { border: 'border-[#16446D]', text: 'text-[#97C9ED]', bg: 'bg-[#081723]', dot: 'bg-[#218DDA]', stroke: '#218DDA' },
-    violet: { border: 'border-[#272971]', text: 'text-[#ACA9F2]', bg: 'bg-[#0E0F24]', dot: 'bg-[#4F46E5]', stroke: '#4F46E5' },
-    sky: { border: 'border-[#0E506B]', text: 'text-[#8ED7EB]', bg: 'bg-[#061B22]', dot: 'bg-[#0DACD6]', stroke: '#0DACD6' },
-    rose: { border: 'border-[#20356F]', text: 'text-[#A3B7EF]', bg: 'bg-[#0B1224]', dot: 'bg-[#3B65E0]', stroke: '#3B65E0' },
-    indigo: { border: 'border-[#252D70]', text: 'text-[#A9AEF1]', bg: 'bg-[#0D1024]', dot: 'bg-[#4850E3]', stroke: '#4850E3' },
+    cyan: { border: 'border-[#B9EBF3]', text: 'text-[#085765]', bg: 'bg-[#EEFAFC]', dot: 'bg-[#06B6D4]', stroke: '#06B6D4' },
+    blue: { border: 'border-[#BBE6F4]', text: 'text-[#0B5167]', bg: 'bg-[#EEF9FC]', dot: 'bg-[#0CA7D8]', stroke: '#0CA7D8' },
+    lime: { border: 'border-[#BDE0F6]', text: 'text-[#0E4669]', bg: 'bg-[#EFF7FD]', dot: 'bg-[#1490DE]', stroke: '#1490DE' },
+    amber: { border: 'border-[#BFDCF7]', text: 'text-[#11406C]', bg: 'bg-[#EFF6FD]', dot: 'bg-[#1A81E3]', stroke: '#1A81E3' },
+    pink: { border: 'border-[#C0D8F8]', text: 'text-[#13396D]', bg: 'bg-[#EFF5FD]', dot: 'bg-[#1F72E7]', stroke: '#1F72E7' },
+    teal: { border: 'border-[#BCE4F5]', text: 'text-[#0C4D68]', bg: 'bg-[#EEF8FC]', dot: 'bg-[#0E9FDA]', stroke: '#0E9FDA' },
+    orange: { border: 'border-[#BEDEF7]', text: 'text-[#10436B]', bg: 'bg-[#EFF7FD]', dot: 'bg-[#1789E1]', stroke: '#1789E1' },
+    emerald: { border: 'border-[#BCE2F5]', text: 'text-[#0D4A68]', bg: 'bg-[#EEF8FD]', dot: 'bg-[#1198DC]', stroke: '#1198DC' },
+    violet: { border: 'border-[#C2D3F9]', text: 'text-[#16326F]', bg: 'bg-[#F0F4FE]', dot: 'bg-[#2563EB]', stroke: '#2563EB' },
+    sky: { border: 'border-[#BAE8F4]', text: 'text-[#0A5466]', bg: 'bg-[#EEF9FC]', dot: 'bg-[#09AED6]', stroke: '#09AED6' },
+    rose: { border: 'border-[#C0DAF8]', text: 'text-[#133C6D]', bg: 'bg-[#EFF6FD]', dot: 'bg-[#1D7AE5]', stroke: '#1D7AE5' },
+    indigo: { border: 'border-[#C1D6F9]', text: 'text-[#15366E]', bg: 'bg-[#F0F5FD]', dot: 'bg-[#226BE9]', stroke: '#226BE9' },
 };
 
 // Entrance order, so the animation radiates outward from the hub.
@@ -79,7 +79,7 @@ const TeamCard = ({
             title={`${team.name} — ${team.role} · ${team.agents} agents`}
             style={{ transitionDelay: visible ? `${(entranceIndex.get(team.id) ?? 0) * 30}ms` : '0ms' }}
             className={`eco-card ${visible ? 'is-visible' : ''} ${isDimmed ? 'is-dimmed' : ''}
-                border rounded-lg ${tone.border} ${tone.bg} ${tone.text} ${s.pad}
+                border rounded-[3px] ${tone.border} ${tone.bg} ${tone.text} ${s.pad}
                 min-w-0 flex flex-col items-center text-center cursor-default
                 will-change-transform`}
         >
@@ -88,7 +88,7 @@ const TeamCard = ({
             </div>
 
             <div className="min-w-0 w-full">
-                <span className={`block ${s.name} leading-tight font-mono font-bold uppercase tracking-tight break-words leading-[1.15]`}>
+                <span className={`block ${s.name} leading-tight omx-label font-bold uppercase tracking-tight break-words leading-[1.15]`}>
                     {team.name}
                 </span>
                 <span className={`block ${s.role} text-muted leading-tight truncate`}>
@@ -104,7 +104,7 @@ const TeamCard = ({
                 {Array.from({ length: team.agents }).map((_, i) => (
                     <span
                         key={i}
-                        className={`eco-blink ${s.dot} rounded-full ${tone.dot}`}
+                        className={`eco-blink ${s.dot} rounded-[3px] ${tone.dot}`}
                         style={{ animationDelay: `${((entranceIndex.get(team.id) ?? 0) * 120 + i * 180) % 2400}ms` }}
                     />
                 ))}
@@ -162,21 +162,21 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
     return (
         <div
             ref={panelRef}
-            className={`relative rounded-2xl border border-border bg-surface/95 backdrop-blur-md ring-1 ring-black/[0.03] shadow-xl shadow-slate-200/50 overflow-hidden ${dense ? 'p-4 lg:p-3' : 'p-5 sm:p-7'}`}
+            className={`relative rounded-[3px] border border-border bg-surface/95 backdrop-blur-md ring-1 ring-black/[0.03] overflow-hidden ${dense ? 'p-4 lg:p-3' : 'p-5 sm:p-7'}`}
         >
             {/* Ambient wash */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-[#22D3EE]/[0.06] animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-[#0891B2]/[0.06] animate-pulse" style={{ animationDuration: '4s' }} />
 
             {/* Panel header */}
             <div className={`relative z-10 flex flex-wrap items-start justify-between gap-2 ${dense ? 'mb-4 lg:mb-3' : 'mb-6'}`}>
-                <div className="bg-border/70 border border-border rounded-lg px-2.5 py-1.5">
-                    <span className={`block ${dense ? 'text-[10px] lg:text-[8px]' : 'text-[10px] sm:text-xs'} font-mono font-bold uppercase tracking-widest text-secondary leading-snug`}>
+                <div className="bg-border/70 border border-border rounded-[3px] px-2.5 py-1.5">
+                    <span className={`block ${dense ? 'text-[10px] lg:text-[8px]' : 'text-[10px] sm:text-xs'} omx-label font-bold uppercase tracking-[0.08em] text-secondary leading-snug`}>
                         Company Services<br />Ecosystem &amp; Interconnect
                     </span>
                 </div>
 
                 <div className="flex flex-col gap-1 items-end">
-                    <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
+                    <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} omx-label font-bold uppercase tracking-[0.08em] text-muted`}>
                         <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#94A3B8]" />
                         Data_Sync
                         <span className="flex gap-0.5">
@@ -189,8 +189,8 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                             ))}
                         </span>
                     </span>
-                    <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted`}>
-                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#6366F1]" style={{ animationDelay: '900ms' }} />
+                    <span className={`inline-flex items-center gap-1.5 ${dense ? 'text-[9px] lg:text-[7px]' : 'text-[9px]'} omx-label font-bold uppercase tracking-[0.08em] text-muted`}>
+                        <span className="eco-blink w-1.5 h-1.5 rounded-full bg-[#2563EB]" style={{ animationDelay: '900ms' }} />
                         Security_Alert
                     </span>
                 </div>
@@ -228,9 +228,9 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                     {/* Hub */}
                     <div className="relative flex flex-col items-center">
                         <div className={`relative ${dense ? 'w-24 h-24 lg:w-20 lg:h-20' : 'w-28 h-28 sm:w-36 sm:h-36'} flex items-center justify-center`}>
-                            <span className="eco-breathe absolute inset-0 rounded-full border-2 border-primary/30" />
+                            <span className="eco-breathe absolute inset-0 rounded-[3px] border-2 border-primary/30" />
                             <span
-                                className="eco-breathe absolute inset-3 rounded-full border border-primary/20"
+                                className="eco-breathe absolute inset-3 rounded-[3px] border border-primary/20"
                                 style={{ animationDelay: '1.2s' }}
                             />
                             <span className="absolute inset-6 rounded-full bg-primary/5 blur-xl" />
@@ -240,7 +240,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                             />
                         </div>
 
-                        <span className={`mt-1.5 px-2 py-0.5 rounded-md bg-body border border-border ${dense ? 'text-[8px] lg:text-[6px]' : 'text-[9px]'} font-mono font-bold uppercase tracking-widest text-muted whitespace-nowrap`}>
+                        <span className={`mt-1.5 px-2 py-0.5 rounded-[2px] bg-body border border-border ${dense ? 'text-[8px] lg:text-[6px]' : 'text-[9px]'} omx-label font-bold uppercase tracking-[0.08em] text-muted whitespace-nowrap`}>
                             Integrated Services Engine
                         </span>
                     </div>
@@ -331,19 +331,19 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
                     {/* Hub */}
                     <div className="relative flex flex-col items-center">
                         <div className={`relative ${dense ? 'w-24 h-24' : 'w-28 h-28 sm:w-32 sm:h-32'} flex items-center justify-center`}>
-                            <span className="eco-breathe absolute inset-0 rounded-full border-2 border-primary/30" />
-                            <span className="eco-breathe absolute inset-3 rounded-full border border-primary/20" style={{ animationDelay: '1.2s' }} />
+                            <span className="eco-breathe absolute inset-0 rounded-[3px] border-2 border-primary/30" />
+                            <span className="eco-breathe absolute inset-3 rounded-[3px] border border-primary/20" style={{ animationDelay: '1.2s' }} />
                             <span className="absolute inset-6 rounded-full bg-primary/5 blur-xl" />
                             <OmxMark className={`relative z-10 text-secondary ${dense ? 'w-10 h-10' : 'w-12 h-12'}`} />
                         </div>
-                        <span className={`mt-3 px-3 py-1 rounded-md bg-body border border-border ${dense ? 'text-[10px]' : 'text-xs'} font-mono font-bold uppercase tracking-widest text-muted whitespace-nowrap`}>
+                        <span className={`mt-3 px-3 py-1 rounded-[2px] bg-body border border-border ${dense ? 'text-[10px]' : 'text-xs'} omx-label font-bold uppercase tracking-[0.08em] text-muted whitespace-nowrap`}>
                             Integrated Services Engine
                         </span>
                     </div>
 
                     {/* Core Teams Grid */}
                     <div className="w-full">
-                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary-ink/70 mb-3">Core Teams</span>
+                        <span className="block text-center text-[10px] omx-label font-bold uppercase tracking-[0.08em] text-primary-ink/70 mb-3">Core Teams</span>
                         <div className={`grid grid-cols-2 sm:grid-cols-3 ${gap}`}>
                             {coreTeams.map((team) => (
                                 <TeamCard key={team.id} team={team} visible={visible} hovered={hovered} onHover={setHovered} dense={dense} />
@@ -353,7 +353,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
 
                     {/* Satellite Teams Carousel */}
                     <div className="w-full">
-                        <span className="block text-center text-[10px] font-mono font-bold uppercase tracking-widest text-primary-ink/70 mb-3">Satellite Integrated Teams</span>
+                        <span className="block text-center text-[10px] omx-label font-bold uppercase tracking-[0.08em] text-primary-ink/70 mb-3">Satellite Integrated Teams</span>
                         <div className="flex overflow-x-auto gap-3 pb-4 px-1 -mx-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                             <div className="flex gap-3 w-max hide-scroll">
                                 {satelliteTeams.map((team) => (
@@ -369,7 +369,7 @@ export const EcosystemPanel = ({ dense = false }: { dense?: boolean }) => {
             </div>
 
             {/* Footer bar */}
-            <div className={`relative z-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 ${dense ? 'mt-4 pt-3 text-[9px] lg:mt-3 lg:pt-2 lg:text-[7px]' : 'mt-6 pt-4 text-[10px]'} border-t border-border font-mono font-bold uppercase tracking-widest text-muted`}>
+            <div className={`relative z-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 ${dense ? 'mt-4 pt-3 text-[9px] lg:mt-3 lg:pt-2 lg:text-[7px]' : 'mt-6 pt-4 text-[10px]'} border-t border-border omx-label font-bold uppercase tracking-[0.08em] text-muted`}>
                 <span>• {teamCount} Service Teams</span>
                 <span>• {agentCount} Agents</span>
                 <span>• Interconnected Ecosystem</span>

@@ -16,8 +16,8 @@ const mockCommunities = [
 ];
 
 const CommunityCard = ({ src }: { src: string }) => (
-    <div className="w-[280px] md:w-[360px] flex-shrink-0 bg-navy-soft rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer">
-        <div className="h-6 bg-surface border-b border-white/10 flex items-center px-3 gap-1.5">
+    <div className="w-[280px] md:w-[360px] flex-shrink-0 bg-navy-soft rounded-[3px] overflow-hidden hover:shadow-primary/20 transition-all duration-300 cursor-pointer">
+        <div className="h-6 bg-surface border-b border-black/10 flex items-center px-3 gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
@@ -40,15 +40,15 @@ export const ViewFromInside = () => {
     const row3 = [...mockCommunities.slice(3, 12), ...mockCommunities.slice(0, 3)].slice(0, 6);
 
     return (
-        <section className="bg-surface text-white py-24 overflow-hidden relative">
+        <section className="bg-accent text-secondary py-24 overflow-hidden relative border-t border-border">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 
                 {/* Header Section */}
                 <div className="mb-6">
-                    <span className="text-muted text-sm font-semibold tracking-wider uppercase">Discourse Discover</span>
+                    <span className="omx-label text-muted">Discourse Discover</span>
                 </div>
                 
-                <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-4xl mb-6">
+                <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.03em] text-secondary max-w-4xl mb-6">
                     See Discourse in action across the internet's best communities
                 </h2>
                 
@@ -56,7 +56,7 @@ export const ViewFromInside = () => {
                     Don't just take our word for it—explore thousands of thriving communities built on Discourse, from open source projects to game developers, from product communities to AI leaders.
                 </p>
                 
-                <a href="#" className="bg-white text-ink font-semibold py-3 px-8 rounded-full hover:bg-white/90 transition-colors duration-300 shadow-lg">
+                <a href="#" className="bg-primary text-white font-medium text-[15px] py-3 px-6 rounded-[3px] hover:bg-primary-hover transition-colors">
                     Explore the communities powered by Discourse
                 </a>
             </div>
@@ -86,7 +86,7 @@ export const ViewFromInside = () => {
             </div>
 
             <div className="text-center mt-32 mb-10">
-                <h3 className="text-4xl md:text-6xl font-extrabold text-white opacity-90 tracking-tight">Inspired?</h3>
+                <h3 className="text-4xl md:text-6xl font-bold text-secondary tracking-[-0.03em]">Inspired?</h3>
             </div>
         </section>
     );

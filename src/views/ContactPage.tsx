@@ -12,19 +12,19 @@ import type { ContactValues, ContactErrors } from '@/lib/contact';
 import { LuPhone, LuMail, LuMapPin, LuMessageSquare, LuSend, LuHeadphones } from 'react-icons/lu';
 
 const floatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-[#22D3EE]', pos: 'top-[15%] left-[10%]', size: 'text-5xl', animation: 'animate-float' },
-    { id: 2, Icon: LuMail, color: 'text-[#38BDF8]', pos: 'top-[35%] left-[25%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-[#818CF8]', pos: 'bottom-[30%] left-[12%]', size: 'text-5xl', animation: 'animate-float-slow' },
-    { id: 4, Icon: LuMapPin, color: 'text-[#A5B4FC]', pos: 'top-[20%] right-[15%]', size: 'text-4xl', animation: 'animate-float-delayed' },
-    { id: 5, Icon: LuHeadphones, color: 'text-[#6366F1]', pos: 'top-[45%] right-[28%]', size: 'text-4xl', animation: 'animate-float' },
-    { id: 6, Icon: LuSend, color: 'text-[#818CF8]', pos: 'bottom-[25%] right-[10%]', size: 'text-3xl', animation: 'animate-float-slow' },
+    { id: 1, Icon: LuPhone, color: 'text-[#0891B2]', pos: 'top-[15%] left-[4%]', size: 'text-5xl', animation: 'animate-float' },
+    { id: 2, Icon: LuMail, color: 'text-[#0284C7]', pos: 'top-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#4F46E5]', pos: 'bottom-[30%] left-[5%]', size: 'text-5xl', animation: 'animate-float-slow' },
+    { id: 4, Icon: LuMapPin, color: 'text-[#2563EB]', pos: 'top-[20%] right-[5%]', size: 'text-4xl', animation: 'animate-float-delayed' },
+    { id: 5, Icon: LuHeadphones, color: 'text-[#2563EB]', pos: 'top-[45%] right-[7%]', size: 'text-4xl', animation: 'animate-float' },
+    { id: 6, Icon: LuSend, color: 'text-[#4F46E5]', pos: 'bottom-[25%] right-[5%]', size: 'text-3xl', animation: 'animate-float-slow' },
 ];
 
 const mobileFloatingIcons = [
-    { id: 1, Icon: LuPhone, color: 'text-[#22D3EE]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
-    { id: 2, Icon: LuMapPin, color: 'text-[#A5B4FC]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
-    { id: 3, Icon: LuMessageSquare, color: 'text-[#818CF8]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
-    { id: 4, Icon: LuHeadphones, color: 'text-[#6366F1]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 1, Icon: LuPhone, color: 'text-[#0891B2]', pos: 'top-[12%] left-[4%]', size: 'text-3xl', animation: 'animate-float-fast' },
+    { id: 2, Icon: LuMapPin, color: 'text-[#2563EB]', pos: 'top-[30%] right-[4%]', size: 'text-3xl', animation: 'animate-float-fast-delayed' },
+    { id: 3, Icon: LuMessageSquare, color: 'text-[#4F46E5]', pos: 'bottom-[35%] left-[6%]', size: 'text-4xl', animation: 'animate-float-fast-slow' },
+    { id: 4, Icon: LuHeadphones, color: 'text-[#2563EB]', pos: 'bottom-[22%] right-[6%]', size: 'text-3xl', animation: 'animate-float-fast' },
 ];
 
 // Defined at module scope: a component created inside render is a new type on
@@ -105,7 +105,7 @@ export const ContactPage = () => {
 
     // Shared field styling, with an error variant.
     const fieldClass = (name: keyof ContactValues) =>
-        `w-full text-sm bg-[var(--color-body)] border rounded-lg px-4 py-3 text-[var(--color-secondary)] placeholder-[var(--color-muted)] focus:outline-none focus:ring-1 transition disabled:opacity-60 disabled:cursor-not-allowed ${errors[name]
+        `w-full text-sm bg-[var(--color-body)] border rounded-[3px] px-4 py-3 text-[var(--color-secondary)] placeholder-[var(--color-muted)] focus:outline-none focus:ring-1 transition disabled:opacity-60 disabled:cursor-not-allowed ${errors[name]
             ? 'border-red-400 focus:border-red-500 focus:ring-red-500'
             : 'border-[var(--color-border)] focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]'
         }`;
@@ -121,10 +121,8 @@ export const ContactPage = () => {
                     <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-primary/10 via-primary/5 to-transparent" />
 
                     {/* Large glow */}
-                    <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[120px]" />
 
                     {/* Secondary glow */}
-                    <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]" />
 
                     {/* Dot Pattern */}
                     <div
@@ -141,7 +139,7 @@ export const ContactPage = () => {
                     {floatingIcons.map((item) => (
                         <div 
                             key={item.id} 
-                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-2xl flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-16 h-16 bg-surface/70 backdrop-blur-md border border-black/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-[3px] flex items-center justify-center opacity-80 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -153,7 +151,7 @@ export const ContactPage = () => {
                     {mobileFloatingIcons.map((item) => (
                         <div 
                             key={`mobile-${item.id}`} 
-                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-xl flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
+                            className={`absolute ${item.pos} ${item.animation} w-12 h-12 bg-surface/80 backdrop-blur-md border border-black/10 rounded-[3px] flex items-center justify-center opacity-85 transition-all duration-300 z-10 pointer-events-auto`}
                         >
                             <item.Icon className={`${item.size} ${item.color}`} />
                         </div>
@@ -161,12 +159,12 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-semibold mb-6 border border-[var(--color-border)]">
+                    <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
                         <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse"></span>
                         Get In Touch
                     </div>
 
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--color-secondary)] leading-tight max-w-4xl mx-auto">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--color-secondary)] leading-tight max-w-4xl mx-auto">
                         Let's Build
                         <br />
                         <span className="text-[var(--color-primary-ink)]">
@@ -205,9 +203,9 @@ export const ContactPage = () => {
                             {/* Email */}
                             <a
                                 href="mailto:contact@omxlab.tech"
-                                className="group flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
+                                className="group flex items-start gap-4 p-4 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
                             >
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
+                                <div className="p-3 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
@@ -223,9 +221,9 @@ export const ContactPage = () => {
                             {/* Phone */}
                             <a
                                 href="tel:+9779860590678"
-                                className="group flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
+                                className="group flex items-start gap-4 p-4 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 shadow-sm"
                             >
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
+                                <div className="p-3 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)] group-hover:scale-105 transition-transform">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
@@ -239,8 +237,8 @@ export const ContactPage = () => {
                             </a>
 
                             {/* Location */}
-                            <div className="flex items-start gap-4 p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
-                                <div className="p-3 rounded-lg bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
+                            <div className="flex items-start gap-4 p-4 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
+                                <div className="p-3 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] border border-[var(--color-border)]">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -258,7 +256,7 @@ export const ContactPage = () => {
                         {/* Social & Registration Cards */}
                         <div className="pt-2 space-y-4">
                             {/* Follow Us */}
-                            <div className="p-4 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
+                            <div className="p-4 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm">
                                 <span className="text-xs font-medium text-[var(--color-muted)] block mb-3">
                                     Social Connection
                                 </span>
@@ -266,7 +264,7 @@ export const ContactPage = () => {
                                     href="https://www.instagram.com/omxlabofficial/"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-border)] text-[var(--color-secondary)] hover:text-[var(--color-primary-ink)] border border-[var(--color-border)] text-sm font-medium transition"
+                                    className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]"
                                 >
                                     <svg className="w-5 h-5 text-[var(--color-primary-ink)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
@@ -278,7 +276,7 @@ export const ContactPage = () => {
                             </div>
 
                             {/* Registration Badge */}
-                            <div className="p-5 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm relative overflow-hidden">
+                            <div className="p-5 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm relative overflow-hidden">
                                 <div className="flex items-center gap-2 text-xs text-[var(--color-primary-ink)] font-semibold mb-2">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -300,7 +298,7 @@ export const ContactPage = () => {
                     </div>
 
                     {/* RIGHT SIDE: CONTACT FORM */}
-                    <div className="lg:col-span-7 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-10 shadow-lg relative">
+                    <div className="lg:col-span-7 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] p-6 sm:p-10 relative">
                         <div className="mb-8">
                             <h3 className="text-2xl font-bold text-[var(--color-secondary)] tracking-tight">
                                 Send Us a Message
@@ -432,7 +430,7 @@ export const ContactPage = () => {
                                 <div
                                     role={status === 'error' ? 'alert' : 'status'}
                                     aria-live="polite"
-                                    className={`flex items-start gap-3 rounded-lg border p-4 text-sm ${status === 'success'
+                                    className={`flex items-start gap-3 rounded-[3px] border p-4 text-sm ${status === 'success'
                                         ? 'border-[var(--color-primary)]/30 bg-[var(--color-accent)] text-[var(--color-secondary)]'
                                         : 'border-red-300 bg-red-50 text-red-700'
                                         }`}
@@ -449,7 +447,7 @@ export const ContactPage = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary font-semibold text-sm px-8 py-3.5 rounded-lg transition-all duration-300 shadow-md cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white font-semibold text-sm px-8 py-3.5 rounded-[3px] transition-all duration-300 shadow-sm cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
                                         <>

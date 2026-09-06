@@ -6,11 +6,11 @@ export const TechStack = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
-                <span className="text-xs font-bold font-mono tracking-widest text-[var(--color-muted)] uppercase block mb-3">
+                <span className="text-xs font-bold omx-label tracking-[0.08em] text-[var(--color-muted)] uppercase block mb-3">
                     Technology
                 </span>
 
-                <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-4">
                     Boring tools, chosen deliberately.
                 </h2>
 
@@ -24,16 +24,16 @@ export const TechStack = () => {
                     {techStack.map((group) => (
                         <div
                             key={group.group}
-                            className="bg-[var(--color-body)] border border-[var(--color-border)] rounded-2xl p-6"
+                            className="bg-[var(--color-body)] border border-[var(--color-border)] rounded-[3px] p-6"
                         >
-                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-4">
+                            <span className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-primary-ink)] block mb-4">
                                 {group.group}
                             </span>
                             <div className="flex flex-wrap gap-2">
                                 {group.items.map((item) => (
                                     <span
                                         key={item}
-                                        className="px-3 py-1.5 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] text-xs font-medium text-[var(--color-secondary)]"
+                                        className="px-3 py-1.5 rounded-[3px] bg-[var(--color-surface)] border border-[var(--color-border)] text-xs font-medium text-[var(--color-secondary)]"
                                     >
                                         {item}
                                     </span>

@@ -16,7 +16,7 @@ export const MemberCard = ({
     linkedinUrl,
 }: MemberCardProps) => {
     return (
-        <div className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+        <div className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] overflow-hidden shadow-sm transition-all duration-300 flex flex-col h-full">
             {/* Image / Avatar Container */}
             <div className="relative aspect-[4/3] sm:aspect-square w-full overflow-hidden bg-[var(--color-accent)]">
                 {image ? (
@@ -67,7 +67,7 @@ export const MemberCard = ({
                             href={linkedinUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-[var(--color-primary-ink)] hover:text-secondary text-xs font-semibold transition-colors duration-200"
+                            className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-[3px] bg-[var(--color-accent)] hover:bg-[var(--color-primary)] text-[var(--color-primary-ink)] hover:text-white text-xs font-semibold transition-colors duration-200"
                         >
                             <span>Connect on LinkedIn</span>
                             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">

@@ -7,10 +7,10 @@ import { ServicesCTA } from '@/components/sections/ServicesCTA';
 const NotFound = () => (
     <section className="bg-[var(--color-surface)] py-24 md:py-32 border-b border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="text-xs font-bold font-mono tracking-widest text-[var(--color-muted)] uppercase block mb-3">
+            <span className="text-xs font-bold omx-label tracking-[0.08em] text-[var(--color-muted)] uppercase block mb-3">
                 404 — Not Found
             </span>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-4">
                 We don't offer that service.
             </h1>
             <p className="text-[var(--color-muted)] text-base md:text-lg mb-8 max-w-xl mx-auto">
@@ -19,7 +19,7 @@ const NotFound = () => (
             </p>
             <Link
                 href="/services"
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-lg shadow-[var(--color-primary)]/20"
+                className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3.5 rounded-[3px] font-medium text-sm transition-all"
             >
                 <span>←</span> Back to Services
             </Link>
@@ -41,9 +41,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
 
                 {/* Full-width Background Effects */}
                 <div className="pointer-events-none absolute top-0 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-full overflow-hidden">
-                    <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent" />
-                    <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-[var(--color-primary)]/20 blur-[120px]" />
-                    <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[var(--color-primary)]/10 blur-[100px]" />
+                    <div className="absolute inset-x-0 top-0 h-full bg-[var(--color-accent)]" />
                     <div
                         className="absolute inset-0 opacity-[0.03]"
                         style={{
@@ -58,17 +56,17 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                     {/* Breadcrumb */}
                     <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
+                        className="inline-flex items-center gap-2 text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] transition-colors mb-8 group"
                     >
                         <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
                         All Services
                     </Link>
 
-                    <div className="w-14 h-14 rounded-2xl bg-[var(--color-accent)] border border-[var(--color-border)] flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 rounded-[3px] bg-[var(--color-accent)] border border-[var(--color-border)] flex items-center justify-center mb-6">
                         <ServiceIcon name={service.icon} />
                     </div>
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--color-secondary)] leading-[1.1] max-w-4xl mb-5">
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--color-secondary)] leading-[1.1] max-w-4xl mb-5">
                         {service.title}
                     </h1>
 
@@ -105,14 +103,14 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                             </div>
 
                             {/* Deliverables */}
-                            <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 shadow-sm">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)] block mb-5">
+                            <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] p-8 shadow-sm">
+                                <span className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-primary-ink)] block mb-5">
                                     What's Included
                                 </span>
                                 <ul className="space-y-4">
                                     {service.deliverables.map((item, index) => (
                                         <li key={item} className="flex items-start gap-3">
-                                            <span className="shrink-0 w-6 h-6 rounded-md bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
+                                            <span className="shrink-0 w-6 h-6 rounded-[2px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] font-mono font-bold text-[11px] flex items-center justify-center mt-0.5">
                                                 {String(index + 1).padStart(2, '0')}
                                             </span>
                                             <span className="text-[var(--color-secondary)] text-sm sm:text-base leading-relaxed">
@@ -126,16 +124,16 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
 
                         {/* Sticky Sidebar */}
                         <aside className="lg:col-span-4 lg:sticky lg:top-8">
-                            <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 shadow-sm">
+                            <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] p-8 shadow-sm">
                                 {/* Outcomes */}
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] block mb-5">
+                                <span className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] block mb-5">
                                     At a Glance
                                 </span>
 
                                 <div className="grid grid-cols-2 gap-4 mb-7">
                                     {service.outcomes.map((outcome) => (
                                         <div key={outcome.label}>
-                                            <span className="text-2xl font-extrabold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none block">
+                                            <span className="text-2xl font-bold font-mono text-[var(--color-primary-ink)] tracking-tight leading-none block">
                                                 {outcome.value}
                                             </span>
                                             <span className="mt-2 text-xs text-[var(--color-muted)] leading-snug block">
@@ -147,14 +145,14 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
 
                                 {/* Stack */}
                                 <div className="pt-6 border-t border-[var(--color-border)]">
-                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-primary-ink)] block mb-3">
+                                    <span className="text-xs omx-label font-bold uppercase tracking-wider text-[var(--color-primary-ink)] block mb-3">
                                         Typical Stack
                                     </span>
                                     <div className="flex flex-wrap gap-2">
                                         {service.stack.map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="px-2.5 py-1 rounded-md bg-[var(--color-body)] border border-[var(--color-border)] text-xs font-medium text-[var(--color-muted)]"
+                                                className="px-2.5 py-1 rounded-[2px] bg-[var(--color-body)] border border-[var(--color-border)] text-xs font-medium text-[var(--color-muted)]"
                                             >
                                                 {tech}
                                             </span>
@@ -165,13 +163,13 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                                 <div className="mt-7 pt-6 border-t border-[var(--color-border)] flex flex-col gap-3">
                                     <Link
                                         href="/contact"
-                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-secondary px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                                        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-3 rounded-[3px] font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-sm"
                                     >
                                         Discuss this service <span>→</span>
                                     </Link>
                                     <Link
                                         href="/services"
-                                        className="border border-[var(--color-border)] bg-[var(--color-surface)] hover:bg-[var(--color-body)] text-[var(--color-secondary)] px-5 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all"
+                                        className="border border-[var(--color-border)] bg-[var(--color-surface)] hover:bg-[var(--color-body)] text-[var(--color-secondary)] px-5 py-3 rounded-[3px] font-medium text-sm flex items-center justify-center gap-2 transition-all"
                                     >
                                         See all services
                                     </Link>
@@ -187,10 +185,10 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
             {/* RELATED SERVICES */}
             <section className="bg-[var(--color-surface)] py-16 md:py-20 border-t border-[var(--color-border)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <span className="text-xs font-bold font-mono tracking-widest text-[var(--color-muted)] uppercase block mb-3">
+                    <span className="text-xs font-bold omx-label tracking-[0.08em] text-[var(--color-muted)] uppercase block mb-3">
                         Often Paired With
                     </span>
-                    <h2 className="text-2xl md:text-4xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-10">
+                    <h2 className="text-2xl md:text-4xl font-bold text-[var(--color-secondary)] tracking-tight mb-10">
                         Related services
                     </h2>
 
@@ -199,9 +197,9 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                             <Link
                                 key={item.id}
                                 href={`/services/${item.id}`}
-                                className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-8 transition-all hover:shadow-lg hover:border-[var(--color-primary)]/40 flex flex-col items-start gap-4"
+                                className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] p-8 transition-all hover:border-[var(--color-primary)]/40 flex flex-col items-start gap-4"
                             >
-                                <div className="w-12 h-12 rounded-lg bg-[var(--color-accent)]/60 flex items-center justify-center">
+                                <div className="w-12 h-12 rounded-[3px] bg-[var(--color-accent)]/60 flex items-center justify-center">
                                     <ServiceIcon name={item.icon} />
                                 </div>
 
@@ -213,7 +211,7 @@ export const ServiceDetailPage = ({ id }: { id: string }) => {
                                     {item.summary}
                                 </p>
 
-                                <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-primary-ink)]">
+                                <span className="inline-flex items-center gap-2 text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-primary-ink)]">
                                     <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                         Explore service
                                     </span>

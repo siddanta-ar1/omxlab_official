@@ -22,7 +22,7 @@ export const HaKomxClub = () => {
                 
                 {/* Ambient Background Glows */}
                 <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-[#22D3EE]/10 to-[var(--color-highlight)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl rounded-full bg-gradient-to-r from-[var(--color-primary)]/10 via-[#0891B2]/10 to-[var(--color-highlight)]/20 blur-[120px] animate-pulse" style={{ animationDuration: '6s' }} />
                     <div
                         className="absolute inset-0 opacity-[0.04]"
                         style={{
@@ -33,7 +33,7 @@ export const HaKomxClub = () => {
                 </div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-surface/60 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] rounded-[2.5rem] p-8 md:p-16 text-center overflow-hidden relative">
+                    <div className="bg-surface/60 backdrop-blur-xl border border-black/10 rounded-[2.5rem] p-8 md:p-16 text-center overflow-hidden relative">
                         
                         {/* Inner Decorative Elements */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent rounded-bl-[100px] pointer-events-none" />
@@ -49,16 +49,16 @@ export const HaKomxClub = () => {
 
                         <div className="relative z-10 flex flex-col items-center">
                             {/* Premium Glassmorphism Icon instead of gradient block */}
-                            <div className="w-20 h-20 md:w-24 md:h-24 bg-surface/80 backdrop-blur-md border border-[var(--color-border)] shadow-[0_8px_30px_rgb(0,0,0,0.45)] rounded-2xl flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-300">
+                            <div className="w-20 h-20 md:w-24 md:h-24 bg-surface/80 backdrop-blur-md border border-[var(--color-border)] rounded-[3px] flex items-center justify-center mb-8 transform hover:scale-110 transition-transform duration-300">
                                 <LuUsers className="w-10 h-10 md:w-12 md:h-12 text-[var(--color-primary-ink)]" />
                             </div>
                             
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+                            <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
                                 Join Our Community
                             </div>
                             
                             {/* Removed gradient color from text */}
-                            <h2 className="text-4xl md:text-6xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
+                            <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-secondary)] tracking-tight mb-6">
                                 Welcome to the <br />
                                 HaKomx Club
                             </h2>
@@ -69,7 +69,7 @@ export const HaKomxClub = () => {
                             
                             <button 
                                 onClick={() => setIsModalOpen(true)}
-                                className="group relative inline-flex flex-col items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 bg-[var(--color-primary)] rounded-full hover:bg-[var(--color-primary-hover)] hover:shadow-[0_0_40px_rgba(194,169,122,0.55)] hover:-translate-y-1 overflow-hidden"
+                                className="group relative inline-flex flex-col items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300 bg-[var(--color-primary)] rounded-[3px] hover:bg-[var(--color-primary-hover)] hover:-translate-y-1 overflow-hidden"
                             >
                                 <span className="relative z-10 flex items-center gap-2 text-lg">
                                     Apply to Join <LuRocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -91,10 +91,10 @@ export const HaKomxClub = () => {
                     />
                     
                     {/* Modal Content */}
-                    <div className="relative bg-surface rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+                    <div className="relative bg-surface rounded-[4px] w-full max-w-md overflow-hidden transform transition-all">
                         <button 
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 p-2 text-muted hover:text-muted hover:bg-white/10 rounded-full transition-colors"
+                            className="absolute top-4 right-4 p-2 text-muted hover:text-muted hover:bg-black/1 rounded-[3px] transition-colors"
                         >
                             <LuX className="w-5 h-5" />
                         </button>
@@ -118,7 +118,7 @@ export const HaKomxClub = () => {
                                                 type="text" 
                                                 id="name" 
                                                 required
-                                                className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
+                                                className="w-full px-4 py-3 rounded-[3px] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
                                                 placeholder="Jane Doe"
                                             />
                                         </div>
@@ -128,7 +128,7 @@ export const HaKomxClub = () => {
                                                 type="email" 
                                                 id="email" 
                                                 required
-                                                className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
+                                                className="w-full px-4 py-3 rounded-[3px] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
                                                 placeholder="jane@example.com"
                                             />
                                         </div>
@@ -137,13 +137,13 @@ export const HaKomxClub = () => {
                                             <input 
                                                 type="url" 
                                                 id="github" 
-                                                className="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
+                                                className="w-full px-4 py-3 rounded-[3px] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] outline-none transition-all"
                                                 placeholder="https://github.com/..."
                                             />
                                         </div>
                                         <button 
                                             type="submit"
-                                            className="w-full py-3.5 mt-2 bg-[var(--color-primary)] text-secondary font-bold rounded-xl hover:bg-[var(--color-primary-hover)] transition-colors"
+                                            className="w-full py-3.5 mt-2 bg-[var(--color-primary)] text-white font-bold rounded-[3px] hover:bg-[var(--color-primary-hover)] transition-colors"
                                         >
                                             Submit Application
                                         </button>

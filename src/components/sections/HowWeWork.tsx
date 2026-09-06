@@ -75,8 +75,7 @@ export const HowWeWork = () => {
         <section id="how-we-work" className="relative py-24 md:py-32 bg-[var(--color-surface)] border-t border-[var(--color-border)] overflow-hidden">
             {/* Background Effects */}
             <div className="pointer-events-none absolute inset-0 z-0">
-                <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[var(--color-primary)]/10 blur-[120px]" />
+                <div className="absolute inset-x-0 top-0 h-full bg-[var(--color-accent)]" />
                 <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
@@ -89,11 +88,11 @@ export const HowWeWork = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)] border border-[var(--color-primary)]/20 text-[var(--color-primary-ink)] text-xs font-semibold mb-6 shadow-sm">
-                        <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
+                    <div className="inline-flex items-center gap-2.5 mb-6 omx-label text-[var(--color-muted)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                         Our Process
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-6">
                         How we build projects.
                     </h2>
                     <p className="text-[var(--color-muted)] text-lg md:text-xl">
@@ -108,12 +107,12 @@ export const HowWeWork = () => {
                 >
                     {/* The dashed spinning ring */}
                     <div 
-                        className="absolute w-[80%] h-[80%] left-[10%] top-[10%] border-[2px] border-dashed border-[var(--color-border)] rounded-full z-10 opacity-70"
+                        className="absolute w-[80%] h-[80%] left-[10%] top-[10%] border-[2px] border-dashed border-[var(--color-border)] rounded-[3px] z-10 opacity-70"
                         style={{ animation: 'spin 20s linear infinite' }}
                     ></div>
                     
                     {/* Center Content Bubble */}
-                    <div className="absolute w-[60%] h-[60%] left-[20%] top-[20%] bg-surface shadow-[0_20px_50px_-12px_rgba(0,0,0,0.55)] rounded-full border border-[var(--color-border)] flex flex-col items-center justify-center p-4 md:p-8 text-center z-20 transition-all duration-500">
+                    <div className="absolute w-[60%] h-[60%] left-[20%] top-[20%] bg-surface rounded-[3px] border border-[var(--color-border)] flex flex-col items-center justify-center p-4 md:p-8 text-center z-20 transition-all duration-500">
                         <div className="text-[var(--color-primary-ink)] font-mono font-bold text-xl md:text-3xl mb-1 md:mb-3 opacity-90 transition-all duration-300">
                             {steps[activeStep].id}
                         </div>
@@ -158,8 +157,8 @@ export const HowWeWork = () => {
                                         onClick={() => handleStepClick(index)}
                                         className={`w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-500 cursor-pointer ${
                                             isActive 
-                                                ? 'bg-[var(--color-primary)] text-secondary shadow-[0_0_30px_rgba(194,169,122,0.55)] scale-110'
-                                                : 'bg-surface border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] hover:scale-105 hover:shadow-lg'
+                                                ? 'bg-[var(--color-primary)] text-white scale-110'
+                                                : 'bg-surface border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary-ink)] hover:scale-105'
                                         }`}
                                         style={{ transform: `rotate(${counterRotation}deg)`, transition: 'transform 700ms ease-in-out, background-color 500ms, transform 500ms' }}
                                         aria-label={`Step ${step.id}: ${step.title}`}
@@ -174,7 +173,7 @@ export const HowWeWork = () => {
                 </div>
                 
                 {/* Mobile description fallback */}
-                <div className="sm:hidden mt-8 max-w-sm mx-auto text-center bg-surface p-6 rounded-2xl border border-[var(--color-border)] shadow-sm">
+                <div className="sm:hidden mt-8 max-w-sm mx-auto text-center bg-surface p-6 rounded-[3px] border border-[var(--color-border)] shadow-sm">
                     <h3 className="font-bold text-lg mb-3 text-[var(--color-primary-ink)]">
                         {steps[activeStep].title}
                     </h3>

@@ -24,7 +24,7 @@ export const AnimatedAppIcons = () => {
     return (
         <section className="bg-[var(--color-surface)] py-12 border-b border-[var(--color-border)] overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-                <h3 className="text-sm font-bold font-mono tracking-widest text-[var(--color-muted)] uppercase">
+                <h3 className="text-sm font-bold omx-label tracking-[0.08em] text-[var(--color-muted)] uppercase">
                     Powered By Industry Standards
                 </h3>
             </div>
@@ -35,7 +35,7 @@ export const AnimatedAppIcons = () => {
                     {marqueeItems.map((app, index) => (
                         <div 
                             key={`${app.name}-${index}`} 
-                            className="flex items-center gap-3 px-6 py-4 bg-surface rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border hover:-translate-y-2 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55)] transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
+                            className="flex items-center gap-3 px-6 py-4 bg-surface rounded-[3px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border hover:-translate-y-2 transition-all duration-300 cursor-pointer group whitespace-nowrap min-w-max"
                         >
                             <div className={`text-3xl ${app.color} group-hover:scale-110 transition-transform duration-300`}>
                                 {app.icon}

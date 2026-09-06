@@ -38,12 +38,12 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
 
                 {/* Section Header */}
                 <div className="mb-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
+                    <span className="inline-block px-4 py-1.5 rounded-[3px] text-xs font-semibold text-[var(--color-primary-ink)] bg-[var(--color-accent)] border border-[var(--color-border)]">
                         Publications
                     </span>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--color-secondary)] tracking-tight mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-secondary)] tracking-tight mb-4">
                     Everything we've written down.
                 </h2>
 
@@ -53,7 +53,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                 </p>
 
                 {/* Filter Tabs */}
-                <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-body)] p-2 shadow-sm w-full md:w-fit mb-10">
+                <div className="flex flex-wrap items-center gap-2 rounded-[3px] border border-[var(--color-border)] bg-[var(--color-body)] p-2 shadow-sm w-full md:w-fit mb-10">
                     {tabs.map((tab) => {
                         const isActive = activeTab === tab;
 
@@ -61,8 +61,8 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                             <button
                                 key={tab}
                                 onClick={() => selectTab(tab)}
-                                className={`font-semibold text-sm transition-all duration-200 rounded-lg py-2 px-5 cursor-pointer ${isActive
-                                    ? 'bg-[var(--color-primary)] text-secondary shadow-sm'
+                                className={`font-semibold text-sm transition-all duration-200 rounded-[3px] py-2 px-5 cursor-pointer ${isActive
+                                    ? 'bg-[var(--color-primary)] text-white shadow-sm'
                                     : 'text-[var(--color-muted)] hover:text-[var(--color-primary-ink)] hover:bg-[var(--color-accent)]'
                                     }`}
                             >
@@ -78,15 +78,15 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                         {featured && (
                             <Link
                                 href={`/research/${featured.id}`}
-                                className="group relative block overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-body)] p-8 sm:p-10 mb-6 transition-all hover:shadow-xl hover:border-[var(--color-primary)]/40"
+                                className="group relative block overflow-hidden rounded-[4px] border border-[var(--color-border)] bg-[var(--color-body)] p-8 sm:p-10 mb-6 transition-all hover:border-[var(--color-primary)]/40"
                             >
                                 {/* Ambient glow */}
                                 <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[var(--color-primary)]/10 blur-3xl" />
 
                                 <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                                     <div className="lg:col-span-8">
-                                        <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono font-bold uppercase tracking-widest">
-                                            <span className="px-3 py-1 rounded-full bg-[var(--color-primary)] text-secondary">
+                                        <div className="flex flex-wrap items-center gap-3 mb-4 text-xs omx-label font-bold uppercase tracking-[0.08em]">
+                                            <span className="px-3 py-1 rounded-[3px] bg-[var(--color-primary)] text-white">
                                                 Latest
                                             </span>
                                             <span className="text-[var(--color-primary-ink)]">
@@ -97,7 +97,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                             </span>
                                         </div>
 
-                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
+                                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-secondary)] tracking-tight leading-tight mb-4 group-hover:text-[var(--color-primary-ink)] transition-colors">
                                             {featured.title}
                                         </h3>
 
@@ -105,7 +105,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                             {featured.abstract}
                                         </p>
 
-                                        <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-[var(--color-primary-ink)] uppercase">
+                                        <span className="inline-flex items-center gap-2 text-xs omx-label font-bold tracking-[0.08em] text-[var(--color-primary-ink)] uppercase">
                                             <span className="border-b border-[var(--color-primary)]/30 pb-0.5">
                                                 Read the paper
                                             </span>
@@ -116,7 +116,7 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                     </div>
 
                                     <div className="lg:col-span-4 lg:border-l lg:border-[var(--color-border)] lg:pl-8">
-                                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] block mb-3">
+                                        <span className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] block mb-3">
                                             Authors
                                         </span>
                                         <ul className="space-y-2">
@@ -140,11 +140,11 @@ export const ResearchPublications = ({ activeTopic }: { activeTopic?: string }) 
                                 <Link
                                     key={paper.id}
                                     href={`/research/${paper.id}`}
-                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 flex flex-col transition-all hover:shadow-lg hover:border-[var(--color-primary)]/40"
+                                    className="group bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[3px] p-8 flex flex-col transition-all hover:border-[var(--color-primary)]/40"
                                 >
                                     {/* Meta Row */}
                                     <div className="flex items-center justify-between gap-3 mb-5">
-                                        <span className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs font-mono font-bold uppercase tracking-wider">
+                                        <span className="px-3 py-1 rounded-[3px] bg-[var(--color-accent)] text-[var(--color-primary-ink)] text-xs omx-label font-bold uppercase tracking-wider">
                                             {paper.type}
                                         </span>
                                         <span className="text-xs font-mono text-[var(--color-muted)]">

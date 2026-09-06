@@ -60,7 +60,7 @@ export const Footer = () => {
 
                     {/* Nav Links Column 1: Explore */}
                     <div className="md:col-span-3">
-                        <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] mb-4">
+                        <h4 className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-4">
                             Explore
                         </h4>
                         <ul className="space-y-3 text-sm">
@@ -94,7 +94,7 @@ export const Footer = () => {
 
                     {/* Nav Links Column 2: About */}
                     <div className="md:col-span-2">
-                        <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] mb-4">
+                        <h4 className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-4">
                             About
                         </h4>
                         <ul className="space-y-3 text-sm">
@@ -118,14 +118,14 @@ export const Footer = () => {
 
                     {/* Contact Details Column */}
                     <div className="md:col-span-3">
-                        <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-muted)] mb-4">
+                        <h4 className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-[var(--color-muted)] mb-4">
                             Contact
                         </h4>
 
                         {/* Offices */}
                         <div className="grid grid-cols-2 gap-4 text-xs text-[var(--color-muted)] mb-6">
                             <div>
-                                <span className="font-mono font-bold text-[var(--color-primary-ink)] uppercase block mb-1">
+                                <span className="omx-label font-bold text-[var(--color-primary-ink)] uppercase block mb-1">
                                     NEPAL
                                 </span>
                                 <p>Chitwan</p>
@@ -135,7 +135,7 @@ export const Footer = () => {
 
                         {/* Email */}
                         <div>
-                            <span className="font-mono font-bold text-xs uppercase text-[var(--color-primary-ink)] block mb-1">
+                            <span className="omx-label font-bold text-xs uppercase text-[var(--color-primary-ink)] block mb-1">
                                 @ Email
                             </span>
 

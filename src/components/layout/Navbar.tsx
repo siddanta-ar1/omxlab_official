@@ -37,10 +37,10 @@ export const Navbar = () => {
 
     // Helper function for active link styling
     const navLinkStyle = ({ isActive }: { isActive: boolean }) =>
-        `transition-colors ${isActive ? 'text-primary-ink font-semibold' : 'hover:text-primary-ink'}`;
+        `omx-underline transition-colors ${isActive ? 'text-primary' : 'text-secondary'}`;
 
     const mobileNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
-        `block px-4 py-3 text-base transition-colors ${isActive ? 'text-primary-ink font-semibold' : 'text-secondary hover:text-primary-ink'}`;
+        `block px-4 py-3 text-[15px] border-b border-border last:border-b-0 transition-colors ${isActive ? 'text-primary' : 'text-secondary hover:text-primary'}`;
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
@@ -48,8 +48,8 @@ export const Navbar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md border-b border-border shadow-sm transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+        <header className="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-border">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3.5">
                 <div className="flex items-center justify-between">
                     {/* Clickable Brand Logo -> Home */}
                     <Link href="/" className="flex items-center hover:opacity-85 transition-opacity" onClick={closeMobileMenu}>
@@ -57,7 +57,7 @@ export const Navbar = () => {
                 </Link>
 
                 {/* Navigation Links (Desktop) */}
-                <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-secondary">
+                <nav className="hidden md:flex items-center gap-7 text-[14px] font-normal tracking-[-0.01em] text-secondary">
                     <NavLink href="/services" className={navLinkStyle}>Services</NavLink>
                     <NavLink href="/initiatives" className={navLinkStyle}>Initiatives</NavLink>
                     <NavLink href="/research" className={navLinkStyle}>Research</NavLink>
@@ -70,16 +70,16 @@ export const Navbar = () => {
                         onMouseEnter={() => setIsAboutOpen(true)}
                         onMouseLeave={() => setIsAboutOpen(false)}
                     >
-                        <button className="flex items-center gap-1 hover:text-primary-ink transition-colors cursor-pointer">
+                        <button className="omx-underline flex items-center gap-1 text-secondary transition-colors cursor-pointer">
                             About
                             <span className={`text-xs transition-transform duration-200 ${isAboutOpen ? 'rotate-180' : ''}`}>▾</span>
                         </button>
 
                         {isAboutOpen && (
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-36 bg-surface border border-border rounded-xl shadow-xl py-2 flex flex-col z-50">
-                                <Link href="/about" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">About Us</Link>
-                                <Link href="/team" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">Team</Link>
-                                <Link href="/contact" className="px-4 py-2 text-xs text-secondary hover:bg-body hover:text-primary-ink">Contact</Link>
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-40 bg-surface border border-border rounded-[2px] flex flex-col z-50">
+                                <Link href="/about" className="px-4 py-2.5 text-[13px] text-secondary border-b border-border last:border-b-0 hover:bg-accent">About Us</Link>
+                                <Link href="/team" className="px-4 py-2.5 text-[13px] text-secondary border-b border-border last:border-b-0 hover:bg-accent">Team</Link>
+                                <Link href="/contact" className="px-4 py-2.5 text-[13px] text-secondary border-b border-border last:border-b-0 hover:bg-accent">Contact</Link>
                             </div>
                         )}
                     </div>
@@ -88,7 +88,7 @@ export const Navbar = () => {
                 {/* Action Button (Desktop) */}
                 <Link
                     href="/contact"
-                    className="hidden md:flex bg-primary hover:bg-primary-hover text-secondary px-5 py-2.5 rounded-full font-medium text-sm items-center gap-2 transition-all shadow-md hover:shadow-primary/25 cursor-pointer"
+                    className="hidden md:flex bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-[3px] font-medium text-[14px] items-center gap-2 transition-colors cursor-pointer"
                 >
                     Schedule a call <span>→</span>
                 </Link>
@@ -112,7 +112,7 @@ export const Navbar = () => {
                     isMobileMenuOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
                 }`}
             >
-                <nav className="flex flex-col bg-surface border border-border rounded-2xl shadow-xl overflow-hidden">
+                <nav className="flex flex-col bg-surface border border-border rounded-[3px] overflow-hidden">
                     <NavLink href="/services" className={mobileNavLinkStyle} onClick={closeMobileMenu}>Services</NavLink>
                     <NavLink href="/initiatives" className={mobileNavLinkStyle} onClick={closeMobileMenu}>Initiatives</NavLink>
                     <NavLink href="/research" className={mobileNavLinkStyle} onClick={closeMobileMenu}>Research</NavLink>
@@ -141,7 +141,7 @@ export const Navbar = () => {
                     <Link
                         href="/contact"
                         onClick={closeMobileMenu}
-                        className="m-4 bg-primary hover:bg-primary-hover text-secondary px-5 py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md"
+                        className="m-4 bg-primary hover:bg-primary-hover text-white px-5 py-3 rounded-[3px] font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-sm"
                     >
                         Schedule a call <span>→</span>
                     </Link>

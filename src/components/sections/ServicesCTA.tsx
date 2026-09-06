@@ -5,26 +5,24 @@ export const ServicesCTA = () => {
         <section className="bg-[var(--color-body)] py-16 md:py-20 border-t border-[var(--color-border)]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Dark Floating Card with Subtle Gradient */}
-                <div className="relative overflow-hidden rounded-3xl bg-[var(--color-surface)] text-white p-8 sm:p-12 md:p-16 shadow-2xl">
+                <div className="relative overflow-hidden rounded-[4px] bg-[var(--color-primary)] text-white p-8 sm:p-12 md:p-16">
 
                     {/* Subtle Ambient Background Light */}
-                    <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--color-primary)]/20 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
 
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
                         {/* Left Content Column */}
                         <div className="lg:col-span-7 flex flex-col items-start">
-                            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-3 opacity-90">
+                            <span className="text-xs omx-label font-bold uppercase tracking-[0.08em] text-white mb-3 opacity-90">
                                 Start Here
                             </span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                                 Tell us what's <br className="hidden sm:inline" />
                                 slowing you down.
                             </h2>
 
-                            <p className="text-soft text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+                            <p className="text-white/95 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
                                 A first call is thirty minutes and costs nothing. We will tell you
                                 whether we are the right fit — including when the honest answer is
                                 that you need something smaller than you asked for.
@@ -32,7 +30,7 @@ export const ServicesCTA = () => {
 
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 active:scale-[0.98]"
+                                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[3px] text-sm font-medium text-primary bg-white hover:bg-white/90 transition-all duration-300 active:scale-[0.98]"
                             >
                                 <span>Schedule a call</span>
                                 <span className="text-base">↗</span>
@@ -41,9 +39,9 @@ export const ServicesCTA = () => {
 
                         {/* Right Card Column */}
                         <div className="lg:col-span-5">
-                            <div className="rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between h-full">
+                            <div className="rounded-[3px] border border-white/30 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between h-full">
                                 <div>
-                                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-highlight)] block mb-4 opacity-90">
+                                    <span className="text-xs omx-label font-bold uppercase tracking-wider text-white block mb-4 opacity-90">
                                         What To Expect
                                     </span>
                                     <ul className="space-y-3 mb-6">
@@ -52,8 +50,8 @@ export const ServicesCTA = () => {
                                             'An honest read on feasibility and cost',
                                             'A written summary within two working days',
                                         ].map((item) => (
-                                            <li key={item} className="flex items-start gap-2.5 text-soft text-sm sm:text-base leading-relaxed">
-                                                <span className="text-[var(--color-highlight)] font-bold">✓</span>
+                                            <li key={item} className="flex items-start gap-2.5 text-white/95 text-sm sm:text-base leading-relaxed">
+                                                <span className="text-white font-bold">✓</span>
                                                 <span>{item}</span>
                                             </li>
                                         ))}
@@ -62,9 +60,9 @@ export const ServicesCTA = () => {
 
                                 <a
                                     href="mailto:contact@omxlab.tech"
-                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-white uppercase group hover:text-[var(--color-highlight)] transition-colors duration-200 mt-2"
+                                    className="inline-flex items-center gap-2 text-xs omx-label font-bold tracking-[0.08em] text-white uppercase group hover:text-white transition-colors duration-200 mt-2"
                                 >
-                                    <span className="border-b border-white/30 group-hover:border-[var(--color-highlight)] pb-0.5">
+                                    <span className="border-b border-white/40 group-hover:border-white pb-0.5">
                                         Or email us directly
                                     </span>
                                     <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>

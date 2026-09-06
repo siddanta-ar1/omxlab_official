@@ -8,16 +8,16 @@ export const CustomerTestimonials = () => {
                 
                 {/* Testimonials */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-12 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-12 tracking-tight">
                         What our<br/>customers are saying
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
                         {/* Card 1 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-[3px] transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-secondary">
-                                    <span className="w-8 h-8 bg-surface rounded-md flex items-center justify-center text-white text-sm">C</span> carwow
+                                    <span className="w-8 h-8 bg-secondary rounded-[2px] flex items-center justify-center text-white text-sm">C</span> carwow
                                 </h3>
                                 <p className="text-secondary mb-8 leading-relaxed text-lg">
                                     "...if you want the conversation forgotten, put it on Slack. If it matters, put it on Discourse."
@@ -30,7 +30,7 @@ export const CustomerTestimonials = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-[3px] transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-secondary">Local Guides</h3>
                                 <p className="text-secondary mb-8 leading-relaxed text-lg">
@@ -44,7 +44,7 @@ export const CustomerTestimonials = () => {
                         </div>
 
                         {/* Card 3 */}
-                        <div className="p-10 border border-border rounded-2xl hover:shadow-xl transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
+                        <div className="p-10 border border-border rounded-[3px] transition-all duration-300 bg-surface flex flex-col justify-between h-full group">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-secondary">
                                     <span className="w-6 h-6 bg-green-500 rounded-sm"></span> Katalon
@@ -67,13 +67,13 @@ export const CustomerTestimonials = () => {
 
                 {/* Support Section */}
                 <div className="text-center mt-32 mb-20">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-16 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-16 tracking-tight">
                         Support that<br/>understands your stack
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-24">
-                        <div className="p-10 bg-body rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#818CF8]">
+                        <div className="p-10 bg-body rounded-[4px] border border-border transition-shadow">
+                            <div className="w-12 h-12 bg-accent rounded-[3px] flex items-center justify-center mb-8 text-[#4F46E5]">
                                 <FiCheckCircle size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Expert support team</h4>
@@ -81,8 +81,8 @@ export const CustomerTestimonials = () => {
                             <a href="#" className="text-sm font-bold text-secondary hover:text-primary-ink flex items-center gap-1 transition-colors">Meet our team &rarr;</a>
                         </div>
                         
-                        <div className="p-10 bg-accent/60 rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-[#A5B4FC]">
+                        <div className="p-10 bg-accent/60 rounded-[4px] border border-border transition-shadow">
+                            <div className="w-12 h-12 bg-accent rounded-[3px] flex items-center justify-center mb-8 text-[#2563EB]">
                                 <FiUsers size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Community forum</h4>
@@ -90,8 +90,8 @@ export const CustomerTestimonials = () => {
                             <a href="#" className="text-sm font-bold text-secondary hover:text-primary-ink flex items-center gap-1 transition-colors">Join the Discourse community &rarr;</a>
                         </div>
                         
-                        <div className="p-10 bg-accent/70 rounded-3xl border border-border hover:shadow-lg transition-shadow">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-8 text-primary-ink">
+                        <div className="p-10 bg-accent/70 rounded-[4px] border border-border transition-shadow">
+                            <div className="w-12 h-12 bg-accent rounded-[3px] flex items-center justify-center mb-8 text-primary-ink">
                                 <FiBookOpen size={24} />
                             </div>
                             <h4 className="text-xl font-bold text-secondary mb-4">Resource center</h4>
@@ -104,7 +104,7 @@ export const CustomerTestimonials = () => {
                         "It's been such a privilege to work with you guys over the years. I can't stress how exceptional it was to have such friendly and knowledgeable suppliers to work with. Huge props! Not only did you make this project possible, you made it thoroughly enjoyable!"
                     </div>
                     <div className="flex items-center justify-center gap-4">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80" alt="Tristan Robinson" className="w-14 h-14 rounded-full object-cover shadow-md" />
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80" alt="Tristan Robinson" className="w-14 h-14 rounded-full object-cover shadow-sm" />
                         <div className="text-left">
                             <h5 className="font-bold text-secondary text-base">Tristan Robinson</h5>
                             <p className="text-sm text-muted">Project Manager at Helia</p>
@@ -120,15 +120,15 @@ export const CustomerTestimonials = () => {
                             Join our newsletter
                         </h4>
                         <p className="text-muted text-base mb-6">Get community tips and product updates delivered to your inbox.</p>
-                        <form className="flex gap-3">
+                        <form className="flex flex-wrap gap-3">
                             <input 
                                 type="email" 
                                 placeholder="Your email*" 
-                                className="flex-1 px-5 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" 
+                                className="flex-1 min-w-0 basis-48 px-5 py-3 border border-border rounded-[3px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" 
                             />
                             <button 
                                 type="submit" 
-                                className="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-hover transition-colors shadow-sm"
+                                className="bg-primary text-white px-6 py-3 rounded-[3px] font-medium hover:bg-primary-hover transition-colors"
                             >
                                 Subscribe
                             </button>
@@ -137,7 +137,7 @@ export const CustomerTestimonials = () => {
                     </div>
                     
                     <div className="pl-0 md:pl-8 flex flex-col justify-center">
-                        <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary-ink mb-6">
+                        <div className="w-12 h-12 bg-accent rounded-[3px] flex items-center justify-center text-primary-ink mb-6">
                             <FiBookOpen size={20} />
                         </div>
                         <h4 className="font-bold text-xl text-secondary mb-3">Read our blog</h4>

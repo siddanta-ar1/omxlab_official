@@ -1,22 +1,22 @@
 import React from 'react';
 
 const teams = [
-    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#0C536B] text-[#8BDBEA] bg-[#051C22]/60' },
-    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#114C6C] text-[#91D2EB] bg-[#071A23]/60' },
-    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#13486C] text-[#94CDEC] bg-[#081823]/60' },
-    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#252D70] text-[#A9AEF1] bg-[#0D1024]/60' },
-    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#272971] text-[#ACA9F2] bg-[#0E0F24]/60' },
+    { name: 'FRONTEND', role: 'Experience', agents: 4, color: 'border-[#B9EBF3] text-[#085765] bg-[#EEFAFC]' },
+    { name: 'BACKEND', role: 'Platform', agents: 4, color: 'border-[#BBE6F4] text-[#0B5167] bg-[#EEF9FC]' },
+    { name: 'DEVOPS', role: 'Delivery', agents: 3, color: 'border-[#BCE4F5] text-[#0C4D68] bg-[#EEF8FC]' },
+    { name: 'QA', role: 'Quality Assurance', agents: 3, color: 'border-[#C1D6F9] text-[#15366E] bg-[#F0F5FD]' },
+    { name: 'REVIEW', role: 'Governance', agents: 5, color: 'border-[#C2D3F9] text-[#16326F] bg-[#F0F4FE]' },
 ];
 
 export const AgentDiagram = () => {
     return (
-        <div className="bg-surface/90 backdrop-blur-md rounded-3xl border border-border/80 p-6 md:p-8 shadow-xl shadow-slate-200/50 max-w-lg mx-auto w-full">
+        <div className="bg-surface/90 backdrop-blur-md rounded-[4px] border border-border/80 p-6 md:p-8 max-w-lg mx-auto w-full">
             {/* Top Engineer Node */}
             <div className="flex flex-col items-center justify-center mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-surface flex items-center justify-center shadow-md mb-2">
+                <div className="w-12 h-12 rounded-[3px] bg-surface flex items-center justify-center shadow-sm mb-2">
                     <span className="text-primary-ink font-mono font-bold text-xl">X</span>
                 </div>
-                <span className="text-[11px] tracking-widest font-mono font-bold text-muted uppercase px-3 py-1 bg-body rounded-md border border-border">
+                <span className="text-[11px] tracking-[0.08em] omx-label font-bold text-muted uppercase px-3 py-1 bg-body rounded-[2px] border border-border">
                     AGENTIC ENGINEER
                 </span>
             </div>
@@ -26,7 +26,7 @@ export const AgentDiagram = () => {
                 {teams.map((team) => (
                     <div
                         key={team.name}
-                        className={`border rounded-xl p-2 flex flex-col items-center justify-between text-center ${team.color} min-h-[150px]`}
+                        className={`border rounded-[3px] p-2 flex flex-col items-center justify-between text-center ${team.color} min-h-[150px]`}
                     >
                         <div>
                             <span className="text-[9px] font-mono font-bold block">{team.name}</span>
