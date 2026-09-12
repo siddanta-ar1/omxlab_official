@@ -60,11 +60,13 @@ export function SystemServices() {
         {/* Square cells, breakpoint-aware edge suppression: container carries the
             top/left hairlines, each cell carries its own right/bottom hairline. */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-grid-hairline bg-paper-white">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.Icon;
             return (
               <div
                 key={service.code}
+                data-anim=""
+                style={{ transitionDelay: `${index * 60}ms` }}
                 className="aspect-square p-space-lg lg:p-space-xl border-r border-b border-grid-hairline flex flex-col justify-between hover:bg-studio-grey transition-colors duration-100"
               >
                 <div className="flex items-center justify-between">

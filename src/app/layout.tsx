@@ -15,6 +15,59 @@ const hanken = Hanken_Grotesk({
   style: ['normal', 'italic'],
 });
 
+/* One observer for the whole page, rather than a client component per element.
+
+   Scroll entry has no business depending on React hydration: it is a visual
+   nicety, and if it fails the page must still render. This runs as a plain
+   inline script, arms every [data-anim] element, and only then adds the
+   `js-anim` class that switches the hidden state on -- so the parked state can
+   never outlive the thing that un-parks it. A 2s failsafe reveals everything
+   regardless, and reduced-motion readers never arm at all. */
+const ANIM_SCRIPT = `
+(function () {
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    var root = document.documentElement;
+    var reveal = function (el) { el.setAttribute('data-in', ''); };
+
+    var start = function () {
+      var nodes = document.querySelectorAll('[data-anim]');
+      if (!nodes.length) return;
+      root.classList.add('js-anim');
+
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            reveal(entries[i].target);
+            io.unobserve(entries[i].target);
+          }
+        }
+      }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+      for (var i = 0; i < nodes.length; i++) {
+        var r = nodes[i].getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) reveal(nodes[i]);
+        else io.observe(nodes[i]);
+      }
+
+      setTimeout(function () {
+        var all = document.querySelectorAll('[data-anim]:not([data-in])');
+        for (var i = 0; i < all.length; i++) reveal(all[i]);
+        io.disconnect();
+      }, 2000);
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  } catch (e) { /* leave the page visible */ }
+})();
+`;
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://omxlab.com'),
   title: {
@@ -49,11 +102,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
+      // The SVG is served to browsers that take it, so the mark stays crisp
+      // at any density; the PNGs remain for everything else.
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
       { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
+  manifest: '/manifest.webmanifest',
 };
 
 export const viewport: Viewport = {
@@ -74,6 +131,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <script dangerouslySetInnerHTML={{ __html: ANIM_SCRIPT }} />
       </body>
     </html>
   );

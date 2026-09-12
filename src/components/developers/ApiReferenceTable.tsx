@@ -78,6 +78,7 @@ const METHOD_STYLES: Record<HttpMethod, string> = {
 export function ApiReferenceTable() {
   return (
     <section
+      data-anim=""
       id="api-reference"
       className="w-full bg-paper-white py-space-2xl lg:py-space-3xl border-b border-grid-hairline"
     >

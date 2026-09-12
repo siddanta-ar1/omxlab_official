@@ -548,12 +548,25 @@ time,
   .omx-chevron:nth-child(2) { animation-delay: .4s; }
   .omx-chevron:nth-child(3) { animation-delay: .8s; }
 
-  /* No scroll-reveal. Two implementations of it -- an IntersectionObserver
-     and a CSS view() timeline -- each left whole sections stuck at opacity 0
-     in this layout. A page that can render itself blank is a worse outcome
-     than a page that simply arrives, and the system's own rule is that motion
-     is earned. Hover choreography and the arrow shuffle carry the interaction
-     language instead; they cannot hide content. */
+  /* Scroll entry -- slideUp, per DESIGN.md §8.
+
+     The hidden state is scoped to `html.js-anim`, a class the observer script
+     adds to itself only after it has successfully armed. Nothing is ever
+     parked unless something is already running that will un-park it, so no
+     JS, a thrown script, or reduced motion all leave the page fully visible.
+     A failsafe in the script reveals everything regardless after 2s. */
+  .js-anim [data-anim] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity .8s var(--ease-entry),
+      transform .8s var(--ease-entry);
+  }
+
+  .js-anim [data-anim][data-in] {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   /* Designed loading: reserve the box at the right ratio so nothing shifts. */
   .omx-skeleton {
@@ -598,6 +611,13 @@ time,
   .omx-drift:hover img,
   .omx-drift:hover [data-drift] {
     transform: none;
+  }
+
+  .js-anim [data-anim],
+  .js-anim [data-anim][data-in] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

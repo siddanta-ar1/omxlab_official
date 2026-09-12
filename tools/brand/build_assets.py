@@ -36,9 +36,11 @@ parser.add_argument('--components', type=pathlib.Path,
 args = parser.parse_args()
 SRC, OUT, CMP = str(args.src), str(args.out), str(args.components)
 
-# Logo files ship in Obsidian for light grounds; the app icon is a solid
-# Indigo tile with a White mark, which is what survives 16px.
-INK, TILE, GLYPH = '#05070A', '#4F46E5', '#F8FAFC'
+# Logo files ship in brand Abyss for light grounds. The app icon is a solid
+# Signal Orange tile carrying an Abyss mark: the brand rations orange to flat
+# squares, and a favicon is exactly that -- the one square everyone sees. It
+# also makes the tab legible at a glance in a strip of blue and white icons.
+INK, TILE, GLYPH = '#1F4A52', '#FF7540', '#1F4A52'
 
 def poly_d(pts, prec=2):
     return 'M' + 'L'.join(f'{x:.{prec}f} {y:.{prec}f}' for x, y in pts) + 'Z'
@@ -118,7 +120,7 @@ sc, padx = 0.74, (100 - 0.74 * MARK_W) / 2
 tiled = [[[(x * sc + padx, y * sc + 13.0) for x, y in l] for l in g] for g in mark_n]
 open(f'{OUT}/favicon.svg', 'w').write(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
-    f'<rect width="100" height="100" rx="18" fill="{TILE}"/>'
+    f'<rect width="100" height="100" rx="0" fill="{TILE}"/>'
     f'<g fill="{GLYPH}" fill-rule="evenodd">'
     + ''.join('<path d="' + ''.join(poly_d(l) for l in g) + '"/>' for g in tiled) + '</g></svg>\n')
 
@@ -127,7 +129,7 @@ open(f'{OUT}/favicon.svg', 'w').write(
 # sizes draw only the outer arm — MARK_PATHS[1] plus its two tails.
 OUTER_ARM = (0, 1, 4)
 
-def render(size, ss=8, radius=0.18, pad=0.13, subset=None):
+def render(size, ss=8, radius=0.0, pad=0.13, subset=None):
     S = size * ss
     tile = Image.new('RGBA', (S, S), (0, 0, 0, 0))
     ImageDraw.Draw(tile).rounded_rectangle([0, 0, S - 1, S - 1],

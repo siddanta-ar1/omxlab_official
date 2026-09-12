@@ -5,7 +5,8 @@
  */
 export function MissionNarrative() {
   return (
-    <section className="w-full bg-studio-grey border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-space-3xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-grid-hairline">
           <div className="pb-space-xl lg:pb-0 lg:pr-space-2xl flex items-center">

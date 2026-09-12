@@ -110,10 +110,18 @@ export function BentoConstellation() {
           {MODULES.map((module, index) => {
             const layout = CELL_LAYOUT[index];
             return (
+              // The animated wrapper IS the grid item, so it carries the
+              // column span; the cell inside keeps the hairlines and fills it.
+              // Tiles arrive staggered -- the constellation's whole trick.
               <div
                 key={module.code}
-                className={`${layout.colSpan} p-space-lg ${layout.borders} flex flex-col justify-between relative group hover:bg-studio-grey transition-colors duration-100`}
+                className={layout.colSpan}
+                data-anim=""
+                style={{ transitionDelay: `${index * 70}ms` }}
               >
+                <div
+                  className={`h-full p-space-lg ${layout.borders} flex flex-col justify-between relative group hover:bg-studio-grey transition-colors duration-100`}
+                >
                 {layout.corner && (
                   <div
                     className={`absolute ${layout.corner} w-1.5 h-1.5 bg-text-primary z-10`}
@@ -148,6 +156,7 @@ export function BentoConstellation() {
                   <a className="lab-link text-cta-button" href={module.href}>
                     Explore <span className="lab-link-glyph">→</span>
                   </a>
+                </div>
                 </div>
               </div>
             );

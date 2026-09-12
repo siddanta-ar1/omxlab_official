@@ -12,7 +12,8 @@ const REGISTRY_COUNTS: RegistryCount[] = [
 
 export function ResearchHeader() {
   return (
-    <section className="w-full bg-paper-white border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-space-2xl lg:py-space-3xl">
         <div className="flex items-center gap-space-sm mb-space-md">
           <span className="w-2.5 h-2.5 bg-swatch-sage" aria-hidden="true" />

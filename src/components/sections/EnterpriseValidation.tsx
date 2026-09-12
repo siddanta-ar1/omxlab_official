@@ -57,6 +57,8 @@ export function EnterpriseValidation() {
           {validationCases.map((item, index) => (
             <div
               key={item.client}
+              data-anim=""
+              style={{ transitionDelay: `${index * 80}ms` }}
               className="relative aspect-[16/10] bg-text-primary overflow-hidden group flex flex-col justify-between p-space-lg"
             >
               <div

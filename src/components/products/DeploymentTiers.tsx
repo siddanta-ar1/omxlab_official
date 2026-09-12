@@ -46,7 +46,8 @@ const TIER_FIELDS: { label: string; key: keyof Pick<Tier, 'includes' | 'isolatio
 
 export function DeploymentTiers() {
   return (
-    <section className="w-full bg-paper-white py-space-3xl border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-paper-white py-space-3xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
         <div className="mb-space-lg">
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">

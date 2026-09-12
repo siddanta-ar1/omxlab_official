@@ -20,6 +20,7 @@ const FACTS: RegistryFact[] = [
 export function FacilityRegistry() {
   return (
     <section
+      data-anim=""
       className="w-full bg-paper-white border-b border-grid-hairline"
       aria-labelledby="registry-heading"
     >

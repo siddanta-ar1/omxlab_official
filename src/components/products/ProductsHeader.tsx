@@ -21,7 +21,8 @@ const REGISTRY_METRICS: RegistryMetric[] = [
 
 export function ProductsHeader() {
   return (
-    <section className="w-full bg-paper-white border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto border-l border-r border-grid-hairline">
         <div className="flex flex-col lg:flex-row items-stretch">
           {/* Left column (70%) */}

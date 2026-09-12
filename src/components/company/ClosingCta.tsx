@@ -3,7 +3,8 @@ import { ArrowButton } from '@/components/common/ArrowButton';
 
 export function ClosingCta() {
   return (
-    <section className="w-full bg-action py-space-3xl text-on-primary">
+    <section
+      data-anim="" className="w-full bg-action py-space-3xl text-on-primary">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin flex flex-col lg:flex-row lg:items-center justify-between gap-space-2xl">
         <div className="max-w-3xl">
           <span className="text-micro-eyebrow text-on-primary/80 uppercase tracking-[0.25em] block mb-space-sm">

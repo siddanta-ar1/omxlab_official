@@ -48,6 +48,7 @@ const DISCIPLINES: Discipline[] = [
 export function Leadership() {
   return (
     <section
+      data-anim=""
       className="w-full bg-studio-grey border-b border-grid-hairline"
       aria-labelledby="founder-heading"
     >

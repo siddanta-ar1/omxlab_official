@@ -24,7 +24,8 @@ const COLUMNS: { label: string; key: keyof Role }[] = [
 
 export function OpenRoles() {
   return (
-    <section id="open-roles" className="w-full bg-studio-grey border-b border-grid-hairline">
+    <section
+      data-anim="" id="open-roles" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-space-3xl">
         <div className="mb-space-lg flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm">
           <div>

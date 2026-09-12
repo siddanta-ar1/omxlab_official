@@ -11,7 +11,8 @@ const HEADER_METRICS: HeaderMetric[] = [
 
 export function SolutionsHeader() {
   return (
-    <section className="w-full bg-paper-white border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin py-space-2xl lg:py-space-3xl">
         <div className="flex items-center gap-space-sm mb-space-md">
           <span className="w-2.5 h-2.5 bg-swatch-sage shrink-0" aria-hidden="true" />

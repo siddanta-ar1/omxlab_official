@@ -70,7 +70,8 @@ const SDKS: SdkEntry[] = [
 
 export function SdkMatrix() {
   return (
-    <section className="w-full bg-studio-grey py-space-2xl lg:py-space-3xl border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-studio-grey py-space-2xl lg:py-space-3xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
         <div className="mb-space-xl">
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">

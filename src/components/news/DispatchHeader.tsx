@@ -1,6 +1,7 @@
 export function DispatchHeader() {
   return (
-    <section className="w-full bg-paper-white border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin py-space-2xl">
         <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-sm">
           DISPATCH REGISTRY

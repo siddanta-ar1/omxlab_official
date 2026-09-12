@@ -26,7 +26,8 @@ const MODULES: ModuleStatus[] = [
 
 export function StatusRegister() {
   return (
-    <section className="w-full bg-studio-grey py-space-2xl lg:py-space-3xl border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-studio-grey py-space-2xl lg:py-space-3xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-space-lg">
           <div>

@@ -5,6 +5,7 @@
 export function SubscribeBand() {
   return (
     <section
+      data-anim=""
       className="w-full bg-paper-white border-b border-grid-hairline"
       aria-labelledby="subscribe-heading"
     >

@@ -44,6 +44,7 @@ const KIT_ITEMS: KitItem[] = [
 export function PressKitBand() {
   return (
     <section
+      data-anim=""
       className="w-full bg-studio-grey border-b border-grid-hairline"
       aria-labelledby="press-kit-heading"
     >

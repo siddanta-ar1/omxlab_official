@@ -14,7 +14,8 @@ const CERTIFICATIONS: Certification[] = [
 
 export function ComplianceStrip() {
   return (
-    <section className="w-full bg-studio-grey border-b border-grid-hairline">
+    <section
+      data-anim="" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin py-space-2xl">
         <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-lg">
           COMPLIANCE REGISTRY
