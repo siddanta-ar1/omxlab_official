@@ -33,7 +33,7 @@ export function ProductsHeader() {
                 PRODUCT REGISTRY
               </span>
             </div>
-            <h1 className="text-headline-xl sm:text-[60px] text-text-primary tracking-[-0.03em] leading-[0.95] max-w-3xl">
+            <h1 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[60px] text-text-primary tracking-[-0.03em] leading-[0.95] max-w-3xl">
               The full instrumentation{' '}
               <span className="accent-mark font-semibold">registry.</span>
             </h1>

@@ -97,7 +97,7 @@ export function BentoConstellation() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             THE BENTO CONSTELLATION
           </span>
-          <h2 className="text-headline-xl sm:text-[52px] text-text-primary font-extrabold tracking-tight leading-none">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[52px] text-text-primary font-extrabold tracking-tight leading-none">
             Unified intelligent systems.
           </h2>
           <p className="text-body-lead text-on-surface-variant mt-space-sm">

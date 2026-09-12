@@ -53,7 +53,7 @@ export function VerticalMatrix() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             SECTOR MATRIX
           </span>
-          <h2 className="text-headline-xl text-text-primary tracking-tight">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">
             Calibrated per compliance boundary.
           </h2>
         </div>

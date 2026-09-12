@@ -10,7 +10,7 @@ export function OpenScienceGrantBand() {
           <span className="text-micro-eyebrow text-on-primary/80 uppercase tracking-[0.25em] block mb-space-sm">
             OPEN SCIENCE GRANT
           </span>
-          <h2 className="text-headline-xl sm:text-[52px] text-on-primary font-black tracking-tight leading-[1.1]">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[52px] text-on-primary font-black tracking-tight leading-[1.1]">
             Fund the next registry entry.
           </h2>
           <p className="text-body-lead text-on-primary/90 mt-space-md">

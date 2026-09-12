@@ -88,7 +88,7 @@ export function ComparisonMatrix() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             MODULE COMPARISON MATRIX
           </span>
-          <h2 className="text-headline-lg text-text-primary">
+          <h2 className="text-headline-lg-mobile md:text-headline-lg text-text-primary">
             Five modules, one calibrated register.
           </h2>
         </div>

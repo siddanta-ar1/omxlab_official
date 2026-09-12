@@ -69,7 +69,7 @@ export function ModuleDetailRows() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             MODULE DETAIL
           </span>
-          <h2 className="text-headline-lg text-text-primary">
+          <h2 className="text-headline-lg-mobile md:text-headline-lg text-text-primary">
             Specification by module.
           </h2>
         </div>

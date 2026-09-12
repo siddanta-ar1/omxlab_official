@@ -15,7 +15,7 @@ export function ApiKeyCta() {
           <span className="text-micro-eyebrow text-on-primary/80 uppercase tracking-[0.25em] block mb-space-sm">
             GET STARTED
           </span>
-          <h2 className="text-headline-xl sm:text-[52px] text-on-primary font-black tracking-tight leading-[1.1]">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[52px] text-on-primary font-black tracking-tight leading-[1.1]">
             Get an API key.
           </h2>
           <p className="text-body-lead text-on-primary/90 mt-space-md">

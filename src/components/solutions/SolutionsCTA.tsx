@@ -10,7 +10,7 @@ export function SolutionsCTA() {
           <span className="text-micro-eyebrow text-on-primary/80 uppercase tracking-[0.25em] block mb-space-sm">
             DEPLOY YOUR VERTICAL
           </span>
-          <h2 className="text-headline-xl sm:text-[60px] text-on-primary font-black tracking-tight leading-[1.1]">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[60px] text-on-primary font-black tracking-tight leading-[1.1]">
             Every sector, one deterministic path.
           </h2>
           <p className="text-body-lead text-on-primary/90 mt-space-md">

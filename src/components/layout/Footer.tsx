@@ -97,7 +97,7 @@ export function Footer() {
               {column.links.map((link) => (
                 <Link
                   key={link.label}
-                  className="link-underline-grow text-body-compact text-on-surface-variant hover:text-on-surface"
+                  className="link-underline-grow text-body-compact text-on-surface-variant hover:text-on-surface py-1 min-h-[24px] flex items-center"
                   href={link.href}
                 >
                   {link.label}

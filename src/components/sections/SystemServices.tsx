@@ -55,7 +55,7 @@ export function SystemServices() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             SYSTEM SERVICES
           </span>
-          <h2 className="text-headline-xl text-text-primary tracking-tight">Engineered capabilities.</h2>
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">Engineered capabilities.</h2>
         </div>
         {/* Square cells, breakpoint-aware edge suppression: container carries the
             top/left hairlines, each cell carries its own right/bottom hairline. */}

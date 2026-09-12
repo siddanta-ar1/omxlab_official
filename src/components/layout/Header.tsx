@@ -7,11 +7,14 @@ import { usePathname } from 'next/navigation';
 import { MdClose, MdExpandMore, MdMenu, MdPerson, MdSearch } from 'react-icons/md';
 import { NAV_ITEMS } from '@/components/layout/nav-data';
 import { MegaMenu } from '@/components/layout/MegaMenu';
+import { SearchDialog } from '@/components/layout/SearchDialog';
 
 export const Header = () => {
     const pathname = usePathname();
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const searchButtonRef = useRef<HTMLButtonElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
     const closeTimer = useRef<number | undefined>(undefined);
 
@@ -69,6 +72,21 @@ export const Header = () => {
         };
     }, [openMenu, isMobileNavOpen]);
 
+    useEffect(() => {
+        const onKey = (event: KeyboardEvent) => {
+            const k = event.key.toLowerCase();
+            const inField = /^(input|textarea|select)$/i.test(
+                (event.target as HTMLElement | null)?.tagName ?? '',
+            );
+            if ((k === 'k' && (event.metaKey || event.ctrlKey)) || (k === '/' && !inField)) {
+                event.preventDefault();
+                setIsSearchOpen(true);
+            }
+        };
+        document.addEventListener('keydown', onKey);
+        return () => document.removeEventListener('keydown', onKey);
+    }, []);
+
     const isItemActive = (href: string) =>
         pathname === href || pathname.startsWith(`${href}/`);
 
@@ -92,7 +110,7 @@ export const Header = () => {
                         <span className="text-label-code text-on-surface uppercase font-medium">
                             OMX LAB
                         </span>
-                        <span className="px-1.5 py-0.5 rounded text-[9px] bg-studio-grey text-on-surface-variant font-medium border border-grid-hairline">
+                        <span className="hidden sm:inline px-1.5 py-0.5 rounded text-[9px] bg-studio-grey text-on-surface-variant font-medium border border-grid-hairline">
                             V.4.2
                         </span>
                     </Link>
@@ -179,11 +197,17 @@ export const Header = () => {
                         </button>
 
                         <button
-                            aria-label="Search"
-                            className="flex items-center justify-center px-space-md text-on-surface-variant hover:text-on-surface hover:bg-studio-grey transition-colors duration-300"
+                            ref={searchButtonRef}
+                            onClick={() => setIsSearchOpen(true)}
+                            aria-label="Search the registry"
+                            aria-keyshortcuts="Control+K Meta+K"
+                            className="flex items-center gap-space-sm justify-center px-space-md text-on-surface-variant hover:text-on-surface hover:bg-studio-grey transition-colors duration-300"
                             type="button"
                         >
                             <MdSearch size={18} aria-hidden="true" />
+                            <kbd className="hidden md:inline px-1.5 py-0.5 border border-grid-hairline bg-studio-grey text-[10px] text-text-muted rounded">
+                                ⌘K
+                            </kbd>
                         </button>
 
                         <Link
@@ -194,7 +218,7 @@ export const Header = () => {
                         </Link>
 
                         <Link
-                            className="flex items-center px-space-md bg-inverse-surface text-on-primary hover:bg-action-hover text-cta-button transition-colors duration-300"
+                            className="hidden sm:flex items-center px-space-md bg-inverse-surface text-on-primary hover:bg-action-hover text-cta-button transition-colors duration-300"
                             href="/company"
                         >
                             Contact sales
@@ -203,7 +227,7 @@ export const Header = () => {
                         <Link
                             href="/company"
                             aria-label="OMX Lab account"
-                            className="flex items-center justify-center px-space-md"
+                            className="hidden sm:flex items-center justify-center px-space-md"
                         >
                             <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                                 <MdPerson className="text-on-primary" size={18} aria-hidden="true" />
@@ -277,6 +301,14 @@ export const Header = () => {
                         })}
                     </nav>
                 </div>
+            )}
+            {isSearchOpen && (
+                <SearchDialog
+                    onClose={() => {
+                        setIsSearchOpen(false);
+                        searchButtonRef.current?.focus();
+                    }}
+                />
             )}
         </header>
     );

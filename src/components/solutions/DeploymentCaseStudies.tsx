@@ -79,7 +79,7 @@ export function DeploymentCaseStudies() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             REGISTERED DEPLOYMENTS
           </span>
-          <h2 className="text-headline-xl text-text-primary tracking-tight">
+          <h2 className="text-headline-xl-mobile sm:text-headline-xl text-text-primary tracking-tight">
             Verified at production scale.
           </h2>
         </div>
@@ -111,7 +111,7 @@ export function DeploymentCaseStudies() {
                     <span className="text-micro-eyebrow text-on-primary/60 uppercase tracking-[0.25em]">
                       {metric.label}
                     </span>
-                    <span className="text-headline-lg text-on-primary font-semibold tracking-tight">
+                    <span className="text-headline-lg-mobile md:text-headline-lg text-on-primary font-semibold tracking-tight">
                       {metric.value}
                     </span>
                   </div>

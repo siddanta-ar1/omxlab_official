@@ -61,7 +61,7 @@ export function InstrumentCatalogue() {
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
             02 / INSTRUMENT CATALOGUE
           </span>
-          <h2 className="text-headline-lg text-text-primary">
+          <h2 className="text-headline-lg-mobile md:text-headline-lg text-text-primary">
             The hardware behind the register.
           </h2>
         </div>

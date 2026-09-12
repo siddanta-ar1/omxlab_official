@@ -109,7 +109,7 @@ export function StackIndex() {
                     <span className="text-label-code text-text-muted uppercase tracking-[0.2em]">
                       {product.code}
                     </span>
-                    <h3 className="text-headline-lg text-text-primary">{product.title}</h3>
+                    <h3 className="text-headline-lg-mobile md:text-headline-lg text-text-primary">{product.title}</h3>
                   </div>
                   <div className="hidden lg:block">
                     <Link href={product.ctaHref} className="lab-link text-cta-button">

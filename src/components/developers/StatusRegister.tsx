@@ -34,7 +34,7 @@ export function StatusRegister() {
             <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
               STATUS REGISTER
             </span>
-            <h2 className="text-headline-lg text-text-primary tracking-tight">
+            <h2 className="text-headline-lg-mobile md:text-headline-lg text-text-primary tracking-tight">
               Live across all five modules.
             </h2>
           </div>

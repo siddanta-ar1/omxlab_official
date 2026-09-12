@@ -43,7 +43,7 @@ export function Hero() {
                   OMX LAB // SYSTEMS ARCHITECTURE V4.2
                 </span>
               </div>
-              <h1 className="text-headline-xl sm:text-[68px] lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
+              <h1 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[68px] lg:text-display-hero-mobile sm:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
                 Frontier AI infrastructure for
                 <br />
                 <span className="accent-mark font-semibold">reality.</span>
