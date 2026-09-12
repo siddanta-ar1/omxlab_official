@@ -1,31 +1,19 @@
-import { HeroSection } from '@/components/sections/HeroSection';
-import { AnimatedAppIcons } from '@/components/sections/AnimatedAppIcons';
-import { TrustedBy } from '@/components/sections/TrustedBy';
-import { WhatWeBuild } from '@/components/sections/WhatWeBuild';
-import { CompaniesSecured } from '@/components/sections/CompaniesSecured';
-import { ViewFromInside } from '@/components/sections/ViewFromInside';
-import { HowWeWork } from '@/components/sections/HowWeWork';
-import { StudentAmbassador } from '@/components/sections/StudentAmbassador';
-import { OpenRoles } from '@/components/sections/OpenRoles';
-import { EcosystemDiagram } from '@/components/sections/EcosystemDiagram';
-import { CustomerTestimonials } from '@/components/sections/CustomerTestimonials';
-import { HaKomxClub } from '@/components/sections/HaKomxClub';
+import { Hero } from '@/components/sections/Hero';
+import { EnterpriseValidation } from '@/components/sections/EnterpriseValidation';
+import { BentoConstellation } from '@/components/sections/BentoConstellation';
+import { StackIndex } from '@/components/sections/StackIndex';
+import { SystemServices } from '@/components/sections/SystemServices';
+import { InitiateArchitecture } from '@/components/sections/InitiateArchitecture';
 
 export default function HomePage() {
-    return (
-        <>
-            <HeroSection />
-            <AnimatedAppIcons />
-            <EcosystemDiagram />
-            <TrustedBy />
-            <WhatWeBuild />
-            <HowWeWork />
-            <CompaniesSecured />
-            <ViewFromInside />
-            <CustomerTestimonials />
-            <StudentAmbassador />
-            <HaKomxClub />
-            <OpenRoles />
-        </>
-    );
+  return (
+    <div className="flex flex-col w-full">
+      <Hero />
+      <EnterpriseValidation />
+      <BentoConstellation />
+      <StackIndex />
+      <SystemServices />
+      <InitiateArchitecture />
+    </div>
+  );
 }

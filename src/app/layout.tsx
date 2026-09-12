@@ -1,16 +1,80 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
-import './globals.css'; /* SAGEA sets everything in Söhne, which is a commercial Klim face. Inter is the closest freely licensed grotesk; the mono carries the micro-labels. */
-const sans = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap',
-}); const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', display: 'swap',
-}); import { Navbar } from '@/components/layout/Navbar';
+import { Hanken_Grotesk } from 'next/font/google';
+import './globals.css';
+import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { ScrollToTop } from '@/components/layout/ScrollToTop';
-import { PageTransitionLoader } from '@/components/common/PageTransitionLoader';
-import { SmoothScroll } from '@/components/common/SmoothScroll';
-import { MascotPet } from '@/components/common/MascotPet'; export const metadata: Metadata = { title: { default: 'OMX Lab — Custom Software Development', template: '%s | OMX Lab', }, description: 'OMX Lab designs and builds custom software, web and mobile applications, and cloud platforms for businesses that have outgrown off-the-shelf tools.', icons: { icon: [ { url: '/favicon.ico', sizes: 'any' }, { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' }, { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' }, ], apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }], },
-}; export const viewport: Viewport = { themeColor: '#FFFFFF',
-}; export default function RootLayout({ children,
-}: Readonly<{ children: React.ReactNode;
-}>) { return ( <html lang="en" className={`${sans.variable} ${mono.variable}`}> <body> <ScrollToTop /> <PageTransitionLoader /> <SmoothScroll> <div className="min-h-screen flex flex-col bg-body relative"> {/* The Cute Random Mascot */} <MascotPet /> <div className="relative z-10 flex flex-col min-h-screen w-full"> {/* Navbar stays visible on all pages */} <Navbar /> <main className="flex-grow">{children}</main> <Footer /> </div> </div> </SmoothScroll> </body> </html> );
+
+/* The system calls for Söhne's proportions and optical density; Hanken
+   Grotesk is the freely licensed face that sits closest. Italics carry the
+   Signal Sky inflections, so the italic axis is loaded too. */
+const hanken = Hanken_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-hanken',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://omxlab.com'),
+  title: {
+    default: 'OMX Lab — Frontier AI Infrastructure',
+    template: '%s | OMX Lab',
+  },
+  description:
+    'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+  applicationName: 'OMX Lab',
+  authors: [{ name: 'Siddanta Sodari' }],
+  keywords: [
+    'AI infrastructure',
+    'distributed training',
+    'biometric verification',
+    'model evaluation',
+    'sovereign deployment',
+  ],
+  openGraph: {
+    type: 'website',
+    siteName: 'OMX Lab',
+    title: 'OMX Lab — Frontier AI Infrastructure',
+    description:
+      'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+    locale: 'en',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OMX Lab — Frontier AI Infrastructure',
+    description:
+      'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#EFEAE4',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" className={hanken.variable}>
+      <body className="bg-surface text-on-surface antialiased">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Header />
+        <main id="main" className="w-full pt-[49px] bg-surface min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
 }

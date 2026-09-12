@@ -1,33 +1,24 @@
 import type { Metadata } from 'next';
-
-import { ResearchHero } from '@/components/sections/ResearchHero';
-import { ResearchAreas } from '@/components/sections/ResearchAreas';
-import { ResearchPublications } from '@/components/sections/ResearchPublications';
-import { ResearchProcess } from '@/components/sections/ResearchProcess';
-import { ResearchCollaborate } from '@/components/sections/ResearchCollaborate';
+import { ResearchHeader } from '@/components/research/ResearchHeader';
+import { PublicationsTable } from '@/components/research/PublicationsTable';
+import { ResearchAreas } from '@/components/research/ResearchAreas';
+import { BenchmarkDatasets } from '@/components/research/BenchmarkDatasets';
+import { OpenScienceGrantBand } from '@/components/research/OpenScienceGrantBand';
 
 export const metadata: Metadata = {
-    title: 'Research',
-    description:
-        'Papers, reports, and open-source releases from the OMX Lab research group, across agents, machine learning, systems, and security.',
+  title: 'Research',
+  description:
+    'The OMX Lab research registry: peer publications, pre-prints, benchmark datasets and the open science grant programme.',
 };
 
-export default async function ResearchPage({
-    searchParams,
-}: {
-    searchParams: Promise<{ topic?: string }>;
-}) {
-    // Resolved here rather than in the client component so the filtered list is
-    // part of the rendered HTML.
-    const { topic } = await searchParams;
-
-    return (
-        <>
-            <ResearchHero />
-            <ResearchAreas />
-            <ResearchPublications activeTopic={topic} />
-            <ResearchProcess />
-            <ResearchCollaborate />
-        </>
-    );
+export default function ResearchPage() {
+  return (
+    <div className="flex flex-col w-full">
+      <ResearchHeader />
+      <PublicationsTable />
+      <ResearchAreas />
+      <BenchmarkDatasets />
+      <OpenScienceGrantBand />
+    </div>
+  );
 }
