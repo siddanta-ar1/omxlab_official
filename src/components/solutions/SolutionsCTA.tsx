@@ -27,7 +27,7 @@ export function SolutionsCTA() {
             href="/company"
             className="lab-link px-5 py-[10px] border border-on-primary text-on-primary hover:bg-on-primary/10 rounded-lg text-cta-button flex items-center justify-center transition-all duration-200"
           >
-            Talk to an engineer <span className="lab-link-glyph">→</span>
+            Talk to an engineer <span className="lab-link-glyph" aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

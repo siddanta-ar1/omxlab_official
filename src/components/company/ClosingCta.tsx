@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowButton } from '@/components/common/ArrowButton';
+import { ROLES } from '@/components/company/OpenRoles';
 
 export function ClosingCta() {
   return (
@@ -11,7 +12,7 @@ export function ClosingCta() {
             06 / JOIN THE REGISTRY
           </span>
           <h2 className="text-headline-lg-mobile md:text-headline-xl text-on-primary">
-            6 open roles across three facilities.
+            {ROLES.length} open roles, on-site and remote.
           </h2>
           <p className="text-body-lead text-on-primary/90 mt-space-md">
             The Kathmandu studio is hiring engineers, researchers, and

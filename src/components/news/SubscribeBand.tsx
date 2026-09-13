@@ -30,6 +30,12 @@ export function SubscribeBand() {
             </div>
 
             <div className="p-space-xl flex flex-col justify-center bg-studio-grey">
+              {/* No subscription endpoint exists yet. Rather than fake a
+                  success state with an intercepted submit, this stays a
+                  plain native form: required + type="email" means the
+                  browser validates before it goes anywhere, and it will
+                  visibly navigate (not silently "succeed") once a real
+                  `action` is wired up here. */}
               <form className="flex flex-col sm:flex-row gap-space-sm">
                 <div className="flex-1">
                   <label htmlFor="subscribe-email" className="sr-only">

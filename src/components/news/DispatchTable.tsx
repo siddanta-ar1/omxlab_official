@@ -143,12 +143,12 @@ export function DispatchTable() {
                     className={`w-[10px] h-[10px] shrink-0 ${CATEGORY_SWATCH[dispatch.category]}`}
                     aria-hidden="true"
                   />
-                  <span className="text-[10px] uppercase tracking-[0.1em] text-text-primary border border-grid-hairline px-1.5 py-0.5">
+                  <span className="text-label-code uppercase text-text-primary border border-grid-hairline px-1.5 py-0.5">
                     {dispatch.category}
                   </span>
                 </span>
 
-                <span className="text-label-code text-[11px] text-text-muted">
+                <span className="text-label-code text-text-muted">
                   <time dateTime={toIsoDate(dispatch.date)}>{dispatch.date}</time>
                 </span>
 

@@ -111,7 +111,7 @@ export function DeploymentCaseStudies() {
                     <span className="text-micro-eyebrow text-on-primary/60 uppercase tracking-[0.25em]">
                       {metric.label}
                     </span>
-                    <span className="text-headline-lg-mobile md:text-headline-lg text-on-primary font-semibold tracking-tight">
+                    <span className="text-headline-lg-mobile md:text-headline-lg text-on-primary font-semibold tracking-tight tabular-nums">
                       {metric.value}
                     </span>
                   </div>

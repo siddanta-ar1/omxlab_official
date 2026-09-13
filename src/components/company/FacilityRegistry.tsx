@@ -5,14 +5,17 @@
    One real entry, stated plainly, rather than a roster of facilities the
    company does not have. */
 
+import { toIsoDate } from '@/lib/registry-date';
+
 type RegistryFact = {
   label: string;
   value: string;
+  isDate?: boolean;
 };
 
 const FACTS: RegistryFact[] = [
   { label: 'COORDINATES', value: '27.7172° N / 85.3240° E' },
-  { label: 'ESTABLISHED', value: 'SEPTEMBER 2026' },
+  { label: 'ESTABLISHED', value: 'SEP 2026', isDate: true },
   { label: 'FOUNDER', value: 'SIDDANTA SODARI' },
   { label: 'CLASSIFICATION', value: 'TECHNOLOGY & RESEARCH' },
 ];
@@ -68,7 +71,11 @@ export function FacilityRegistry() {
                   {fact.label}
                 </span>
                 <span className="text-body-default text-text-primary">
-                  {fact.value}
+                  {fact.isDate ? (
+                    <time dateTime={toIsoDate(fact.value)}>{fact.value}</time>
+                  ) : (
+                    fact.value
+                  )}
                 </span>
               </div>
             ))}

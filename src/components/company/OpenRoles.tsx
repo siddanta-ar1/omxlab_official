@@ -5,8 +5,9 @@ type Role = {
   type: 'Full-time' | 'Research Fellowship' | 'Contract';
 };
 
-// 18 rows -- keep the count exactly matching the "Careers (6 open)" canon.
-const ROLES: Role[] = [
+// Exported so other sections (the closing CTA) can cite the live count
+// instead of a hardcoded number that could drift out of sync.
+export const ROLES: Role[] = [
   { role: 'Founding Engineer, Distributed Systems', department: 'Engineering', facility: 'Kathmandu Studio', type: 'Full-time' },
   { role: 'Research Engineer, Evaluation', department: 'Research', facility: 'Kathmandu Studio', type: 'Full-time' },
   { role: 'Applied Researcher, Multimodal', department: 'Research', facility: 'Remote', type: 'Full-time' },
@@ -32,7 +33,7 @@ export function OpenRoles() {
             <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
               05 / CAREERS
             </span>
-            <h2 className="text-headline-md text-text-primary">Careers (6 open)</h2>
+            <h2 className="text-headline-md text-text-primary">Careers ({ROLES.length} open)</h2>
           </div>
           <p className="text-body-compact text-on-surface-variant max-w-sm">
             Open registry entries, current as of this publication. The laboratory

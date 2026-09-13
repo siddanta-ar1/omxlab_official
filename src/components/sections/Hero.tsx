@@ -1,4 +1,4 @@
-import { MdArrowDownward, MdArrowUpward } from 'react-icons/md';
+import Link from 'next/link';
 import { SpecimenPlate } from '@/components/common/SpecimenPlate';
 
 /**
@@ -43,7 +43,7 @@ export function Hero() {
                   OMX LAB // SYSTEMS ARCHITECTURE V4.2
                 </span>
               </div>
-              <h1 className="text-headline-xl-mobile sm:text-headline-xl sm:text-[68px] lg:text-display-hero-mobile sm:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
+              <h1 className="text-headline-xl-mobile sm:text-headline-xl lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
                 Frontier AI infrastructure for
                 <br />
                 <span className="accent-mark font-semibold">reality.</span>
@@ -126,34 +126,18 @@ export function Hero() {
               <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-sm">
                 DISPATCH REGISTRY
               </span>
-              <div className="flex border border-grid-hairline bg-paper-white group hover:border-on-surface transition-colors duration-200">
+              <Link
+                href="/news"
+                className="flex border border-grid-hairline bg-paper-white group hover:border-on-surface transition-colors duration-200"
+              >
                 <div className="w-20 h-20 shrink-0 border-r border-grid-hairline overflow-hidden halftone-strip" aria-hidden="true" />
-                <div className="flex-1 p-space-sm flex flex-col justify-center">
+                <div className="flex-1 p-space-sm flex flex-col justify-center min-w-0">
                   <span className="text-label-code text-[10px] text-text-muted">SYSTEM RELEASE · 03.14</span>
-                  <a
-                    className="text-body-compact font-medium text-text-primary group-hover:text-on-surface-variant transition-colors line-clamp-2"
-                    href="#helios"
-                  >
+                  <span className="text-body-compact font-medium text-text-primary group-hover:text-on-surface-variant transition-colors line-clamp-2">
                     Introducing Helios: Autonomous Verification Matrix
-                  </a>
+                  </span>
                 </div>
-                <div className="w-10 flex flex-col border-l border-grid-hairline divide-y divide-grid-hairline shrink-0">
-                  <button
-                    aria-label="Previous dispatch"
-                    className="h-10 flex items-center justify-center text-text-primary hover:bg-studio-grey transition-colors"
-                    type="button"
-                  >
-                    <MdArrowUpward size={16} aria-hidden="true" />
-                  </button>
-                  <button
-                    aria-label="Next dispatch"
-                    className="h-10 flex items-center justify-center text-text-primary hover:bg-studio-grey transition-colors"
-                    type="button"
-                  >
-                    <MdArrowDownward size={16} aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

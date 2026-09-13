@@ -1,14 +1,21 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MdClose, MdExpandMore, MdMenu, MdPerson, MdSearch } from 'react-icons/md';
 import { NAV_ITEMS } from '@/components/layout/nav-data';
 import { MegaMenu } from '@/components/layout/MegaMenu';
-import { SearchDialog } from '@/components/layout/SearchDialog';
+import dynamic from 'next/dynamic';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
+
+/* Loaded on first open rather than on every page. The dialog pulls in the whole
+   static search index, which is dead weight until someone actually presses the
+   key. No SSR: it renders nothing until opened. */
+const SearchDialog = dynamic(
+    () => import('@/components/layout/SearchDialog').then((m) => m.SearchDialog),
+    { ssr: false },
+);
 
 export const Header = () => {
     const pathname = usePathname();
@@ -17,6 +24,8 @@ export const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
+    const mobileToggleRef = useRef<HTMLButtonElement>(null);
+    const mobileDrawerRef = useRef<HTMLDivElement>(null);
     const closeTimer = useRef<number | undefined>(undefined);
 
     // Close everything whenever the route changes. Adjusting state during
@@ -43,7 +52,8 @@ export const Header = () => {
     useEffect(() => () => cancelClose(), []);
 
     // Escape closes the open drawer and returns focus to its trigger; a click
-    // or a focus landing outside the nav closes it too.
+    // or a focus landing outside the nav (desktop menu) or the drawer (mobile
+    // nav) closes that too.
     useEffect(() => {
         if (!openMenu && !isMobileNavOpen) return;
 
@@ -60,7 +70,11 @@ export const Header = () => {
         };
 
         const onAway = (event: Event) => {
-            if (!navRef.current?.contains(event.target as Node)) setOpenMenu(null);
+            const target = event.target as Node;
+            if (navRef.current?.contains(target)) return;
+            if (mobileDrawerRef.current?.contains(target)) return;
+            setOpenMenu(null);
+            setIsMobileNavOpen(false);
         };
 
         document.addEventListener('keydown', onKeyDown);
@@ -72,6 +86,55 @@ export const Header = () => {
             document.removeEventListener('focusin', onAway);
         };
     }, [openMenu, isMobileNavOpen]);
+
+    // Trap focus inside the mobile drawer while it is open, and return focus
+    // to the hamburger that opened it once it closes (Escape, outside click,
+    // toggling the trigger again, or a route change) — mirroring the desktop
+    // mega-menu's own focus contract.
+    useEffect(() => {
+        if (!isMobileNavOpen) return;
+
+        const focusableSelector =
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        const focusFirst = () => {
+            const first = mobileDrawerRef.current?.querySelector<HTMLElement>(focusableSelector);
+            first?.focus();
+        };
+        focusFirst();
+
+        const onTab = (event: KeyboardEvent) => {
+            if (event.key !== 'Tab') return;
+            const drawer = mobileDrawerRef.current;
+            if (!drawer) return;
+            const focusables = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelector));
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        };
+
+        // Captured at setup rather than read in cleanup: the hamburger is
+        // always mounted so the node is stable, and reading a ref during
+        // teardown is the pattern that goes wrong when it later isn't.
+        const toggle = mobileToggleRef.current;
+
+        document.addEventListener('keydown', onTab);
+        return () => {
+            document.removeEventListener('keydown', onTab);
+            // The drawer unmounts as soon as isMobileNavOpen goes false, which
+            // moves focus to <body> by default — reclaim it for the trigger.
+            if (document.activeElement === document.body) {
+                toggle?.focus();
+            }
+        };
+    }, [isMobileNavOpen]);
 
     useEffect(() => {
         const onKey = (event: KeyboardEvent) => {
@@ -100,12 +163,16 @@ export const Header = () => {
                         aria-label="OMX Lab, home"
                         className="flex items-center gap-space-sm px-space-md shrink-0 hover:bg-studio-grey transition-colors duration-300"
                     >
-                        <Image
+                        {/* A plain <img>: next/image cannot optimise an SVG, so
+                            it emitted an unoptimised passthrough while still
+                            costing a preload slot ahead of the stylesheet.
+                            Explicit width/height keep the box reserved. */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src="/logo-mark.svg"
                             alt=""
                             width={215}
                             height={100}
-                            priority
                             className="h-5 w-auto object-contain"
                         />
                         <span className="text-label-code text-on-surface uppercase font-medium">
@@ -183,6 +250,7 @@ export const Header = () => {
 
                     <div className="flex items-stretch shrink-0 divide-x divide-nav-hairline">
                         <button
+                            ref={mobileToggleRef}
                             type="button"
                             onClick={() => setIsMobileNavOpen((open) => !open)}
                             aria-label={isMobileNavOpen ? 'Close menu' : 'Open menu'}
@@ -258,6 +326,7 @@ export const Header = () => {
 
             {isMobileNavOpen && (
                 <div
+                    ref={mobileDrawerRef}
                     id="mobile-nav-drawer"
                     className="lg:hidden absolute left-0 right-0 top-[49px] bg-paper-white border-b border-nav-hairline rounded-b-lg mega-menu-veil max-h-[80vh] overflow-y-auto"
                 >

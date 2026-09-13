@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { toIsoDate } from '@/lib/registry-date';
 
 /**
  * The canon lead dispatch, reproduced verbatim from the hero widget
@@ -24,8 +25,8 @@ export function FeaturedDispatch() {
               ·
             </span>
             <time
-              dateTime="2026-09-02"
-              className="text-label-code text-[11px] text-text-muted"
+              dateTime={toIsoDate('02 SEP 2026')}
+              className="text-label-code text-text-muted"
             >
               02 SEP 2026
             </time>

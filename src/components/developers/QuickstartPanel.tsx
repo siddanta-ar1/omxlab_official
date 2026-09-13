@@ -40,7 +40,7 @@ result = client.helios.verify(
     subject_id="SUBJ_00931A",
     document={
         "type": "passport",
-        "issuing_country": "CH",
+        "issuing_country": "US",
     },
     liveness_check=True,
 )
@@ -89,7 +89,7 @@ export function QuickstartPanel() {
           {/* Inverted code panel -- the sole inverted surface on the page */}
           <div className="bg-inverse-surface text-inverse-on-surface flex flex-col">
             <div className="flex items-center justify-between px-space-md py-space-sm border-b border-inverse-on-surface/15">
-              <span className="text-label-code text-inverse-on-surface/80 font-mono tracking-wider">
+              <span id="quickstart-snippet-label" className="text-label-code text-inverse-on-surface/80 font-mono tracking-wider">
                 verify.py
               </span>
               <span className="text-label-code text-inverse-on-surface/60 uppercase tracking-[0.2em]">
@@ -98,6 +98,8 @@ export function QuickstartPanel() {
             </div>
             <pre
               tabIndex={0}
+              role="group"
+              aria-labelledby="quickstart-snippet-label"
               className="overflow-x-auto p-space-md text-body-compact leading-relaxed font-mono flex-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-inverse-on-surface/40"
             >
               <code>{SNIPPET}</code>

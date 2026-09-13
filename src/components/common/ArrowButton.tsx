@@ -15,9 +15,10 @@ import type { ReactNode } from 'react';
    - the offsets are CSS variables so the same component serves a wide CTA and
      a tight inline link without re-tuning the classes
 
-   The whole choreography is CSS, gated to pointer devices by the
-   `@media (hover: hover)` block in globals.css, and flattened under
-   prefers-reduced-motion.
+   The whole choreography is CSS. Under prefers-reduced-motion every part is
+   pinned to its resting state — no transition, and neither arrow's hover
+   target overrides its default — so the button reads exactly the same
+   hovered or not: one arrow, no shuffle.
    --------------------------------------------------------------------------- */
 
 type Variant = 'primary' | 'secondary' | 'onDark';
@@ -58,13 +59,16 @@ export function ArrowButton({
                   transition-colors duration-300 active:scale-[0.99]
                   ${VARIANTS[variant]} ${className}`}
     >
-      {/* Incoming arrow, parked off the left edge. */}
+      {/* Incoming arrow, parked off the left edge. Under reduced motion it
+          must stay parked on hover too, or it and the trailing arrow (which
+          is pinned visible below) would show at once. */}
       <span
         aria-hidden="true"
         className="absolute left-4 -translate-x-10 opacity-0 will-change-transform
                    transition-all duration-300 delay-100
                    group-hover:translate-x-0 group-hover:opacity-100
-                   motion-reduce:transition-none"
+                   motion-reduce:transition-none
+                   motion-reduce:group-hover:-translate-x-10 motion-reduce:group-hover:opacity-0"
       >
         →
       </span>

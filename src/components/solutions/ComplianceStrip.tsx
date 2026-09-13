@@ -17,9 +17,9 @@ export function ComplianceStrip() {
     <section
       data-anim="" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin py-space-2xl">
-        <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-lg">
+        <h2 className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-lg">
           COMPLIANCE REGISTRY
-        </span>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 border-t border-l border-grid-hairline bg-paper-white">
           {CERTIFICATIONS.map((cert) => (
             <div

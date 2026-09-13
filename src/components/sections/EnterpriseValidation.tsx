@@ -1,3 +1,5 @@
+import { toIsoDate } from '@/lib/registry-date';
+
 type ValidationCase = {
   sector: string;
   date: string;
@@ -79,9 +81,9 @@ export function EnterpriseValidation() {
                 <span className="bg-paper-white text-on-surface text-label-code text-[10px] tracking-[0.1em] px-2 py-0.5 uppercase font-semibold">
                   {item.sector}
                 </span>
-                <span className="text-on-primary/80 text-label-code text-[11px]">
+                <time dateTime={toIsoDate(item.date)} className="text-on-primary/80 text-label-code">
                   {item.date}
-                </span>
+                </time>
               </div>
               <div className="relative z-10">
                 <div className="h-8 mb-space-xs flex items-center">

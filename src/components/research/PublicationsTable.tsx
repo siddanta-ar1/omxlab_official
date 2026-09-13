@@ -131,7 +131,7 @@ export function PublicationsTable() {
           </h2>
         </div>
 
-        <div className="w-full overflow-x-auto border border-grid-hairline">
+        <div className="w-full overflow-x-auto border border-grid-hairline bg-paper-white">
           <table className="w-full min-w-[960px] border-collapse tabular-nums">
             <caption className="sr-only">OMX Lab research registry: publication index, title, authors, venue, date and source link.</caption>
             <thead>

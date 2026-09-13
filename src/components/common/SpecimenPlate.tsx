@@ -66,28 +66,39 @@ function buildTrace(seed: number) {
   return { points: points.join(' '), peak };
 }
 
+/* The density field is ~125 cells. Emitted as individual <rect> elements that
+   cost ~18KB of DOM per plate, and again the same inside the RSC flight
+   payload. Because the opacity is quantised to three levels, the whole field
+   collapses into three <path> elements -- one per level -- with every cell as a
+   subpath. Identical pixels, a fraction of the nodes. */
+const DENSITY_LEVELS = [0.16, 0.4, 0.82] as const;
+
 function buildMatrix(seed: number) {
   const next = rng(seed);
   const cols = 24;
   const rows = 9;
-  const cells: { x: number; y: number; o: number }[] = [];
   const cw = VIEW_W / cols;
   const ch = (PLOT_BOTTOM - PLOT_TOP) / rows;
+  const w = (cw - 2).toFixed(2);
+  const h = (ch - 2).toFixed(2);
+
+  const buckets: string[][] = DENSITY_LEVELS.map(() => []);
 
   for (let r = 0; r < rows; r += 1) {
     for (let c = 0; c < cols; c += 1) {
       const v = next();
       if (v < 0.42) continue;
-      cells.push({
-        x: c * cw,
-        y: PLOT_TOP + r * ch,
-        // Quantised so the field reads as discrete specimen density.
-        o: v > 0.88 ? 0.82 : v > 0.66 ? 0.4 : 0.16,
-      });
+      // Quantised so the field reads as discrete specimen density.
+      const level = v > 0.88 ? 2 : v > 0.66 ? 1 : 0;
+      const x = (c * cw + 1).toFixed(2);
+      const y = (PLOT_TOP + r * ch + 1).toFixed(2);
+      buckets[level].push(`M${x} ${y}h${w}v${h}h-${w}z`);
     }
   }
 
-  return { cells, cw, ch };
+  return DENSITY_LEVELS.map((o, i) => ({ o, d: buckets[i].join('') })).filter(
+    (p) => p.d.length > 0,
+  );
 }
 
 export function SpecimenPlate({
@@ -178,15 +189,12 @@ export function SpecimenPlate({
         })}
 
         {matrix ? (
-          matrix.cells.map((cell, i) => (
-            <rect
-              key={i}
-              x={cell.x + 1}
-              y={cell.y + 1}
-              width={matrix.cw - 2}
-              height={matrix.ch - 2}
+          matrix.map((layer) => (
+            <path
+              key={layer.o}
+              d={layer.d}
               fill="var(--color-text-primary)"
-              opacity={cell.o}
+              opacity={layer.o}
             />
           ))
         ) : (

@@ -1,44 +1,45 @@
 type Vertical = {
   sector: string;
-  swatchClassName: string;
   title: string;
   body: string;
 };
 
+/**
+ * Sector markers deliberately do NOT borrow the five product-swatch colours
+ * (bg-swatch-helios|foundry|studio|rune|sage): those are reserved for
+ * identifying the five modules elsewhere (ComparisonMatrix, ModuleDetailRows,
+ * DeploymentCaseStudies). Six verticals over a five-colour palette would
+ * force a repeat and falsely imply a module association, so every row gets
+ * the same neutral outline marker instead.
+ */
 const VERTICALS: Vertical[] = [
   {
     sector: 'INFRASTRUCTURE',
-    swatchClassName: 'bg-swatch-foundry',
     title: 'Physical telemetry, verified continuously.',
     body: 'Autonomous verification pipelines calibrated for high-precision foundry and automation lines — zero-drift sensor tolerances at industrial scale.',
   },
   {
     sector: 'HEALTHCARE',
-    swatchClassName: 'bg-swatch-helios',
     title: 'Structural accuracy without compromise.',
     body: 'Protein sequence alignment and bio-informatics workloads accelerated under HIPAA-compliant, zero-loss structural tolerance guarantees.',
   },
   {
     sector: 'FINTECH',
-    swatchClassName: 'bg-swatch-studio border border-grid-hairline',
     title: 'Deterministic identity, real time.',
     body: 'KYC and identity synthesis pipelines built to strict FINMA Tier-1 standards, deployed with sub-12ms deterministic response latency.',
   },
   {
     sector: 'DEFENCE & SOVEREIGN',
-    swatchClassName: 'bg-swatch-sage',
     title: 'Air-gapped, sovereign by design.',
     body: 'Zero-exposure enclave architectures for classified and sovereign workloads, hardware-isolated from every external network boundary.',
   },
   {
     sector: 'SCIENTIFIC RESEARCH',
-    swatchClassName: 'bg-swatch-rune',
     title: 'Instrumented for reproducibility.',
     body: 'Cryo-EM and structural modeling pipelines with sub-angstrom resolution limits, engineered for peer-reviewable, reproducible output.',
   },
   {
     sector: 'ADVANCED MANUFACTURING',
-    swatchClassName: 'bg-swatch-foundry',
     title: 'Line-rate quality assurance.',
     body: 'Distributed inspection and defect-classification systems running at production line-rate across multi-site manufacturing floors.',
   },
@@ -66,7 +67,7 @@ export function VerticalMatrix() {
               className="p-space-lg lg:p-space-xl border-r border-b border-grid-hairline flex flex-col gap-space-md hover:bg-studio-grey transition-colors duration-100"
             >
               <div className="flex items-center gap-space-sm">
-                <span className={`w-[10px] h-[10px] shrink-0 ${vertical.swatchClassName}`} aria-hidden="true" />
+                <span className="w-[10px] h-[10px] shrink-0 border border-text-muted" aria-hidden="true" />
                 <span className="text-label-code text-text-muted uppercase tracking-[0.2em]">
                   {vertical.sector}
                 </span>

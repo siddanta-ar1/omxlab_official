@@ -73,6 +73,11 @@ export function StackIndex() {
   return (
     <section className="w-full bg-studio-grey py-space-3xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
+        {/* The visible "STACK INDEX" label lives in the sticky rail, which is
+            hidden below md — so the section still needs a heading that is
+            always in the DOM for proper heading order and for phone-width
+            screen reader users, who never see the rail at all. */}
+        <h2 className="sr-only">Stack Index</h2>
         <div className="grid grid-cols-1 md:grid-cols-10 gap-0">
           {/* Sticky index rail: plain in-page anchors, not a tab switcher. */}
           <div className="hidden md:flex md:col-span-2 flex-col justify-end sticky bottom-8 self-end pr-space-lg pb-space-lg">

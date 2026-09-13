@@ -119,7 +119,7 @@ export function Footer() {
             {LEGAL_LINKS.map((link) => (
               <Link
                 key={link.label}
-                className="text-label-code text-on-surface-variant hover:text-on-surface"
+                className="text-label-code text-on-surface-variant hover:text-on-surface inline-flex items-center min-h-[24px]"
                 href={link.href}
               >
                 {link.label}

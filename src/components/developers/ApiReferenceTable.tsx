@@ -68,6 +68,12 @@ const ENDPOINTS: Endpoint[] = [
     description: 'Register a signed endpoint for module lifecycle event delivery.',
     rateLimit: '10 req/min',
   },
+  {
+    method: 'GET',
+    path: '/v1/status',
+    description: 'Report real-time operational status and uptime for all five modules.',
+    rateLimit: '600 req/min',
+  },
 ];
 
 const METHOD_STYLES: Record<HttpMethod, string> = {
@@ -88,11 +94,11 @@ export function ApiReferenceTable() {
             API REFERENCE
           </span>
           <h2 className="text-headline-lg-mobile md:text-headline-lg text-text-primary tracking-tight">
-            Ten endpoints, five modules.
+            Eleven endpoints, five modules.
           </h2>
         </div>
 
-        <div className="overflow-x-auto border border-grid-hairline">
+        <div className="overflow-x-auto border border-grid-hairline bg-paper-white">
           <table className="w-full min-w-[720px] border-collapse">
             <caption className="sr-only">OMX Lab API reference: HTTP method, endpoint path, description and rate limit.</caption>
             <thead>
@@ -125,7 +131,7 @@ export function ApiReferenceTable() {
             </thead>
             <tbody className="divide-y divide-grid-hairline">
               {ENDPOINTS.map((endpoint) => (
-                <tr key={`${endpoint.method}-${endpoint.path}`} className="hover:bg-studio-grey transition-colors">
+                <tr key={`${endpoint.method}-${endpoint.path}`} className="hover:bg-studio-grey transition-colors duration-100">
                   <td className="px-space-md py-space-sm align-middle">
                     <span
                       className={`inline-flex items-center justify-center w-14 text-[11px] font-semibold tracking-wider py-1 ${METHOD_STYLES[endpoint.method]}`}

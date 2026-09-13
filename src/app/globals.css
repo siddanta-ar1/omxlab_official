@@ -478,6 +478,9 @@ time,
      the emphasised word stays ink and the brand colour arrives as a rule
      drawn under it -- an editor's mark rather than a highlight. */
   .accent-mark {
+    /* The italic face is its own lazily-loaded instance, so it has to be
+       named explicitly -- the body variable carries the normal axis only. */
+    font-family: var(--font-hanken-italic), var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
     font-style: italic;
     position: relative;
     display: inline-block;

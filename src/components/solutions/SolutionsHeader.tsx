@@ -37,7 +37,7 @@ export function SolutionsHeader() {
               <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em]">
                 {metric.label}
               </span>
-              <span className="text-headline-md text-text-primary font-medium">
+              <span className="text-headline-md text-text-primary font-medium tabular-nums">
                 {metric.value}
               </span>
             </div>

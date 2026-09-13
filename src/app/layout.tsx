@@ -3,16 +3,34 @@ import { Hanken_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { ScrollAnimator } from '@/components/common/ScrollAnimator';
 
 /* The system calls for Söhne's proportions and optical density; Hanken
-   Grotesk is the freely licensed face that sits closest. Italics carry the
-   accent marks, so the italic axis is loaded too. */
+   Grotesk is the freely licensed face that sits closest.
+
+   No `weight` array: Hanken Grotesk is a variable font, so every weight
+   resolves to the same file and listing six of them bought zero download
+   bytes -- it only emitted 48 @font-face rules where 8 would do, and clamped
+   the axis to 300-800. Four headings ask for `font-black` (900) and were
+   silently rendering at 800 because of that clamp. Omitting the array gives
+   the real 100-900 axis and fixes them.
+
+   Italic is split into its own non-preloaded instance. It is worth exactly one
+   word per page -- the six `.accent-mark` usages -- and preloading it put
+   ~35KB of high-priority font data in front of the render-blocking stylesheet
+   for that one word. Loaded lazily it no longer competes with first paint. */
 const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--font-hanken',
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
+});
+
+const hankenItalic = Hanken_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-hanken-italic',
+  display: 'swap',
+  style: ['italic'],
+  preload: false,
 });
 
 /* Runs before first paint. Without it the page renders in the system theme
@@ -20,59 +38,6 @@ const hanken = Hanken_Grotesk({
 const THEME_SCRIPT = `
 (function(){try{var t=localStorage.getItem('omx-theme');
 if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
-`;
-
-/* One observer for the whole page, rather than a client component per element.
-
-   Scroll entry has no business depending on React hydration: it is a visual
-   nicety, and if it fails the page must still render. This runs as a plain
-   inline script, arms every [data-anim] element, and only then adds the
-   `js-anim` class that switches the hidden state on -- so the parked state can
-   never outlive the thing that un-parks it. A 2s failsafe reveals everything
-   regardless, and reduced-motion readers never arm at all. */
-const ANIM_SCRIPT = `
-(function () {
-  try {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (typeof IntersectionObserver === 'undefined') return;
-
-    var root = document.documentElement;
-    var reveal = function (el) { el.setAttribute('data-in', ''); };
-
-    var start = function () {
-      var nodes = document.querySelectorAll('[data-anim]');
-      if (!nodes.length) return;
-      root.classList.add('js-anim');
-
-      var io = new IntersectionObserver(function (entries) {
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) {
-            reveal(entries[i].target);
-            io.unobserve(entries[i].target);
-          }
-        }
-      }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
-
-      for (var i = 0; i < nodes.length; i++) {
-        var r = nodes[i].getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) reveal(nodes[i]);
-        else io.observe(nodes[i]);
-      }
-
-      setTimeout(function () {
-        var all = document.querySelectorAll('[data-anim]:not([data-in])');
-        for (var i = 0; i < all.length; i++) reveal(all[i]);
-        io.disconnect();
-      }, 2000);
-    };
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', start);
-    } else {
-      start();
-    }
-  } catch (e) { /* leave the page visible */ }
-})();
 `;
 
 export const metadata: Metadata = {
@@ -131,7 +96,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={hanken.variable}>
+    // suppressHydrationWarning covers the pre-paint theme script below, which
+    // must set data-theme on <html> before React runs or the page flashes the
+    // wrong ground. It relaxes attribute checking on this element only.
+    <html
+      lang="en"
+      className={`${hanken.variable} ${hankenItalic.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
@@ -144,7 +116,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <script dangerouslySetInnerHTML={{ __html: ANIM_SCRIPT }} />
+        <ScrollAnimator />
       </body>
     </html>
   );

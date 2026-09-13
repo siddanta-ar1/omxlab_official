@@ -62,13 +62,13 @@ export function GovernanceStrip() {
                   {item.code}
                 </span>
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-on-surface-variant"
+                  className="w-1.5 h-1.5 bg-on-surface-variant"
                   aria-hidden="true"
                 />
               </div>
               <h3 className="text-body-default font-medium text-text-primary">{item.name}</h3>
               <p className="text-body-compact text-on-surface-variant">{item.scope}</p>
-              <span className="mt-auto pt-space-sm text-[10px] text-text-muted uppercase tracking-[0.15em]">
+              <span className="mt-auto pt-space-sm text-micro-eyebrow text-text-muted uppercase">
                 {item.cadence}
               </span>
             </div>
