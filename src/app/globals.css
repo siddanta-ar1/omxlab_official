@@ -530,24 +530,28 @@ time,
      previous one leaves left. Mobile keeps all panels in document flow. */
   @media (min-width: 1024px) {
     .scroll-hero-stage {
+      display: flex;
+      flex-direction: row;
       position: relative;
       overflow: hidden;
+      width: 100%;
     }
 
     .scroll-hero-slide {
-      position: absolute;
-      inset: 0;
+      position: relative;
       height: 100%;
-      transform: translate3d(var(--slide-offset, 0), 0, 0);
-      will-change: transform;
+      width: var(--slide-width, 100%) !important;
+      flex-shrink: 0;
+      overflow: hidden;
+      will-change: width;
     }
   }
 
   @media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
     .scroll-hero-root { height: auto; }
     .scroll-hero-root > div { position: static; height: auto; overflow: visible; }
-    .scroll-hero-stage { display: flex; height: auto; overflow: visible; }
-    .scroll-hero-slide { position: static; height: auto; transform: none; }
+    .scroll-hero-stage { display: flex; flex-direction: column !important; height: auto; overflow: visible; }
+    .scroll-hero-slide { position: static; height: auto; width: 100%; transform: none; }
   }
 
   .omx-pulse-slow { animation: omx-pulse-slow 4s ease-in-out infinite; }
