@@ -123,7 +123,6 @@
   --color-swatch-rune: #cbacbc;
   --color-swatch-sage: #466d68;
 
-
   /* --- Type -------------------------------------------------------------
      Hanken Grotesk throughout, standing in for Söhne's proportions. */
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, -apple-system,
@@ -503,61 +502,15 @@ time,
   --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@keyframes omx-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes omx-slide-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes omx-pop-in {
-  from { opacity: 0; transform: scale(0.85); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes omx-settle {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 /* Ambient, and deliberately the only two things that move unprompted. */
 @keyframes omx-pulse-slow {
   0%, 100% { opacity: 0.15; }
   50%      { opacity: 0.35; }
 }
 
-@keyframes omx-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
 /* Three chevrons pulsing in sequence; the stagger expresses causality. */
-@keyframes omx-chevron {
-  0%, 100% { opacity: 0.15; }
-  50%      { opacity: 0.55; }
-}
-
 @layer components {
-  .omx-fade-in   { animation: omx-fade-in .8s ease-out both; }
-  .omx-slide-up  { animation: omx-slide-up .8s var(--ease-entry) both; }
-  .omx-pop-in    { animation: omx-pop-in .25s ease-out both; }
-  .omx-settle    { animation: omx-settle .55s var(--ease-settle) both; }
   .omx-pulse-slow { animation: omx-pulse-slow 4s ease-in-out infinite; }
-
-  .omx-marquee {
-    display: flex;
-    width: max-content;
-    animation: omx-marquee 40s linear infinite;
-  }
-
-  .omx-chevron {
-    animation: omx-chevron 2.4s ease-in-out infinite;
-  }
-  .omx-chevron:nth-child(2) { animation-delay: .4s; }
-  .omx-chevron:nth-child(3) { animation-delay: .8s; }
 
   /* Scroll entry -- slideUp, per DESIGN.md §8.
 
@@ -586,28 +539,8 @@ time,
   }
 }
 
-/* Hover choreography belongs to pointer devices only. On touch, a "hover"
-   state latches after a tap and reads as a bug. */
-@media (hover: hover) and (pointer: fine) {
-  .omx-drift img,
-  .omx-drift [data-drift] {
-    transition: transform .7s ease-in-out;
-  }
-
-  .omx-drift:hover img,
-  .omx-drift:hover [data-drift] {
-    transform: scale(1.03);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .omx-fade-in,
-  .omx-slide-up,
-  .omx-pop-in,
-  .omx-settle,
   .omx-pulse-slow,
-  .omx-marquee,
-  .omx-chevron,
   .omx-skeleton {
     animation: none !important;
   }
@@ -617,11 +550,6 @@ time,
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .omx-drift:hover img,
-  .omx-drift:hover [data-drift] {
-    transform: none;
   }
 
   .js-anim [data-anim],

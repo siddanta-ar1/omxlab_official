@@ -91,7 +91,7 @@ const CELL_LAYOUT: {
 
 export function BentoConstellation() {
   return (
-    <section className="w-full bg-studio-grey py-space-3xl border-b border-grid-hairline">
+    <section className="w-full bg-paper-white py-space-3xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
         <div className="text-center max-w-3xl mx-auto mb-space-2xl">
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">

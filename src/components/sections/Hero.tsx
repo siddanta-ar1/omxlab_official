@@ -60,7 +60,7 @@ export function Hero() {
 
               {/* Technical coordinate overlays */}
               <div className="absolute top-3 left-3 z-20 flex items-center gap-space-sm bg-paper-white/95 px-2.5 py-1 border border-grid-hairline text-[10px] text-on-surface">
-                <span className="w-1.5 h-1.5 rounded-full bg-on-surface-variant animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-on-surface-variant omx-pulse-slow" />
                 <span>GEO_LAT: 27.7172° N · LON: 85.3240° E</span>
                 <span className="text-text-muted">|</span>
                 <span>CALIBRATION: NODE_ACTIVE</span>

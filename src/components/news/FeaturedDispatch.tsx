@@ -12,7 +12,7 @@ import Link from 'next/link';
 export function FeaturedDispatch() {
   return (
     <section
-      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
+      data-anim="" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto border-l border-r border-grid-hairline">
         <div className="p-space-md sm:p-space-lg lg:p-space-xl">
           <div className="flex flex-wrap items-center gap-space-sm mb-space-md">

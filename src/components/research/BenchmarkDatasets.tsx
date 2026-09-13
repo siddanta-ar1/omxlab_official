@@ -35,7 +35,7 @@ const DATASETS: Dataset[] = [
 export function BenchmarkDatasets() {
   return (
     <section
-      data-anim="" className="w-full bg-paper-white border-b border-grid-hairline">
+      data-anim="" className="w-full bg-studio-grey border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-space-2xl lg:py-space-3xl">
         <div className="mb-space-lg">
           <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">

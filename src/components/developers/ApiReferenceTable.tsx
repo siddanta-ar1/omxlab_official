@@ -80,7 +80,7 @@ export function ApiReferenceTable() {
     <section
       data-anim=""
       id="api-reference"
-      className="w-full bg-paper-white py-space-2xl lg:py-space-3xl border-b border-grid-hairline"
+      className="w-full bg-studio-grey py-space-2xl lg:py-space-3xl border-b border-grid-hairline"
     >
       <div className="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
         <div className="mb-space-xl">

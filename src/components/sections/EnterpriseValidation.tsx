@@ -31,7 +31,7 @@ const validationCases: ValidationCase[] = [
 
 export function EnterpriseValidation() {
   return (
-    <section className="w-full bg-paper-white py-space-2xl border-b border-grid-hairline">
+    <section className="w-full bg-studio-grey py-space-2xl border-b border-grid-hairline">
       <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-md">
           <div>
@@ -42,12 +42,16 @@ export function EnterpriseValidation() {
               Deployed across mission-critical nodes
             </h2>
           </div>
-          {/* Custom progress indicator with expanding active bar */}
-          <div className="flex items-center gap-1.5" aria-hidden="true">
-            <div className="h-1.5 w-12 bg-text-primary rounded-full transition-all duration-300" />
-            <div className="h-1.5 w-2 bg-border-subtle rounded-full transition-all duration-300" />
-            <div className="h-1.5 w-2 bg-border-subtle rounded-full transition-all duration-300" />
-            <div className="h-1.5 w-2 bg-border-subtle rounded-full transition-all duration-300" />
+          {/* The source markup carried a four-pill carousel indicator here, for
+              three cells that are all visible at once and never move. An
+              indicator that tracks nothing is the decorative noise this system
+              explicitly rejects, so it is replaced by the count itself --
+              derived from the data, so it cannot drift out of step. */}
+          <div className="flex items-center gap-space-sm shrink-0">
+            <span className="w-2.5 h-2.5 bg-swatch-helios" aria-hidden="true" />
+            <span className="text-micro-eyebrow uppercase text-text-muted tabular-nums">
+              {String(validationCases.length).padStart(2, '0')} DEPLOYMENTS ON RECORD
+            </span>
           </div>
         </div>
 
