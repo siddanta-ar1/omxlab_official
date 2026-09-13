@@ -8,6 +8,7 @@ import { MdClose, MdExpandMore, MdMenu, MdPerson, MdSearch } from 'react-icons/m
 import { NAV_ITEMS } from '@/components/layout/nav-data';
 import { MegaMenu } from '@/components/layout/MegaMenu';
 import { SearchDialog } from '@/components/layout/SearchDialog';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 export const Header = () => {
     const pathname = usePathname();
@@ -209,6 +210,8 @@ export const Header = () => {
                                 ⌘K
                             </kbd>
                         </button>
+
+                        <ThemeToggle />
 
                         <Link
                             className="hidden sm:flex items-center px-space-md text-on-surface-variant hover:text-on-surface hover:bg-studio-grey text-cta-button transition-colors duration-300"

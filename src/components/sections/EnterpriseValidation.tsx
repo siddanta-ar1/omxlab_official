@@ -66,7 +66,7 @@ export function EnterpriseValidation() {
               className="relative aspect-[16/10] bg-text-primary overflow-hidden group flex flex-col justify-between p-space-lg"
             >
               <div
-                className="absolute inset-0 halftone-strip opacity-[0.14]"
+                className="absolute inset-0 halftone-invert opacity-[0.14]"
                 aria-hidden="true"
               />
               <span

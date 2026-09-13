@@ -258,6 +258,17 @@ main > :last-child {
     opacity: 0.22;
   }
 
+  /* The same texture for a cell that is itself inverted. Because the dots are
+     drawn in paper-white -- light on a light ground, dark on a dark one -- they
+     always oppose the inverted cell beneath, in either theme. */
+  .halftone-invert {
+    background-image:
+      radial-gradient(var(--color-paper-white) 0.75px, transparent 0.75px),
+      radial-gradient(var(--color-paper-white) 0.75px, transparent 0.75px);
+    background-size: 6px 6px;
+    background-position: 0 0, 3px 3px;
+  }
+
   /* Underline that grows from the left -- the only motion in the nav. */
   .link-underline-grow {
     position: relative;
@@ -560,3 +571,134 @@ time,
   }
 }
 
+
+/* ---------------------------------------------------------------------------
+   Dark mode
+
+   DESIGN.md §10 records that the reference site authored dark variants on
+   hundreds of elements and never applied the class, so the theme was "fully
+   authored but never visually verified". This one ships, and is checked.
+
+   It works by redefining the same token names rather than adding dark:
+   variants to components, so every surface, rule and label inverts at once and
+   nothing can be missed. The palette stays inside the brand ramp: the ground
+   is Abyss driven toward black, type is Bone and Mist, and the conversion band
+   inverts to Bone carrying Abyss.
+
+   Three selectors, in order: the system preference, unless the reader has
+   explicitly chosen light; and an explicit dark choice, which wins either way.
+   --------------------------------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --color-bone: #0f2427;
+    --color-paper-white: #143136;
+    --color-studio-grey: #0f2427;
+    --color-nav-hairline: #334445;
+    --color-grid-hairline: #25383a;
+    --color-border-subtle: #405051;
+
+    --color-text-primary: #efeae4;
+    --color-text-muted: #b9c4c6;
+    --color-text-soft: #8fa5a6;
+
+    --color-surface: #0f2427;
+    --color-surface-dim: #0a1a1c;
+    --color-surface-bright: #143136;
+    --color-surface-container-lowest: #0a1a1c;
+    --color-surface-container-low: #102a2e;
+    --color-surface-container: #143136;
+    --color-surface-container-high: #1a3b41;
+    --color-surface-container-highest: #21464c;
+    --color-surface-variant: #21464c;
+    --color-on-surface: #efeae4;
+    --color-on-surface-variant: #b9c4c6;
+    --color-inverse-surface: #efeae4;
+    --color-inverse-on-surface: #0f2427;
+    --color-background: #0f2427;
+    --color-on-background: #efeae4;
+    --color-outline: #8fa5a6;
+    --color-outline-variant: #405051;
+
+    /* The band inverts: Bone ground carrying Abyss at 8.13:1. */
+    --color-action: #efeae4;
+    --color-action-hover: #caccc4;
+    --color-on-primary: #0f2427;
+
+    --color-primary: #6fbcc7;
+    --color-primary-container: #ff7540;
+    --color-on-primary-container: #0f2427;
+
+    --color-secondary: #94ccdc;
+    --color-on-secondary: #0f2427;
+
+    --color-error: #f8a392;
+    --color-on-error: #0f2427;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bone: #0f2427;
+  --color-paper-white: #143136;
+  --color-studio-grey: #0f2427;
+  --color-nav-hairline: #334445;
+  --color-grid-hairline: #25383a;
+  --color-border-subtle: #405051;
+
+  --color-text-primary: #efeae4;
+  --color-text-muted: #b9c4c6;
+  --color-text-soft: #8fa5a6;
+
+  --color-surface: #0f2427;
+  --color-surface-dim: #0a1a1c;
+  --color-surface-bright: #143136;
+  --color-surface-container-lowest: #0a1a1c;
+  --color-surface-container-low: #102a2e;
+  --color-surface-container: #143136;
+  --color-surface-container-high: #1a3b41;
+  --color-surface-container-highest: #21464c;
+  --color-surface-variant: #21464c;
+  --color-on-surface: #efeae4;
+  --color-on-surface-variant: #b9c4c6;
+  --color-inverse-surface: #efeae4;
+  --color-inverse-on-surface: #0f2427;
+  --color-background: #0f2427;
+  --color-on-background: #efeae4;
+  --color-outline: #8fa5a6;
+  --color-outline-variant: #405051;
+
+  --color-action: #efeae4;
+  --color-action-hover: #caccc4;
+  --color-on-primary: #0f2427;
+
+  --color-primary: #6fbcc7;
+  --color-primary-container: #ff7540;
+  --color-on-primary-container: #0f2427;
+
+  --color-secondary: #94ccdc;
+  --color-on-secondary: #0f2427;
+
+  --color-error: #f8a392;
+  --color-on-error: #0f2427;
+}
+
+/* The halftone specimen texture is drawn in ink, so it has to flip too. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .halftone-strip {
+    background-image:
+      radial-gradient(#efeae4 0.75px, transparent 0.75px),
+      radial-gradient(#efeae4 0.75px, #0f2427 0.75px);
+    opacity: 0.16;
+  }
+}
+
+:root[data-theme='dark'] .halftone-strip {
+  background-image:
+    radial-gradient(#efeae4 0.75px, transparent 0.75px),
+    radial-gradient(#efeae4 0.75px, #0f2427 0.75px);
+  opacity: 0.16;
+}

@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 
 /* The system calls for Söhne's proportions and optical density; Hanken
    Grotesk is the freely licensed face that sits closest. Italics carry the
-   Signal Sky inflections, so the italic axis is loaded too. */
+   accent marks, so the italic axis is loaded too. */
 const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--font-hanken',
@@ -14,6 +14,13 @@ const hanken = Hanken_Grotesk({
   weight: ['300', '400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
 });
+
+/* Runs before first paint. Without it the page renders in the system theme
+   and then snaps to the stored choice -- a flash of the wrong ground. */
+const THEME_SCRIPT = `
+(function(){try{var t=localStorage.getItem('omx-theme');
+if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+`;
 
 /* One observer for the whole page, rather than a client component per element.
 
@@ -114,7 +121,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#EFEAE4',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#EFEAE4' },
+    { media: '(prefers-color-scheme: dark)', color: '#0F2427' },
+  ],
 };
 
 export default function RootLayout({
@@ -122,6 +132,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={hanken.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="bg-surface text-on-surface antialiased">
         <a href="#main" className="skip-link">
           Skip to content

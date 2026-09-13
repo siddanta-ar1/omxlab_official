@@ -51,7 +51,7 @@ export function SubscribeBand() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-action text-white rounded-lg px-5 py-[10px] text-cta-button
+                  className="bg-action text-on-primary rounded-lg px-5 py-[10px] text-cta-button
                              uppercase shrink-0 transition-colors duration-100
                              hover:bg-swatch-foundry active:scale-[0.99]"
                 >

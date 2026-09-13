@@ -33,7 +33,7 @@ type ArrowButtonProps = {
 const VARIANTS: Record<Variant, string> = {
   // Abyss carrying white at 9.72:1 — the one solid action colour.
   primary:
-    'bg-action text-white rounded-lg hover:bg-action-hover',
+    'bg-action text-on-primary rounded-lg hover:bg-action-hover',
   // Hairline on paper; the ground fills on hover rather than the border moving.
   secondary:
     'bg-paper-white text-text-primary border border-border-subtle rounded hover:bg-studio-grey hover:border-text-primary',
