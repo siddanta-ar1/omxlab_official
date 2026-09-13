@@ -12,11 +12,7 @@ const METRICS: Metric[] = [
   { label: 'Deterministic Latency', value: '< 12ms' },
 ];
 
-const SLIDES = [
-  { code: '01', label: 'Foundation' },
-  { code: '02', label: 'Training fabric' },
-  { code: '03', label: 'Deployment' },
-];
+const SLIDE_COUNT = 3;
 
 const OVERLAY_CELLS = Array.from({ length: 12 });
 
@@ -72,18 +68,9 @@ export function Hero() {
     };
   }, []);
 
-  const activeSlide = Math.min(SLIDES.length - 1, Math.round(progress * (SLIDES.length - 1)));
   const panelStyle = (index: number) => ({
-    '--slide-offset': `${(index - progress * (SLIDES.length - 1)) * 100}%`,
+    '--slide-offset': `${(index - progress * (SLIDE_COUNT - 1)) * 100}%`,
   } as React.CSSProperties);
-  const scrollToSlide = (index: number) => {
-    const section = sectionRef.current;
-    const frame = frameRef.current;
-    if (!section || !frame) return;
-    const start = section.getBoundingClientRect().top + window.scrollY - 49;
-    const distance = section.offsetHeight - frame.offsetHeight;
-    window.scrollTo({ top: start + distance * (index / (SLIDES.length - 1)), behavior: 'smooth' });
-  };
 
   return (
     <section ref={sectionRef} className="scroll-hero-root relative w-full bg-paper-white border-b border-grid-hairline lg:h-[400vh]" aria-label="OMX Lab introduction">
@@ -153,10 +140,6 @@ export function Hero() {
               </aside>
             </div>
           </article>
-        </div>
-
-        <div className="hidden lg:flex absolute z-20 left-1/2 bottom-space-lg -translate-x-1/2 items-center border border-grid-hairline bg-paper-white/95">
-          {SLIDES.map((slide, index) => <button key={slide.code} type="button" onClick={() => scrollToSlide(index)} aria-current={activeSlide === index ? 'step' : undefined} aria-label={`Go to ${slide.label}`} className={`px-space-sm py-2 text-label-code uppercase border-r last:border-r-0 border-grid-hairline transition-colors ${activeSlide === index ? 'bg-text-primary text-on-primary' : 'text-text-muted hover:bg-studio-grey'}`}>{slide.code}</button>)}
         </div>
       </div>
     </section>
