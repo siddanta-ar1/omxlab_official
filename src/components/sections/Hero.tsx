@@ -1,23 +1,10 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { SpecimenPlate } from '@/components/common/SpecimenPlate';
 
-/**
- * Split 70/30 hero. Left column carries the narrative headline and the
- * technical illustration well; the right rail stacks the mission statement,
- * the metric ledger, the instrument spec card, and the dispatch
- * registry widget behind a hairline divider.
- *
- * The accent is spent exactly once in this section, per the
- * design system's surgical-scarcity rule, on the italic "reality." in the
- * headline. The source markup repeats that same accent value on the
- * GEO_LAT pulse dot and on the dispatch-card hover state — both have been
- * recolored to text-on-surface-variant / bg-on-surface-variant here.
- */
-
-type Metric = {
-  label: string;
-  value: string;
-};
+type Metric = { label: string; value: string };
 
 const METRICS: Metric[] = [
   { label: 'Inference Reliability', value: '99.98%' },
@@ -25,121 +12,151 @@ const METRICS: Metric[] = [
   { label: 'Deterministic Latency', value: '< 12ms' },
 ];
 
-// Hairline alignment overlay: a decorative 4x3 grid drawn over the hero
-// illustration with divider rules only, no content.
+const SLIDES = [
+  { code: '01', label: 'Foundation' },
+  { code: '02', label: 'Training fabric' },
+  { code: '03', label: 'Deployment' },
+];
+
 const OVERLAY_CELLS = Array.from({ length: 12 });
 
+/**
+ * A scroll-driven hero rather than a timed carousel: the outer section creates
+ * three viewport lengths of scroll room while its inner panel sticks below the
+ * fixed navigation. The track only translates on large screens. On smaller
+ * viewports the same panels become a regular, readable vertical sequence.
+ */
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const frame = frameRef.current;
+    if (!section || !frame) return;
+
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let animationFrame: number | undefined;
+
+    const update = () => {
+      animationFrame = undefined;
+      if (!desktop.matches || reducedMotion.matches) {
+        setProgress(0);
+        return;
+      }
+
+      const start = section.getBoundingClientRect().top + window.scrollY - 49;
+      const distance = Math.max(section.offsetHeight - frame.offsetHeight, 1);
+      const next = Math.min(1, Math.max(0, (window.scrollY - start) / distance));
+      setProgress(next);
+    };
+
+    const requestUpdate = () => {
+      if (animationFrame === undefined) animationFrame = window.requestAnimationFrame(update);
+    };
+
+    requestUpdate();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    desktop.addEventListener('change', requestUpdate);
+    reducedMotion.addEventListener('change', requestUpdate);
+
+    return () => {
+      window.removeEventListener('scroll', requestUpdate);
+      window.removeEventListener('resize', requestUpdate);
+      desktop.removeEventListener('change', requestUpdate);
+      reducedMotion.removeEventListener('change', requestUpdate);
+      if (animationFrame !== undefined) window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  const activeSlide = Math.min(SLIDES.length - 1, Math.round(progress * (SLIDES.length - 1)));
+  const scrollToSlide = (index: number) => {
+    const section = sectionRef.current;
+    const frame = frameRef.current;
+    if (!section || !frame) return;
+    const start = section.getBoundingClientRect().top + window.scrollY - 49;
+    const distance = section.offsetHeight - frame.offsetHeight;
+    window.scrollTo({ top: start + distance * (index / (SLIDES.length - 1)), behavior: 'smooth' });
+  };
+
   return (
-    <section className="w-full bg-paper-white border-b border-grid-hairline">
-      <div className="max-w-[1600px] mx-auto border-l border-r border-grid-hairline">
-        <div className="flex flex-col lg:flex-row items-stretch">
-          {/* Left Column (70%) */}
-          <div className="w-full lg:w-[70%] flex flex-col justify-between p-space-md sm:p-space-lg lg:p-space-xl">
-            <div className="pt-space-md lg:pt-space-xl">
-              <div className="flex items-center gap-space-sm mb-space-md">
-                <span className="w-2.5 h-2.5 bg-swatch-sage" />
-                <span className="text-micro-eyebrow text-on-surface-variant uppercase tracking-[0.25em]">
-                  OMX LAB // SYSTEMS ARCHITECTURE V4.2
-                </span>
-              </div>
-              <h1 className="text-headline-xl-mobile sm:text-headline-xl lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
-                Frontier AI infrastructure for
-                <br />
-                <span className="accent-mark font-semibold">reality.</span>
-              </h1>
-            </div>
-
-            {/* Technical hero illustration well with hairline rules & coordinates */}
-            <div className="mt-space-2xl relative w-full aspect-[16/9] border border-grid-hairline bg-studio-grey overflow-hidden group">
-              {/* Registration corner marks */}
-              <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-text-primary z-20" />
-              <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-text-primary z-20" />
-              <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-text-primary z-20" />
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-text-primary z-20" />
-
-              {/* Technical coordinate overlays */}
-              <div className="absolute top-3 left-3 z-20 flex items-center gap-space-sm bg-paper-white/95 px-2.5 py-1 border border-grid-hairline text-[10px] text-on-surface">
-                <span className="w-1.5 h-1.5 rounded-full bg-on-surface-variant omx-pulse-slow" />
-                <span>GEO_LAT: 27.7172° N · LON: 85.3240° E</span>
-                <span className="text-text-muted">|</span>
-                <span>CALIBRATION: NODE_ACTIVE</span>
-              </div>
-              <div className="absolute bottom-3 right-3 z-20 bg-paper-white/95 px-2.5 py-1 border border-grid-hairline text-[10px] text-text-muted">
-                SYS_REF // MATRIX 04.981A
-              </div>
-
-              {/* A plotted specimen plate rather than photography: the system
-                  draws with hairlines, and a chart recording carries the
-                  laboratory register the panel is asking for. */}
-              <SpecimenPlate seed={41} variant="trace" className="border-0" />
-
-              {/* Hairline alignment overlay grid */}
-              <div className="absolute inset-0 pointer-events-none grid grid-cols-4 grid-rows-3 divide-x divide-y divide-grid-hairline/40">
-                {OVERLAY_CELLS.map((_, i) => (
-                  <div key={i} />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Rail (30%) */}
-          <div className="w-full lg:w-[30%] bg-studio-grey border-t lg:border-t-0 lg:border-l border-grid-hairline p-space-lg lg:p-space-xl flex flex-col justify-between">
-            <div className="flex flex-col gap-space-lg">
-              <div className="border-b border-grid-hairline pb-space-md">
-                <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">
-                  01 / ARCHITECTURAL MISSION
-                </span>
-                <p className="text-body-lead text-text-primary tracking-[-0.01em]">
-                  Building foundational models, high-throughput training platforms, and applied intelligence for the
-                  physical world.
-                </p>
-              </div>
-
-              {/* Metric badges */}
-              <div className="flex flex-col divide-y divide-grid-hairline border-y border-grid-hairline">
-                {METRICS.map((metric) => (
-                  <div key={metric.label} className="py-space-md flex items-center justify-between">
-                    <span className="text-body-compact text-on-surface-variant">{metric.label}</span>
-                    <span className="text-headline-md text-text-primary font-medium">{metric.value}</span>
+    <section ref={sectionRef} className="relative w-full bg-paper-white border-b border-grid-hairline lg:h-[400vh]" aria-label="OMX Lab introduction">
+      <div ref={frameRef} className="lg:sticky lg:top-[49px] lg:h-[calc(100svh-49px)] lg:overflow-hidden">
+        <div
+          className="scroll-hero-track flex flex-col lg:h-full lg:w-[300%] lg:flex-row"
+          style={{ '--hero-progress': progress } as React.CSSProperties}
+        >
+          <article className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:h-full lg:w-1/3 lg:border-b-0 lg:border-r">
+            <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10">
+              <div className="lg:col-span-7 flex flex-col justify-between p-space-md sm:p-space-lg lg:p-space-xl">
+                <div className="pt-space-md lg:pt-space-xl">
+                  <div className="flex items-center gap-space-sm mb-space-md">
+                    <span className="w-2.5 h-2.5 bg-swatch-sage" aria-hidden="true" />
+                    <span className="text-micro-eyebrow text-on-surface-variant uppercase tracking-[0.25em]">OMX LAB // SYSTEMS ARCHITECTURE V4.2</span>
                   </div>
-                ))}
-              </div>
-
-              {/* Stencil micro-spec */}
-              <div className="p-space-md bg-paper-white border border-grid-hairline">
-                <div className="flex items-center justify-between mb-space-xs">
-                  <span className="text-label-code text-on-surface font-semibold">INST. SPEC 08</span>
-                  <span className="text-label-code text-[10px] text-primary flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
-                    ONLINE
-                  </span>
+                  <h1 className="text-headline-xl-mobile sm:text-headline-xl lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92] max-w-4xl">
+                    Frontier AI infrastructure for<br /><span className="accent-mark font-semibold">reality.</span>
+                  </h1>
                 </div>
-                <p className="text-body-compact text-on-surface-variant text-[12px]">
-                  Deterministic latency guarantees enforced via strict hardware L1 register partitioning.
-                </p>
+                <div className="mt-space-xl lg:mt-space-2xl relative w-full aspect-[16/9] max-h-[46svh] border border-grid-hairline bg-studio-grey overflow-hidden">
+                  <div className="absolute top-3 left-3 z-20 hidden sm:flex items-center gap-space-sm bg-paper-white/95 px-2.5 py-1 border border-grid-hairline text-[10px] text-on-surface">
+                    <span className="w-1.5 h-1.5 rounded-full bg-on-surface-variant omx-pulse-slow" /> GEO_LAT: 27.7172° N · NODE_ACTIVE
+                  </div>
+                  <div className="absolute bottom-3 right-3 z-20 bg-paper-white/95 px-2.5 py-1 border border-grid-hairline text-[10px] text-text-muted">SYS_REF // MATRIX 04.981A</div>
+                  <SpecimenPlate seed={41} variant="trace" className="border-0" />
+                  <div className="absolute inset-0 pointer-events-none grid grid-cols-4 grid-rows-3 divide-x divide-y divide-grid-hairline/40">{OVERLAY_CELLS.map((_, i) => <div key={i} />)}</div>
+                </div>
+              </div>
+              <aside className="lg:col-span-3 bg-studio-grey border-t lg:border-t-0 lg:border-l border-grid-hairline p-space-lg lg:p-space-xl flex flex-col justify-between gap-space-xl">
+                <div>
+                  <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-xs">01 / ARCHITECTURAL MISSION</span>
+                  <p className="text-body-lead text-text-primary tracking-[-0.01em]">Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.</p>
+                </div>
+                <p className="text-label-code text-text-muted uppercase">Scroll to inspect the system →</p>
+              </aside>
+            </div>
+          </article>
+
+          <article className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:h-full lg:w-1/3 lg:border-b-0 lg:border-r">
+            <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10 bg-studio-grey">
+              <div className="lg:col-span-4 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-grid-hairline">
+                <div>
+                  <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-md">02 / TRAINING FABRIC</span>
+                  <h2 className="text-headline-xl-mobile sm:text-headline-xl lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92]">Compute that holds its line.</h2>
+                </div>
+                <p className="mt-space-xl text-body-lead text-on-surface-variant max-w-md">A distributed training fabric where every workload is scheduled, measured, and repeatable at cluster scale.</p>
+              </div>
+              <div className="lg:col-span-6 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col justify-between">
+                <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-l border-grid-hairline">
+                  {METRICS.map((metric) => <div key={metric.label} className="p-space-md border-r border-b border-grid-hairline"><span className="text-body-compact text-on-surface-variant block mb-space-sm">{metric.label}</span><span className="text-headline-md text-text-primary font-medium">{metric.value}</span></div>)}
+                </div>
+                <div className="mt-space-xl max-w-3xl"><SpecimenPlate seed={77} code="FABRIC / 02" reading="16,384 ACCELERATORS" variant="matrix" /></div>
               </div>
             </div>
+          </article>
 
-            {/* Featured news mini-card widget with stacked hairline arrows */}
-            <div className="mt-space-xl pt-space-lg border-t border-grid-hairline">
-              <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-sm">
-                DISPATCH REGISTRY
-              </span>
-              <Link
-                href="/news"
-                className="flex border border-grid-hairline bg-paper-white group hover:border-on-surface transition-colors duration-200"
-              >
-                <div className="w-20 h-20 shrink-0 border-r border-grid-hairline overflow-hidden halftone-strip" aria-hidden="true" />
-                <div className="flex-1 p-space-sm flex flex-col justify-center min-w-0">
-                  <span className="text-label-code text-[10px] text-text-muted">SYSTEM RELEASE · 03.14</span>
-                  <span className="text-body-compact font-medium text-text-primary group-hover:text-on-surface-variant transition-colors line-clamp-2">
-                    Introducing Helios: Autonomous Verification Matrix
-                  </span>
+          <article className="scroll-hero-slide w-full shrink-0 lg:h-full lg:w-1/3">
+            <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10">
+              <div className="lg:col-span-6 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col justify-between min-h-[460px] lg:min-h-0">
+                <div>
+                  <span className="text-micro-eyebrow text-text-muted uppercase tracking-[0.25em] block mb-space-md">03 / DEPLOYMENT REGISTER</span>
+                  <h2 className="text-headline-xl-mobile sm:text-headline-xl lg:text-display-hero text-text-primary tracking-[-0.03em] leading-[0.92]">From validated signal to deployed intelligence.</h2>
                 </div>
-              </Link>
+                <div className="mt-space-xl max-w-2xl"><SpecimenPlate seed={103} code="HELIOS / ACTIVE" reading="LATENCY < 12MS" variant="trace" /></div>
+              </div>
+              <aside className="lg:col-span-4 bg-text-primary text-on-primary p-space-lg lg:p-space-xl flex flex-col justify-between gap-space-xl">
+                <div><span className="text-micro-eyebrow text-on-primary/60 uppercase tracking-[0.25em] block mb-space-md">SYSTEM RELEASE · 03.14</span><p className="text-headline-md text-on-primary">Introducing Helios: Autonomous Verification Matrix</p></div>
+                <Link href="/news" className="inline-flex items-center justify-between border border-on-primary/30 px-space-md py-space-md text-cta-button hover:bg-paper-white hover:text-text-primary transition-colors duration-200">Read the dispatch <span aria-hidden="true">→</span></Link>
+              </aside>
             </div>
-          </div>
+          </article>
+        </div>
+
+        <div className="hidden lg:flex absolute z-20 left-1/2 bottom-space-lg -translate-x-1/2 items-center border border-grid-hairline bg-paper-white/95">
+          {SLIDES.map((slide, index) => <button key={slide.code} type="button" onClick={() => scrollToSlide(index)} aria-current={activeSlide === index ? 'step' : undefined} aria-label={`Go to ${slide.label}`} className={`px-space-sm py-2 text-label-code uppercase border-r last:border-r-0 border-grid-hairline transition-colors ${activeSlide === index ? 'bg-text-primary text-on-primary' : 'text-text-muted hover:bg-studio-grey'}`}>{slide.code}</button>)}
         </div>
       </div>
     </section>

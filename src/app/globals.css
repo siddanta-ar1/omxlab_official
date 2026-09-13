@@ -524,6 +524,16 @@ time,
 
 /* Three chevrons pulsing in sequence; the stagger expresses causality. */
 @layer components {
+  /* The hero owns the scroll distance; the translated inner track is only
+     enabled at desktop widths. Mobile keeps all panels in normal document
+     flow, avoiding a pinned viewport with cramped or unreachable content. */
+  @media (min-width: 1024px) {
+    .scroll-hero-track {
+      transform: translate3d(calc(var(--hero-progress, 0) * -66.666667%), 0, 0);
+      will-change: transform;
+    }
+  }
+
   .omx-pulse-slow { animation: omx-pulse-slow 4s ease-in-out infinite; }
 
   /* Scroll entry -- slideUp, per DESIGN.md §8.
