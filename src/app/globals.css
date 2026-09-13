@@ -524,14 +524,30 @@ time,
 
 /* Three chevrons pulsing in sequence; the stagger expresses causality. */
 @layer components {
-  /* The hero owns the scroll distance; the translated inner track is only
-     enabled at desktop widths. Mobile keeps all panels in normal document
-     flow, avoiding a pinned viewport with cramped or unreachable content. */
+  /* The hero owns the scroll distance. Its panels are independently layered,
+     then driven across the fixed stage by scroll progress. This avoids the
+     "wide strip" feeling: each new panel enters from the right while the
+     previous one leaves left. Mobile keeps all panels in document flow. */
   @media (min-width: 1024px) {
-    .scroll-hero-track {
-      transform: translate3d(calc(var(--hero-progress, 0) * -66.666667%), 0, 0);
+    .scroll-hero-stage {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-hero-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transform: translate3d(var(--slide-offset, 0), 0, 0);
       will-change: transform;
     }
+  }
+
+  @media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+    .scroll-hero-root { height: auto; }
+    .scroll-hero-root > div { position: static; height: auto; overflow: visible; }
+    .scroll-hero-stage { display: flex; height: auto; overflow: visible; }
+    .scroll-hero-slide { position: static; height: auto; transform: none; }
   }
 
   .omx-pulse-slow { animation: omx-pulse-slow 4s ease-in-out infinite; }

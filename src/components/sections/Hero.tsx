@@ -73,6 +73,9 @@ export function Hero() {
   }, []);
 
   const activeSlide = Math.min(SLIDES.length - 1, Math.round(progress * (SLIDES.length - 1)));
+  const panelStyle = (index: number) => ({
+    '--slide-offset': `${(index - progress * (SLIDES.length - 1)) * 100}%`,
+  } as React.CSSProperties);
   const scrollToSlide = (index: number) => {
     const section = sectionRef.current;
     const frame = frameRef.current;
@@ -83,13 +86,10 @@ export function Hero() {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-paper-white border-b border-grid-hairline lg:h-[400vh]" aria-label="OMX Lab introduction">
+    <section ref={sectionRef} className="scroll-hero-root relative w-full bg-paper-white border-b border-grid-hairline lg:h-[400vh]" aria-label="OMX Lab introduction">
       <div ref={frameRef} className="lg:sticky lg:top-[49px] lg:h-[calc(100svh-49px)] lg:overflow-hidden">
-        <div
-          className="scroll-hero-track flex flex-col lg:h-full lg:w-[300%] lg:flex-row"
-          style={{ '--hero-progress': progress } as React.CSSProperties}
-        >
-          <article className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:h-full lg:w-1/3 lg:border-b-0 lg:border-r">
+        <div className="scroll-hero-stage flex flex-col lg:h-full">
+          <article style={panelStyle(0)} className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:border-b-0">
             <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10">
               <div className="lg:col-span-7 flex flex-col justify-between p-space-md sm:p-space-lg lg:p-space-xl">
                 <div className="pt-space-md lg:pt-space-xl">
@@ -120,7 +120,7 @@ export function Hero() {
             </div>
           </article>
 
-          <article className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:h-full lg:w-1/3 lg:border-b-0 lg:border-r">
+          <article style={panelStyle(1)} className="scroll-hero-slide w-full shrink-0 border-b border-grid-hairline last:border-b-0 lg:border-b-0">
             <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10 bg-studio-grey">
               <div className="lg:col-span-4 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-grid-hairline">
                 <div>
@@ -138,7 +138,7 @@ export function Hero() {
             </div>
           </article>
 
-          <article className="scroll-hero-slide w-full shrink-0 lg:h-full lg:w-1/3">
+          <article style={panelStyle(2)} className="scroll-hero-slide w-full shrink-0">
             <div className="max-w-[1600px] h-full mx-auto border-x border-grid-hairline grid grid-cols-1 lg:grid-cols-10">
               <div className="lg:col-span-6 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col justify-between min-h-[460px] lg:min-h-0">
                 <div>
