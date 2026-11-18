@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { PROJECTS } from '@/lib/work';
 import { FeaturedProject, ProjectCell } from '@/components/work/ProjectCard';
+import { ContactBand } from '@/components/common/ContactBand';
 
 export const metadata: Metadata = {
   title: 'Work',
   description:
     'Products and client projects built by OMX Lab: Sākṣī, KKKhane, UNSAID, e-commerce stores, community and event apps across Nepal.',
 };
-
-// Set NEXT_PUBLIC_CONTACT_EMAIL to send visitors straight to an inbox.
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-const START_HREF = CONTACT_EMAIL
-  ? `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('New project for OMX Lab')}`
-  : '/company';
 
 export default function WorkPage() {
   const featured = PROJECTS.filter((p) => p.featured);
@@ -86,22 +80,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section className="w-full bg-studio-grey py-space-3xl">
-        <div className="max-w-[1600px] mx-auto px-space-md md:px-margin flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg">
-          <div>
-            <h2 className="text-headline-lg text-text-primary tracking-tight">Have something to build?</h2>
-            <p className="mt-space-xs text-body-compact text-on-surface-variant max-w-xl">
-              Tell us what it needs to do. We reply with a plan, a timeline and a price.
-            </p>
-          </div>
-          <Link
-            href={START_HREF}
-            className="inline-flex items-center justify-center bg-action text-on-primary px-space-lg py-space-sm text-body-compact hover:bg-action-hover transition-colors"
-          >
-            Start a project
-          </Link>
-        </div>
-      </section>
+      <ContactBand />
     </div>
   );
 }

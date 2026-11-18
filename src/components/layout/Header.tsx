@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { START_PROJECT_HREF } from '@/lib/site';
 import { usePathname } from 'next/navigation';
-import { MdClose, MdExpandMore, MdMenu, MdPerson, MdSearch } from 'react-icons/md';
+import { MdClose, MdExpandMore, MdMenu, MdSearch } from 'react-icons/md';
 import { NAV_ITEMS } from '@/components/layout/nav-data';
 import { MegaMenu } from '@/components/layout/MegaMenu';
 import dynamic from 'next/dynamic';
@@ -178,9 +179,6 @@ export const Header = () => {
                         <span className="text-label-code text-on-surface uppercase font-medium">
                             OMX LAB
                         </span>
-                        <span className="hidden sm:inline px-1.5 py-0.5 rounded text-[9px] bg-studio-grey text-on-surface-variant font-medium border border-grid-hairline">
-                            V.4.2
-                        </span>
                     </Link>
 
                     <nav
@@ -268,7 +266,7 @@ export const Header = () => {
                         <button
                             ref={searchButtonRef}
                             onClick={() => setIsSearchOpen(true)}
-                            aria-label="Search the registry"
+                            aria-label="Search the site"
                             aria-keyshortcuts="Control+K Meta+K"
                             className="flex items-center gap-space-sm justify-center px-space-md text-on-surface-variant hover:text-on-surface hover:bg-studio-grey transition-colors duration-300"
                             type="button"
@@ -283,27 +281,17 @@ export const Header = () => {
 
                         <Link
                             className="hidden sm:flex items-center px-space-md text-on-surface-variant hover:text-on-surface hover:bg-studio-grey text-cta-button transition-colors duration-300"
-                            href="/developers"
+                            href="/work"
                         >
-                            Start building
+                            See our work
                         </Link>
 
-                        <Link
+                        <a
                             className="hidden sm:flex items-center px-space-md bg-inverse-surface text-on-primary hover:bg-action-hover text-cta-button transition-colors duration-300"
-                            href="/company"
+                            href={START_PROJECT_HREF}
                         >
-                            Contact sales
-                        </Link>
-
-                        <Link
-                            href="/company"
-                            aria-label="OMX Lab account"
-                            className="hidden sm:flex items-center justify-center px-space-md"
-                        >
-                            <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                                <MdPerson className="text-on-primary" size={18} aria-hidden="true" />
-                            </span>
-                        </Link>
+                            Start a project
+                        </a>
                     </div>
                 </div>
 

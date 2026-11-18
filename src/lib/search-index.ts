@@ -11,17 +11,9 @@
 
 import { PROJECTS, SERVICES } from '@/lib/work';
 import { RESEARCH } from '@/lib/research';
+import { SITE, START_PROJECT_HREF } from '@/lib/site';
 
-export type SearchKind =
-  | 'Page'
-  | 'Module'
-  | 'Instrument'
-  | 'Solution'
-  | 'Research'
-  | 'Developer'
-  | 'Company'
-  | 'Dispatch'
-  | 'Work';
+export type SearchKind = 'Page' | 'Work' | 'Research';
 
 export type SearchEntry = {
   title: string;
@@ -37,58 +29,15 @@ export type SearchEntry = {
 
 export const SEARCH_INDEX: SearchEntry[] = [
   // --- Pages ---------------------------------------------------------------
-  { kind: 'Page', title: 'Work', href: '/work', detail: 'Products and client projects we have shipped.', keywords: 'portfolio projects clients case studies services' },
-  { kind: 'Page', title: 'Home', href: '/', detail: 'Frontier AI infrastructure for reality.', keywords: 'index start overview' },
-  { kind: 'Page', title: 'Products', href: '/products', detail: 'The product registry and deployment tiers.', keywords: 'catalogue modules matrix' },
-  { kind: 'Page', title: 'Solutions', href: '/solutions', detail: 'Deployment verticals and case studies.', keywords: 'industries sectors' },
+  { kind: 'Page', title: 'Home', href: '/', detail: 'Technology and research from Bharatpur, Chitwan.', keywords: 'index start overview omx lab' },
+  { kind: 'Page', title: 'Work', href: '/work', detail: 'Products and client projects we have shipped.', keywords: 'portfolio projects clients case studies' },
+  { kind: 'Page', title: 'Services', href: '/#services', detail: 'What we build, and where we have done it.', keywords: 'services offer hire' },
+  { kind: 'Page', title: 'Products', href: '/products', detail: 'Products we make and run ourselves.', keywords: 'saksi kkkhane unsaid noteacher focusift' },
+  { kind: 'Page', title: 'Solutions', href: '/solutions', detail: 'What we build for each kind of organisation.', keywords: 'industries sectors hospitality retail education heritage events' },
   { kind: 'Page', title: 'Research', href: '/research', detail: 'Papers, proposals and research projects.', keywords: 'papers science humansign sign language' },
-  { kind: 'Page', title: 'Developers', href: '/developers', detail: 'SDKs, API reference and the status register.', keywords: 'api docs sdk' },
-  { kind: 'Page', title: 'Company', href: '/company', detail: 'Institutional profile, founder and open roles.', keywords: 'about team careers' },
-  { kind: 'Page', title: 'News', href: '/news', detail: 'The dispatch registry.', keywords: 'press releases updates' },
+  { kind: 'Page', title: 'Company', href: '/company', detail: 'Who we are, how we work, company details.', keywords: 'about registration pan address contact' },
+  { kind: 'Page', title: 'Start a project', href: START_PROJECT_HREF, detail: SITE.email, keywords: 'contact email hire quote' },
 
-  // --- Modules -------------------------------------------------------------
-  { kind: 'Module', title: 'Helios', href: '/products', swatch: 'bg-swatch-helios', detail: 'MOD_01 — Identity and verification, sub-80ms.', keywords: 'biometric liveness credential eal6 iso 30107' },
-  { kind: 'Module', title: 'Foundry', href: '/products', swatch: 'bg-swatch-foundry', detail: 'MOD_02 — Distributed training across 16,384 accelerators.', keywords: 'gpu cluster rdma tensor parallelism bf16 fp8' },
-  { kind: 'Module', title: 'OMX Studio', href: '/products', swatch: 'bg-swatch-studio', detail: 'MOD_03 — Evaluation, drift and adversarial probing.', keywords: 'benchmark observability red team playground' },
-  { kind: 'Module', title: 'Rune Agent', href: '/products', swatch: 'bg-swatch-rune', detail: 'MOD_04 — Autonomous code synthesis, formally verified.', keywords: 'codegen rust cuda microvm llvm' },
-  { kind: 'Module', title: 'Sage Core', href: '/products', swatch: 'bg-swatch-sage', detail: 'MOD_05 — Foundation multimodal reasoning.', keywords: 'multimodal spatial audio telemetry tensor' },
-
-  // --- Instruments ---------------------------------------------------------
-  { kind: 'Instrument', title: 'OMX Synth 4', href: '/products', detail: 'Instrument catalogue.' },
-  { kind: 'Instrument', title: 'Spectra Core', href: '/products', detail: 'Instrument catalogue.' },
-  { kind: 'Instrument', title: 'Flow Array 200', href: '/products', detail: 'Instrument catalogue.' },
-  { kind: 'Instrument', title: 'Calibrator Pro', href: '/products', detail: 'Instrument catalogue.' },
-  { kind: 'Instrument', title: 'LIMS Bridge', href: '/products', detail: 'Instrument catalogue.' },
-  { kind: 'Instrument', title: 'Deployment tiers', href: '/products', detail: 'Sandbox, Enterprise and Sovereign.', keywords: 'pricing plans isolation' },
-
-  // --- Solutions -----------------------------------------------------------
-  { kind: 'Solution', title: 'Infrastructure', href: '/solutions', swatch: 'bg-swatch-foundry', detail: 'Telemetry verification across foundry lines.', keywords: 'axis automation manufacturing' },
-  { kind: 'Solution', title: 'Healthcare', href: '/solutions', swatch: 'bg-swatch-sage', detail: 'Sequence alignment at 18.4x throughput.', keywords: 'helvetia bio protein clinical hipaa' },
-  { kind: 'Solution', title: 'Fintech', href: '/solutions', swatch: 'bg-swatch-helios', detail: 'Deterministic KYC under Tier-1 supervision.', keywords: 'zurich capital finma identity' },
-  { kind: 'Solution', title: 'Defence & Sovereign', href: '/solutions', swatch: 'bg-swatch-rune', detail: 'Air-gapped deployment on customer premises.', keywords: 'enclave sovereign secure' },
-  { kind: 'Solution', title: 'Compliance', href: '/solutions', detail: 'FINMA, HIPAA, SOC 2, ISO 30107-3, EAL6+.', keywords: 'certification regulatory audit' },
-
-  // --- Research ------------------------------------------------------------
-
-  // --- Developers ----------------------------------------------------------
-  { kind: 'Developer', title: 'API reference', href: '/developers', detail: 'Endpoints, methods and rate limits.', keywords: 'rest http endpoint' },
-  { kind: 'Developer', title: 'Python SDK', href: '/developers', swatch: 'bg-swatch-foundry', detail: 'The reference client.', keywords: 'pip install client' },
-  { kind: 'Developer', title: 'Rust bindings', href: '/developers', swatch: 'bg-swatch-rune', detail: 'Zero-copy, for latency-bound callers.', keywords: 'cargo crate' },
-  { kind: 'Developer', title: 'TypeScript SDK', href: '/developers', swatch: 'bg-swatch-studio', detail: 'Browser and server, fully typed.', keywords: 'npm node javascript' },
-  { kind: 'Developer', title: 'Webhooks & events', href: '/developers', detail: 'Delivery, retries and signatures.', keywords: 'callback subscribe' },
-  { kind: 'Developer', title: 'Status register', href: '/developers', detail: 'Uptime per module.', keywords: 'uptime health incident' },
-  { kind: 'Developer', title: 'Quickstart', href: '/developers', detail: 'Authenticate and run a verification.', keywords: 'getting started example' },
-
-  // --- Company -------------------------------------------------------------
-  { kind: 'Company', title: 'Siddanta Sodari', href: '/company', swatch: 'bg-swatch-helios', detail: 'Founder. OMX Lab, established September 2026.', keywords: 'founder leadership who' },
-  { kind: 'Company', title: 'Registry entry', href: '/company', swatch: 'bg-swatch-sage', detail: 'Kathmandu. 27.7172° N / 85.3240° E.', keywords: 'address location nepal facility hq' },
-  { kind: 'Company', title: 'Open roles', href: '/company#open-roles', swatch: 'bg-swatch-foundry', detail: 'Six entries across engineering, research and design.', keywords: 'careers jobs hiring vacancy' },
-  { kind: 'Company', title: 'Governance', href: '/company', detail: 'Ethics, biosafety, SOC 2 and data residency.', keywords: 'compliance ethics audit policy' },
-
-  // --- Dispatches ----------------------------------------------------------
-  { kind: 'Dispatch', title: 'Introducing Helios', href: '/news', detail: 'SYSTEM RELEASE · 03.14 — Autonomous Verification Matrix.', keywords: 'launch announcement' },
-  { kind: 'Dispatch', title: 'Press kit', href: '/news', detail: 'Logo package, photography and brand guidelines.', keywords: 'media brand assets download' },
-  { kind: 'Dispatch', title: 'Dispatch registry', href: '/news', detail: 'Every release, in order.', keywords: 'archive changelog history' },
   // --- Work (generated from the work register) ----------------------------
   ...PROJECTS.map((p): SearchEntry => ({
     kind: 'Work',

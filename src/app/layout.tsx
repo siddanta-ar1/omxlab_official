@@ -41,35 +41,37 @@ if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://omxlab.com'),
+  metadataBase: new URL('https://omxlab.site'),
   title: {
-    default: 'OMX Lab — Frontier AI Infrastructure',
+    default: 'OMX Lab: technology and research from Nepal',
     template: '%s | OMX Lab',
   },
   description:
-    'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+    'O.M.X Lab builds websites, apps and platforms for Nepali businesses and institutions, runs its own products such as Sākṣī and KKKhane, and researches better ways to build them.',
   applicationName: 'OMX Lab',
   authors: [{ name: 'Siddanta Sodari' }],
   keywords: [
-    'AI infrastructure',
-    'distributed training',
-    'biometric verification',
-    'model evaluation',
-    'sovereign deployment',
+    'OMX Lab',
+    'software company Nepal',
+    'web development Chitwan',
+    'mobile app development Nepal',
+    'Sākṣī',
+    'KKKhane',
+    'research',
   ],
   openGraph: {
     type: 'website',
     siteName: 'OMX Lab',
-    title: 'OMX Lab — Frontier AI Infrastructure',
+    title: 'OMX Lab: technology and research from Nepal',
     description:
-      'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+      'O.M.X Lab builds websites, apps and platforms for Nepali businesses and institutions, runs its own products such as Sākṣī and KKKhane, and researches better ways to build them.',
     locale: 'en',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OMX Lab — Frontier AI Infrastructure',
+    title: 'OMX Lab: technology and research from Nepal',
     description:
-      'Building foundational models, high-throughput training platforms, and applied intelligence for the physical world.',
+      'O.M.X Lab builds websites, apps and platforms for Nepali businesses and institutions, runs its own products such as Sākṣī and KKKhane, and researches better ways to build them.',
   },
   icons: {
     icon: [

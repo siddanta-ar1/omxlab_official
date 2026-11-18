@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SITE, START_PROJECT_HREF } from '@/lib/site';
 import { ColourRegister } from '@/components/layout/ColourRegister';
 
 type FooterLink = {
@@ -13,78 +14,54 @@ type FooterColumn = {
 
 const FOOTER_COLUMNS: FooterColumn[] = [
   {
-    eyebrow: '01 / Capabilities',
+    eyebrow: '01 / Work',
     links: [
-      { label: 'Sequence Matrix', href: '/products' },
-      { label: 'Protein Folding', href: '/products' },
-      { label: 'Cryo-EM Models', href: '/products' },
-      { label: 'Variant Calling', href: '/products' },
-      { label: 'Batch Analytics', href: '/products' },
+      { label: 'All work', href: '/work' },
+      { label: 'Client work', href: '/work#mileplus' },
+      { label: 'Services', href: '/#services' },
+      { label: 'Solutions', href: '/solutions' },
     ],
   },
   {
-    eyebrow: '02 / Instruments',
+    eyebrow: '02 / Products',
     links: [
-      { label: 'OMX Synth 4', href: '/products' },
-      { label: 'Spectra Core', href: '/products' },
-      { label: 'Flow Array 200', href: '/products' },
-      { label: 'Calibrator Pro', href: '/products' },
-      { label: 'LIMS Bridge', href: '/products' },
+      { label: 'Sākṣī', href: '/products#saksi' },
+      { label: 'KKKhane', href: '/products#kkkhane' },
+      { label: 'UNSAID', href: '/products#unsaid' },
+      { label: 'NOTEacher', href: '/products#noteacher' },
+      { label: 'All products', href: '/products' },
     ],
   },
   {
     eyebrow: '03 / Research',
     links: [
-      { label: 'Peer Publications', href: '/research' },
-      { label: 'Pre-prints (bioRxiv)', href: '/research' },
-      { label: 'Benchmark Datasets', href: '/research' },
-      { label: 'Clinical Trials', href: '/research' },
-      { label: 'Open Science Grant', href: '/research' },
+      { label: 'HumanSign', href: '/research#humansign' },
+      { label: 'Sign language AI', href: '/research#nsl' },
+      { label: 'Heritage evidence', href: '/research#saksi-evidence' },
+      { label: 'All research', href: '/research' },
     ],
   },
   {
-    eyebrow: '04 / Developers',
+    eyebrow: '04 / Company',
     links: [
-      { label: 'API Reference', href: '/developers' },
-      { label: 'Python SDK', href: '/developers' },
-      { label: 'Rust Bindings', href: '/developers' },
-      { label: 'Webhooks & Events', href: '/developers' },
-      { label: 'Status Register', href: '/developers' },
-    ],
-  },
-  {
-    eyebrow: '05 / Governance',
-    links: [
-      { label: 'Ethics Committee', href: '/company' },
-      { label: 'Biosafety Tier III', href: '/company' },
-      { label: 'SOC 2 Type II', href: '/company' },
-      { label: 'HIPAA Compliant', href: '/company' },
-      { label: 'Data Residency', href: '/company' },
-    ],
-  },
-  {
-    eyebrow: '06 / Registry',
-    links: [
-      { label: 'Kathmandu Studio (HQ)', href: '/company' },
-      { label: 'Founder', href: '/company' },
-      { label: 'Registry Index', href: '/company' },
-      { label: 'Careers (6 open)', href: '/company' },
-      { label: 'Press Kit', href: '/company' },
+      { label: 'About OMX Lab', href: '/company' },
+      { label: 'How we work', href: '/company' },
+      { label: 'Company details', href: '/company' },
+      { label: 'Start a project', href: START_PROJECT_HREF },
+      { label: 'GitHub', href: SITE.github },
     ],
   },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
-  { label: 'PRIVACY POLICY', href: '/company' },
-  { label: 'TERMS OF SERVICE', href: '/company' },
-  { label: 'SECURITY DISCLOSURE', href: '/company' },
+  { label: SITE.email.toUpperCase(), href: `mailto:${SITE.email}` },
 ];
 
 export function Footer() {
   return (
     <footer className="w-full bg-studio-grey border-t border-grid-hairline">
       <div className="w-full px-space-md lg:px-margin py-space-2xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-grid-hairline">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-t border-l border-grid-hairline">
           {FOOTER_COLUMNS.map((column) => (
             <nav
               key={column.eyebrow}
@@ -112,7 +89,7 @@ export function Footer() {
               OMX LAB
             </span>
             <span className="text-label-code text-on-surface-variant">
-              © 2026 ALL RIGHTS RESERVED
+              © {SITE.founded} {SITE.legalName.toUpperCase()}
             </span>
           </div>
           <div className="flex items-center gap-space-lg">
@@ -126,7 +103,7 @@ export function Footer() {
               </Link>
             ))}
             <span className="text-label-code text-primary font-semibold">
-              KATHMANDU · EST. 2026
+              BHARATPUR, CHITWAN · EST. {SITE.founded}
             </span>
           </div>
         </div>

@@ -1,21 +1,17 @@
-import { Hero } from '@/components/sections/Hero';
-import { EnterpriseValidation } from '@/components/sections/EnterpriseValidation';
-import { BentoConstellation } from '@/components/sections/BentoConstellation';
-import { StackIndex } from '@/components/sections/StackIndex';
+import { HomeHero } from '@/components/sections/HomeHero';
 import { SystemServices } from '@/components/sections/SystemServices';
 import { SelectedWork } from '@/components/sections/SelectedWork';
-import { InitiateArchitecture } from '@/components/sections/InitiateArchitecture';
+import { ResearchTeaser } from '@/components/sections/ResearchTeaser';
+import { ContactBand } from '@/components/common/ContactBand';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full">
-      <Hero />
-      <EnterpriseValidation />
-      <BentoConstellation />
-      <StackIndex />
+      <HomeHero />
       <SystemServices />
       <SelectedWork />
-      <InitiateArchitecture />
+      <ResearchTeaser />
+      <ContactBand />
     </div>
   );
 }
