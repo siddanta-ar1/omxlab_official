@@ -3,6 +3,7 @@ import { EnterpriseValidation } from '@/components/sections/EnterpriseValidation
 import { BentoConstellation } from '@/components/sections/BentoConstellation';
 import { StackIndex } from '@/components/sections/StackIndex';
 import { SystemServices } from '@/components/sections/SystemServices';
+import { SelectedWork } from '@/components/sections/SelectedWork';
 import { InitiateArchitecture } from '@/components/sections/InitiateArchitecture';
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <BentoConstellation />
       <StackIndex />
       <SystemServices />
+      <SelectedWork />
       <InitiateArchitecture />
     </div>
   );

@@ -9,6 +9,8 @@
    groups things — by registry section rather than by relevance alone.
    --------------------------------------------------------------------------- */
 
+import { PROJECTS, SERVICES } from '@/lib/work';
+
 export type SearchKind =
   | 'Page'
   | 'Module'
@@ -17,7 +19,8 @@ export type SearchKind =
   | 'Research'
   | 'Developer'
   | 'Company'
-  | 'Dispatch';
+  | 'Dispatch'
+  | 'Work';
 
 export type SearchEntry = {
   title: string;
@@ -33,6 +36,7 @@ export type SearchEntry = {
 
 export const SEARCH_INDEX: SearchEntry[] = [
   // --- Pages ---------------------------------------------------------------
+  { kind: 'Page', title: 'Work', href: '/work', detail: 'Products and client projects we have shipped.', keywords: 'portfolio projects clients case studies services' },
   { kind: 'Page', title: 'Home', href: '/', detail: 'Frontier AI infrastructure for reality.', keywords: 'index start overview' },
   { kind: 'Page', title: 'Products', href: '/products', detail: 'The product registry and deployment tiers.', keywords: 'catalogue modules matrix' },
   { kind: 'Page', title: 'Solutions', href: '/solutions', detail: 'Deployment verticals and case studies.', keywords: 'industries sectors' },
@@ -89,6 +93,21 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { kind: 'Dispatch', title: 'Introducing Helios', href: '/news', detail: 'SYSTEM RELEASE · 03.14 — Autonomous Verification Matrix.', keywords: 'launch announcement' },
   { kind: 'Dispatch', title: 'Press kit', href: '/news', detail: 'Logo package, photography and brand guidelines.', keywords: 'media brand assets download' },
   { kind: 'Dispatch', title: 'Dispatch registry', href: '/news', detail: 'Every release, in order.', keywords: 'archive changelog history' },
+  // --- Work (generated from the work register) ----------------------------
+  ...PROJECTS.map((p): SearchEntry => ({
+    kind: 'Work',
+    title: p.name,
+    href: '/work',
+    detail: p.kind === 'Client' ? `${p.sector} · for ${p.client}` : `${p.sector} · ${p.kind}`,
+    keywords: [p.client, ...p.stack, ...p.points].join(' '),
+  })),
+  ...SERVICES.map((s): SearchEntry => ({
+    kind: 'Work',
+    title: s.title.replace(/\.$/, ''),
+    href: '/#services',
+    detail: s.body,
+    keywords: 'service services',
+  })),
 ];
 
 export type ScoredEntry = SearchEntry & { score: number };

@@ -32,6 +32,7 @@ export type NavItem = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
+  { label: 'Work', href: '/work' },
   {
     label: 'Products',
     href: '/products',
