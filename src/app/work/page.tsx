@@ -17,7 +17,8 @@ const START_HREF = CONTACT_EMAIL
 
 export default function WorkPage() {
   const featured = PROJECTS.filter((p) => p.featured);
-  const rest = PROJECTS.filter((p) => !p.featured);
+  const ownMore = PROJECTS.filter((p) => !p.featured && p.kind !== 'Client');
+  const clientWork = PROJECTS.filter((p) => p.kind === 'Client');
   const clients = new Set(PROJECTS.filter((p) => p.kind === 'Client').map((p) => p.client)).size;
   const live = PROJECTS.filter((p) => p.href && !p.href.includes('github.com')).length;
 
@@ -61,11 +62,24 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section className="w-full bg-paper-white py-space-3xl border-b border-grid-hairline">
+      <section className="w-full bg-paper-white py-space-2xl border-b border-grid-hairline">
         <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
-          <h2 className="text-headline-lg text-text-primary tracking-tight mb-space-lg">Client work and open source</h2>
+          <h2 className="text-headline-lg text-text-primary tracking-tight">More products and open source</h2>
+          <p className="mt-space-xs mb-space-lg text-body-compact text-on-surface-variant max-w-2xl">Apps, platforms and tools we build and run ourselves.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-grid-hairline">
-            {rest.map((project, i) => (
+            {ownMore.map((project, i) => (
+              <ProjectCell key={project.slug} project={project} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-paper-white py-space-2xl border-b border-grid-hairline">
+        <div className="max-w-[1600px] mx-auto px-space-md md:px-margin">
+          <h2 className="text-headline-lg text-text-primary tracking-tight">Client work</h2>
+          <p className="mt-space-xs mb-space-lg text-body-compact text-on-surface-variant max-w-2xl">Sites and apps for businesses, clubs and institutions across Nepal.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-grid-hairline">
+            {clientWork.map((project, i) => (
               <ProjectCell key={project.slug} project={project} index={i} />
             ))}
           </div>

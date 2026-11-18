@@ -5,9 +5,10 @@ import type { Project } from '@/lib/work';
 export function FeaturedProject({ project, index }: { project: Project; index: number }) {
   return (
     <article
+      id={project.slug}
       data-anim=""
       style={{ transitionDelay: `${index * 60}ms` }}
-      className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg py-space-2xl border-b border-grid-hairline"
+      className="scroll-mt-24 grid grid-cols-1 lg:grid-cols-12 gap-space-lg py-space-2xl border-b border-grid-hairline"
     >
       <div className="lg:col-span-5">
         <div className="flex flex-wrap items-center gap-x-space-sm gap-y-1 text-[12px] text-text-muted mb-space-sm">
@@ -43,12 +44,13 @@ export function FeaturedProject({ project, index }: { project: Project; index: n
 }
 
 /** A project in the register grid. */
-export function ProjectCell({ project, index }: { project: Project; index: number }) {
+export function ProjectCell({ project, index, anchor = true }: { project: Project; index: number; anchor?: boolean }) {
   return (
     <article
+      id={anchor ? project.slug : undefined}
       data-anim=""
       style={{ transitionDelay: `${(index % 3) * 60}ms` }}
-      className="p-space-lg lg:p-space-xl border-r border-b border-grid-hairline flex flex-col gap-space-md hover:bg-studio-grey transition-colors duration-100"
+      className="scroll-mt-24 p-space-lg lg:p-space-xl border-r border-b border-grid-hairline flex flex-col gap-space-md hover:bg-studio-grey transition-colors duration-100"
     >
       <div className="flex items-center justify-between text-[12px] text-text-muted">
         <span>{project.sector}</span>

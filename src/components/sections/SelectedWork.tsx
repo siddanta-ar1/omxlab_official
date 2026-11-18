@@ -26,7 +26,7 @@ export function SelectedWork() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-grid-hairline">
           {featured.map((project, i) => (
-            <ProjectCell key={project.slug} project={project} index={i} />
+            <ProjectCell key={project.slug} project={project} index={i} anchor={false} />
           ))}
         </div>
       </div>

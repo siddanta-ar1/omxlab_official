@@ -246,44 +246,124 @@ export const PROJECTS: Project[] = [
     href: 'https://krixnova.vercel.app',
     linkLabel: 'krixnova.vercel.app',
   },
+  {
+    slug: 'noteacher',
+    name: 'NOTEacher',
+    client: 'OMX Lab',
+    kind: 'Product',
+    sector: 'Education',
+    year: '2026',
+    summary:
+      'Lessons told as stories instead of textbook chapters: scroll-driven explanations, hands-on simulations and an AI teacher, on the web and Android.',
+    points: [
+      'Scrollytelling lessons with a hook, a guide and a resolution',
+      '15+ interactive simulations, from anchoring bias to Monte Carlo',
+      'An AI teacher, and handwritten answers read by a vision model',
+      'Streaks, badges and a leaderboard',
+    ],
+    stack: ['Next.js 16', 'GSAP', 'Capacitor', 'OpenRouter', 'Gemini Vision'],
+    services: ['SVC_01', 'SVC_05'],
+  },
+  {
+    slug: 'focusift',
+    name: 'FocuSift',
+    client: 'OMX Lab',
+    kind: 'Product',
+    sector: 'Productivity',
+    year: '2026',
+    summary:
+      'A focus app that makes you earn your break: name what you are working on, set a time, and your reward link opens only when the session is done.',
+    points: ['Named, timed focus sessions', 'A reward link unlocked on completion', 'Streaks, history and reminders'],
+    stack: ['Expo', 'React Native', 'Supabase'],
+    services: ['SVC_02'],
+  },
+  {
+    slug: 'k-reels',
+    name: 'K’s animations',
+    client: 'OMX Lab',
+    kind: 'Product',
+    sector: 'Generative media',
+    year: '2026',
+    summary:
+      'A recurring animated comedy series made with an approval-gated AI pipeline: a consistent cast, scripted shots, local assembly and drafts a person approves.',
+    points: ['A cast of nine characters kept consistent across episodes', '12 episodes made; 10 reels posted in October 2026', 'Comic posts from the same cast'],
+    stack: ['Claude Code', 'Kling 3.0', 'FFmpeg', 'Graph API'],
+    services: ['SVC_06'],
+  },
+  {
+    slug: 'ecovera',
+    name: 'EcoVera',
+    client: 'EcoVera Artemisia BioSolution',
+    kind: 'Client',
+    sector: 'Agribusiness',
+    year: '2026',
+    summary:
+      'Online store for a sustainable agribusiness that turns underused rural land into Artemisia products: herbal handwash, incense and moxa.',
+    points: ['Shop, product pages and accounts', 'Ingredient and story pages', 'Shipping, returns and policy pages'],
+    stack: ['Next.js', 'TypeScript'],
+    services: ['SVC_03'],
+    href: 'https://eco-vera.vercel.app',
+    linkLabel: 'eco-vera.vercel.app',
+  },
 ];
+
+export type ProofRef = { label: string; href: string };
 
 export type Service = {
   code: ServiceCode;
   title: string;
   body: string;
+  /** What a client walks away with. */
+  deliverables: string[];
+  /** Where the work behind it lives, on /work or /research. */
+  proof: ProofRef[];
 };
+
+const w = (slug: string, label: string): ProofRef => ({ label, href: `/work#${slug}` });
+const r = (slug: string, label: string): ProofRef => ({ label, href: `/research#${slug}` });
 
 export const SERVICES: Service[] = [
   {
     code: 'SVC_01',
-    title: 'Web platforms and SaaS.',
-    body: 'Multi-tenant products, dashboards and portals on Next.js and Postgres, built to run a business from day one.',
+    title: 'Web platforms and SaaS',
+    body: 'Products that run a business: multi-tenant apps, dashboards, portals and learning platforms.',
+    deliverables: ['Product design and build', 'Accounts, roles and admin', 'Hosting, monitoring and handover'],
+    proof: [w('kkkhane', 'KKKhane'), w('noteacher', 'NOTEacher'), w('rsgrt', 'RSGRT Institute'), w('scholarspoint', 'ScholarsPoint')],
   },
   {
     code: 'SVC_02',
-    title: 'Mobile apps.',
-    body: 'Android and iOS apps in React Native and Expo, offline first, with maps, camera and over-the-air updates.',
+    title: 'Mobile apps',
+    body: 'Android and iOS apps in React Native and Expo that work offline and update without a store release.',
+    deliverables: ['Android and iOS from one codebase', 'Offline data, maps, camera, notifications', 'Store release and over-the-air updates'],
+    proof: [w('saksi', 'Sākṣī'), w('focusift', 'FocuSift')],
   },
   {
     code: 'SVC_03',
-    title: 'E-commerce and catalogues.',
-    body: 'Stores and product catalogues for Nepali businesses: checkout, payments, orders and an admin your team can use.',
+    title: 'E-commerce and catalogues',
+    body: 'Stores and product catalogues for Nepali businesses, from first product photo to paid order.',
+    deliverables: ['Storefront, cart and checkout', 'Online payments and order admin', 'Search-friendly product pages'],
+    proof: [w('madeinnepal', 'Made in Nepal Stores'), w('naarisringaar', 'Naari Sringaar'), w('ecovera', 'EcoVera'), w('gstradelink', 'GSTradeLink'), w('techraj', 'Techraj')],
   },
   {
     code: 'SVC_04',
-    title: 'Community and event apps.',
-    body: 'Installable apps for clubs, hackathons and events: QR check-in, ID cards, live leaderboards and announcements.',
+    title: 'Community and event apps',
+    body: 'Installable apps for clubs, hackathons and events, ready before the first participant arrives.',
+    deliverables: ['QR check-in and digital ID cards', 'Live leaderboards and quizzes', 'Announcements and organiser admin'],
+    proof: [w('mileplus', 'Mile Plus Run Club'), w('codefest', 'Codefest Chitwan')],
   },
   {
     code: 'SVC_05',
-    title: 'Privacy and applied AI.',
-    body: 'AI features that cite their sources, end-to-end encryption, attested enclaves and verifiable on-chain receipts.',
+    title: 'Applied AI and privacy',
+    body: 'AI that cites its sources and respects its users, built on our own research.',
+    deliverables: ['Assistants grounded in your documents', 'Recognition models for signs and behaviour', 'Encryption, enclaves and verifiable receipts'],
+    proof: [w('unsaid', 'UNSAID'), r('humansign', 'HumanSign'), r('nsl', 'Sign language AI'), w('noteacher', 'NOTEacher')],
   },
   {
     code: 'SVC_06',
-    title: '3D, maps and brand content.',
-    body: '3D models and 360° capture of real places, interactive maps, and print and video content from one brand system.',
+    title: '3D, maps and content',
+    body: '3D and 360° capture of real places, interactive maps, and print and video made from one brand system.',
+    deliverables: ['3D models and 360° tours', 'Interactive maps', 'Posters, print files and video pipelines'],
+    proof: [w('saksi', 'Sākṣī'), w('contentkit', 'contentkit'), w('k-reels', 'K’s animations')],
   },
 ];
 

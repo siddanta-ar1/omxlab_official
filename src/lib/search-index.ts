@@ -10,6 +10,7 @@
    --------------------------------------------------------------------------- */
 
 import { PROJECTS, SERVICES } from '@/lib/work';
+import { RESEARCH } from '@/lib/research';
 
 export type SearchKind =
   | 'Page'
@@ -40,7 +41,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { kind: 'Page', title: 'Home', href: '/', detail: 'Frontier AI infrastructure for reality.', keywords: 'index start overview' },
   { kind: 'Page', title: 'Products', href: '/products', detail: 'The product registry and deployment tiers.', keywords: 'catalogue modules matrix' },
   { kind: 'Page', title: 'Solutions', href: '/solutions', detail: 'Deployment verticals and case studies.', keywords: 'industries sectors' },
-  { kind: 'Page', title: 'Research', href: '/research', detail: 'Publications, datasets and the grant programme.', keywords: 'papers science' },
+  { kind: 'Page', title: 'Research', href: '/research', detail: 'Papers, proposals and research projects.', keywords: 'papers science humansign sign language' },
   { kind: 'Page', title: 'Developers', href: '/developers', detail: 'SDKs, API reference and the status register.', keywords: 'api docs sdk' },
   { kind: 'Page', title: 'Company', href: '/company', detail: 'Institutional profile, founder and open roles.', keywords: 'about team careers' },
   { kind: 'Page', title: 'News', href: '/news', detail: 'The dispatch registry.', keywords: 'press releases updates' },
@@ -68,11 +69,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { kind: 'Solution', title: 'Compliance', href: '/solutions', detail: 'FINMA, HIPAA, SOC 2, ISO 30107-3, EAL6+.', keywords: 'certification regulatory audit' },
 
   // --- Research ------------------------------------------------------------
-  { kind: 'Research', title: 'Publications', href: '/research', detail: 'The peer-reviewed registry.', keywords: 'papers neurips icml iclr nature' },
-  { kind: 'Research', title: 'Benchmark datasets', href: '/research', detail: 'Released under open licence.', keywords: 'data corpus evaluation' },
-  { kind: 'Research', title: 'Open Science Grant', href: '/research', detail: 'Funding for reproducible work.', keywords: 'funding grant academic' },
-  { kind: 'Research', title: 'Protein folding', href: '/research', detail: 'Research area.', keywords: 'structure cryo-em molecular' },
-  { kind: 'Research', title: 'Sequence matrix', href: '/research', detail: 'Research area.', keywords: 'alignment genomics variant calling' },
 
   // --- Developers ----------------------------------------------------------
   { kind: 'Developer', title: 'API reference', href: '/developers', detail: 'Endpoints, methods and rate limits.', keywords: 'rest http endpoint' },
@@ -97,13 +93,20 @@ export const SEARCH_INDEX: SearchEntry[] = [
   ...PROJECTS.map((p): SearchEntry => ({
     kind: 'Work',
     title: p.name,
-    href: '/work',
+    href: `/work#${p.slug}`,
     detail: p.kind === 'Client' ? `${p.sector} · for ${p.client}` : `${p.sector} · ${p.kind}`,
     keywords: [p.client, ...p.stack, ...p.points].join(' '),
   })),
+  ...RESEARCH.map((r): SearchEntry => ({
+    kind: 'Research',
+    title: r.short,
+    href: `/research#${r.slug}`,
+    detail: `${r.status} · ${r.area}`,
+    keywords: [r.title, r.question, ...r.methods].join(' '),
+  })),
   ...SERVICES.map((s): SearchEntry => ({
     kind: 'Work',
-    title: s.title.replace(/\.$/, ''),
+    title: s.title,
     href: '/#services',
     detail: s.body,
     keywords: 'service services',
